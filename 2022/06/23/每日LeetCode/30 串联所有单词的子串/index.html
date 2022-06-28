@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>串联所有单词的子串 - 活着就是为了摸鱼🐟！！！</title>
+  <title>30. 串联所有单词的子串 - 活着就是为了摸鱼🐟！！！</title>
   <meta name="keywords" content="算法,LeetCode,数据结构,null">
   <meta desc name="description" content="一个不起眼的小博客 - 一个小垃圾 - 活着就是为了摸鱼🐟！！！">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="串联所有单词的子串">
+<meta property="og:title" content="30. 串联所有单词的子串">
 <meta property="og:url" content="http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/index.html">
 <meta property="og:site_name" content="活着就是为了摸鱼🐟！！！">
-<meta property="og:description" content="题目：给定一个字符串s和一些长度相同的单词words。找出s中恰好可以由words中所有单词串联形成的子串的起始位置。 注意子串要与words中的单词完全匹配，中间不能有其他字符，但不需要考虑words中单词串联的顺序。 示例： 12输入：s &#x3D; &quot;barfoofoobarthefoobarman&quot;, words &#x3D; [&quot;bar&quot;,&quot;foo&amp;quo">
+<meta property="og:description" content="题目：给定一个字符串s和一些长度相同的单词words。找出s中恰好可以由words中所有单词串联形成的子串的起始位置。 注意子串要与words中的单词完全匹配，中间不能有其他字符，但不需要考虑words中单词串联的顺序。 示例： 输入：s &#x3D; “barfoofoobarthefoobarman”, words &#x3D; [“bar”,”foo”,”the”]输出：[6,9,12]">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-06-23T03:53:00.000Z">
-<meta property="article:modified_time" content="2022-06-25T04:49:32.389Z">
+<meta property="article:modified_time" content="2022-06-28T01:15:31.687Z">
 <meta property="article:author" content="一个小垃圾">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="LeetCode">
@@ -1754,7 +1754,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1656168730288),
+    lastupdate: new Date(1656383690858),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2462,7 +2462,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        串联所有单词的子串
+        30. 串联所有单词的子串
       </h1>
       <div class='new-meta-box'>
         
@@ -2531,14 +2531,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <div class="story post-story"><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定一个字符串<code>s</code>和一些<strong>长度相同</strong>的单词<code>words</code>。找出<code>s</code>中恰好可以由<code>words</code>中所有单词串联形成的子串的起始位置。</p>
 <p>注意子串要与<code>words</code>中的单词完全匹配，<strong>中间不能有其他字符</strong>，但不需要考虑<code>words</code>中单词串联的顺序。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = <span class="string">&quot;barfoofoobarthefoobarman&quot;</span>, words = [<span class="string">&quot;bar&quot;</span>,<span class="string">&quot;foo&quot;</span>,<span class="string">&quot;the&quot;</span>]</span><br><span class="line">输出：[<span class="number">6</span>,<span class="number">9</span>,<span class="number">12</span>]</span><br></pre></td></tr></table></figure>
-
+</div><div class="story post-story"><h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><blockquote>
+<p>输入：s &#x3D; “barfoofoobarthefoobarman”, words &#x3D; [“bar”,”foo”,”the”]<br>输出：[6,9,12]</p>
+</blockquote>
 <p>输出返回字串的第一个字符在<code>s</code>中的位置</p>
 <p>第一个字串：barfoo<em><strong>foobarthe</strong></em>foobarman  <code>6</code></p>
 <p>第二个字串：barfoofoo<em><strong>barthefoo</strong></em>barman  <code>9</code></p>
 <p>第三个字符：barfoofoobar<em><strong>thefoobar</strong></em>man  <code>12</code></p>
-</div><div class="story post-story"><h2 id="思路：滑动窗口"><a href="#思路：滑动窗口" class="headerlink" title="思路：滑动窗口"></a>思路：滑动窗口</h2><p><code>word_len</code>为每个单词的长度，因为每个单词的长度都相同；</p>
+</div><div class="story post-story"><h2 id="思路：滑动窗口"><a href="#思路：滑动窗口" class="headerlink" title="思路：滑动窗口"></a>思路：滑动窗口</h2><blockquote>
+<p><code>word_len</code>为每个单词的长度，因为每个单词的长度都相同；</p>
 <p><code>word_num</code>为<code>words</code>数组中单词的个数；</p>
 <p><code>total_len</code>为<code>words</code>数组中所有的单词的总长度；</p>
 <p><code>map</code>来记录<code>words</code>数组中每个单词的个数；</p>
@@ -2548,6 +2549,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>遍历<code>s</code>时无需一个一个字符的遍历，可以一个一个单词的遍历，<code>right += word_len</code>；</p>
 <p>如果截取的单词<code>map</code>中不存在，则之前记录的全部无效，清空<code>t_map</code>和<code>count</code>；</p>
 <p>如果某个单词在<code>t_map</code>中的个数大于<code>map</code>中的个数，就需要删除匹配的多余的单词，就需要删除窗口中第一个单词，直到某个单词出现的次数小于<code>map</code>中的个数</p>
+</blockquote>
 </div><div class="story post-story"><h2 id="代码-cpp-："><a href="#代码-cpp-：" class="headerlink" title="代码(cpp)："></a>代码(cpp)：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">findSubstring</span><span class="params">(string s, vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//用来存放结果</span></span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; result; </span><br><span class="line">        <span class="comment">//判断s和words是否为空，如果其中有一个为空，则返回空数组</span></span><br><span class="line">        <span class="keyword">if</span>(s.<span class="built_in">empty</span>()||words.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="type">int</span> word_len = words[<span class="number">0</span>].<span class="built_in">size</span>(); <span class="comment">//一个单词的长度（每个单词长度都相同）</span></span><br><span class="line">        <span class="type">int</span> word_num = words.<span class="built_in">size</span>(); <span class="comment">// 单词的总个数</span></span><br><span class="line">        <span class="type">int</span> total_len = word_len*word_num; <span class="comment">// 全部单词的长度</span></span><br><span class="line">        <span class="comment">//建立单词-&gt;单词个数的映射</span></span><br><span class="line">        unordered_map&lt;string, <span class="type">int</span>&gt; map;</span><br><span class="line">        <span class="comment">//统计每个单词的个数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;word : words)&#123;</span><br><span class="line">            <span class="comment">//map[key]:返回key值所对应的value值，如果不存在key值，则会使用该key值向当前容器中插入一个新value值为 0 </span></span><br><span class="line">            map[word]++; <span class="comment">//等价于 map[word] += 1</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i&lt; word_len; i++)&#123;</span><br><span class="line">            <span class="comment">//left和right用来表示窗口的左右边界</span></span><br><span class="line">            <span class="type">int</span> left = i;</span><br><span class="line">            <span class="type">int</span> right = i;</span><br><span class="line">            <span class="comment">//count用来统计已经匹配的单词个数</span></span><br><span class="line">            <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">            unordered_map&lt;string, <span class="type">int</span>&gt; t_map;</span><br><span class="line">            <span class="comment">//开始滑动窗口</span></span><br><span class="line">            <span class="comment">//right右边界依次累加单词的长度，直到超过s的长度停止循环 </span></span><br><span class="line">            <span class="keyword">while</span>(right + word_len &lt;= s.<span class="built_in">size</span>())&#123;</span><br><span class="line">                <span class="comment">//substr(pos, n):从第pos的位置开始截取n个字符获取单词</span></span><br><span class="line">                string word = s.<span class="built_in">substr</span>(right, word_len);</span><br><span class="line">                right += word_len; <span class="comment">//right跳到下一个单词</span></span><br><span class="line">                </span><br><span class="line">                <span class="comment">//count(key):在容器中查找以key键的键值对的个数。如果为0，说明此单词word在words数组中不存在。	</span></span><br><span class="line">                <span class="keyword">if</span>(map.<span class="built_in">count</span>(word) == <span class="number">0</span>)&#123;</span><br><span class="line">                    count = <span class="number">0</span>; <span class="comment">//清空之前统计的个数</span></span><br><span class="line">                    left = right; <span class="comment">//将左指针left移动到右指针right位置上重新开始</span></span><br><span class="line">                    t_map.<span class="built_in">clear</span>(); <span class="comment">//之前匹配的单词没用了，清空t_map中的元素</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//如果不为0，说明此单词word在words数组中存在。</span></span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    count++; <span class="comment">//统计个数加1</span></span><br><span class="line">                    t_map[word]++;<span class="comment">// word所对应的个数加1</span></span><br><span class="line">                    <span class="comment">//t_map中的word对应的个数大于map的word对应的个数，说明匹配到多余的单词了</span></span><br><span class="line">                    <span class="keyword">while</span>(t_map[word]&gt; map[word])&#123;</span><br><span class="line">                        <span class="comment">//获取窗口的第一个单词</span></span><br><span class="line">                        string t_word = s.<span class="built_in">substr</span>(left, word_len);</span><br><span class="line">                        <span class="comment">//将t_word这个单词对应的个数减1</span></span><br><span class="line">                        <span class="comment">//并非是那个大于map中个数的单词</span></span><br><span class="line">                        t_map[t_word]--;</span><br><span class="line">                        count--; <span class="comment">//统计个数减1</span></span><br><span class="line">                        left += word_len;<span class="comment">//将左指针跳到下一个</span></span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//如果count等于单词的个数说明匹配成功，将左指针位置记录</span></span><br><span class="line">                    <span class="keyword">if</span>(count == word_num)&#123;</span><br><span class="line">                    	result.<span class="built_in">push_back</span>(left);  </span><br><span class="line">                    &#125; </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 </div><div class="story post-story"><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
@@ -2569,7 +2571,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
           <div class="copyright license">
-            <div class="license-title">串联所有单词的子串</div>
+            <div class="license-title">30. 串联所有单词的子串</div>
             <div class="license-link"><a href="http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/">http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/</a>
             </div>
             <div class="license-meta">
@@ -2584,7 +2586,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
               <div class="license-meta-item">
                 <div class="license-meta-title">更新于</div>
-                <div class="license-meta-text">2022年6月25日</div>
+                <div class="license-meta-text">2022年6月28日</div>
               </div>
               
               
@@ -2609,10 +2611,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-25T12:49:32+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-28T09:15:31+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年6月25日</p>
+    <p>更新于：2022年6月28日</p>
   </a>
 </div>
 
@@ -2635,7 +2637,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/&title=串联所有单词的子串 - 活着就是为了摸鱼🐟！！！&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/&title=30. 串联所有单词的子串 - 活着就是为了摸鱼🐟！！！&summary="
           
           >
           
@@ -2647,7 +2649,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/&title=串联所有单词的子串 - 活着就是为了摸鱼🐟！！！&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/&title=30. 串联所有单词的子串 - 活着就是为了摸鱼🐟！！！&summary="
           
           >
           
@@ -2659,7 +2661,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/&title=串联所有单词的子串 - 活着就是为了摸鱼🐟！！！&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/&title=30. 串联所有单词的子串 - 活着就是为了摸鱼🐟！！！&summary="
           
           >
           
@@ -2693,21 +2695,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="prev-next">
       
         <a class='prev' href='/2022/06/24/%E6%AF%8F%E6%97%A5LeetCode/515%20%E5%9C%A8%E6%AF%8F%E4%B8%AA%E6%A0%91%E8%A1%8C%E4%B8%AD%E6%89%BE%E6%9C%80%E5%A4%A7%E5%80%BC/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>在每个树行中找最大值(中等)</p>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>515. 在每个树行中找最大值(中等)</p>
           <p class='content'>题目：给定一棵二叉树的根节点 root ，请找出该二叉树中每一层的最大值。
 示例：
 
 
 
 
-12输入: root = [1,3,2,5,3,null,9]输出: [1,3,9]
+输入: root &#x3D; [1,3,2,5,3,null,9]输出: [1,3,9]
 
-思路：深度优先...</p>
+思路：深...</p>
         </a>
       
       
         <a class='next' href='/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/'>
-          <p class='title'>找树左下角的值<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='title'>513. 找树左下角的值<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>题目：给定一个二叉树的 根节点 root，请找出该二叉树的 最底层 最左边 节点的值。
 假设二叉树中至少有一个节点。
 示例:
@@ -2715,7 +2717,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-12输入: [1,2,3,4,null,5,6,null,n...</p>
+输入: [1,2,3,4,null,5,6,null,nul...</p>
         </a>
       
     </div>
@@ -2762,7 +2764,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-text">题目：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="toc-text">思路：滑动窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-cpp-%EF%BC%9A"><span class="toc-text">代码(cpp)：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-text">复杂度分析</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-text">题目：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="toc-text">思路：滑动窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-cpp-%EF%BC%9A"><span class="toc-text">代码(cpp)：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-text">复杂度分析</span></a></li></ol>
     </div>
   </section>
 
@@ -3705,7 +3707,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/每日LeetCode/","name":"每日LeetCode"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/23/每日LeetCode/30 串联所有单词的子串/","name":"串联所有单词的子串"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"串联所有单词的子串","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/","wordCount":0,"datePublished":"2022-06-23T03:53:00.000Z","dateModified":"2022-06-25T04:49:32.389Z","articleSection":"每日LeetCode","keywords":"算法,LeetCode,数据结构","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/每日LeetCode/","name":"每日LeetCode"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/23/每日LeetCode/30 串联所有单词的子串/","name":"30. 串联所有单词的子串"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"30. 串联所有单词的子串","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/","wordCount":0,"datePublished":"2022-06-23T03:53:00.000Z","dateModified":"2022-06-28T01:15:31.687Z","articleSection":"每日LeetCode","keywords":"算法,LeetCode,数据结构","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
