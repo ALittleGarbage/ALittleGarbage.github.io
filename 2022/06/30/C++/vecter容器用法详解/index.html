@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/06/22/每日leetcode/513 找树左下角的值/"/>
+  <link rel="canonical" href="http://example.com/2022/06/30/c++/vecter容器用法详解/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,23 +31,23 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>513. 找树左下角的值 - 活着就是为了摸鱼🐟！！！</title>
-  <meta name="keywords" content="算法,LeetCode,数据结构,null">
+  <title>vector容器用法 - 活着就是为了摸鱼🐟！！！</title>
+  <meta name="keywords" content="C++,容器,STL,null">
   <meta desc name="description" content="一个不起眼的小博客 - 一个小垃圾 - 活着就是为了摸鱼🐟！！！">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="513. 找树左下角的值">
-<meta property="og:url" content="http://example.com/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/index.html">
+<meta property="og:title" content="vector容器用法">
+<meta property="og:url" content="http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="活着就是为了摸鱼🐟！！！">
-<meta property="og:description" content="题目：给定一个二叉树的 根节点 root，请找出该二叉树的 最底层 最左边 节点的值。 假设二叉树中至少有一个节点。 示例:     输入: [1,2,3,4,null,5,6,null,null,7]输出: 7  思路：深度优先搜索(DFS)我采用了优先遍历左节点，再遍历右节点，因为只有优先遍历左节点，才会优先记录当前深度左节点的值，所以就没有必要记录当前深度右边的值了。 使用depth记录当前">
+<meta property="og:description" content="vector是什么？vector是一个能够存放任意类型的动态数组。 vector实现动态增长的原理：vector的原理就是动态数组。当插入新元素的时候，如果空间不足，那么vector会重新申请更大的一块空间，将原空间数据拷贝到新空间，释放旧空间数据，再把新元素插入新申请空间。 需要导入头文件： 12#include&lt;vector&gt;using namespace std;  构造函数：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-06-22T03:11:00.000Z">
-<meta property="article:modified_time" content="2022-06-28T01:16:04.637Z">
+<meta property="article:published_time" content="2022-06-30T04:23:10.561Z">
+<meta property="article:modified_time" content="2022-06-30T09:57:01.005Z">
 <meta property="article:author" content="一个小垃圾">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="容器">
+<meta property="article:tag" content="STL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -1754,7 +1754,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1656459916801),
+    lastupdate: new Date(1656747832911),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2441,7 +2441,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2462,7 +2462,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        513. 找树左下角的值
+        vector容器用法
       </h1>
       <div class='new-meta-box'>
         
@@ -2481,10 +2481,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+    <a class="category-link" href="/categories/C/">C++</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+        <a href="/categories/C/" itemprop="url"><span itemprop="name">C++</span></a>
       </span>
     
   </div>
@@ -2493,10 +2493,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-06-22T11:11:00+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-06-30T12:23:10+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年6月22日</p>
+    <p>发布于：2022年6月30日</p>
   </a>
 </div>
 
@@ -2529,28 +2529,201 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定一个二叉树的 <strong>根节点</strong> <code>root</code>，请找出该二叉树的 <strong>最底层 最左边</strong> 节点的值。</p>
-<p>假设二叉树中至少有一个节点。</p>
-</div><div class="story post-story"><h2 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h2><img src="https://assets.leetcode.com/uploads/2020/12/14/tree2.jpg" class="lazyload" data-srcset="https://assets.leetcode.com/uploads/2020/12/14/tree2.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img" style="zoom:50%;"/>
+    <p>vector是什么？<br>vector是一个能够存放任意类型的动态数组。</p>
+<p>vector实现动态增长的原理：<br>vector的原理就是动态数组。<br>当插入新元素的时候，如果空间不足，那么vector会重新申请更大的一块空间，将原空间数据拷贝到新空间，释放旧空间数据，再把新元素插入新申请空间。</p>
+<p>需要导入头文件：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
+
+<p>构造函数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">构造函数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><span style="color:red">vector()</span></td>
+<td>创建一个空的vector</td>
+</tr>
+<tr>
+<td align="center"><span style="color:red">vector(int size)</span></td>
+<td>创建一个vector,元素个数为size，且值均为0(默认为0)</td>
+</tr>
+<tr>
+<td align="center"><span style="color:red">vector(int size, T value)</span></td>
+<td>创建一个vector，元素个数为size,且值均为value</td>
+</tr>
+<tr>
+<td align="center"><span style="color:red">vector(const vector&amp; v)</span></td>
+<td>另一个vector容器拷贝到这个vector中</td>
+</tr>
+<tr>
+<td align="center">vector(iterator begin(), iterator end())</td>
+<td>另一个[begin,end)区间内的数组元素的复制这个vector中</td>
+</tr>
+</tbody></table>
+<p>成员函数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">插入函数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">void <span style="color:red">push_back(const T&amp; x)</span></td>
+<td>容器尾部插入一个元素X</td>
+</tr>
+<tr>
+<td align="center">iterator insert(iterator it,const T&amp; x)</td>
+<td>容器中迭代器指向元素的前面插入一个元素x</td>
+</tr>
+<tr>
+<td align="center">iterator insert(iterator it,int n,const T&amp; x)</td>
+<td>容器中迭代器指向元素的前面插入n个相同的元素x</td>
+</tr>
+<tr>
+<td align="center">iterator insert(iterator it,const_iterator first,const_iterator last)</td>
+<td>向量中迭代器指向元素的前面插入另一个相同类型的vector容器的[first,last)间的数据</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">删除函数</th>
+<th align="left">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">iterator erase(iterator it)</td>
+<td align="left">删除容器中迭代器指向的元素</td>
+</tr>
+<tr>
+<td align="center">iterator erase(iterator first,iterator last)</td>
+<td align="left">删除容器中[first,last)中的元素</td>
+</tr>
+<tr>
+<td align="center">void <span style="color:red">pop_back()</span></td>
+<td align="left">删除容器中最后一个元素</td>
+</tr>
+<tr>
+<td align="center">void clear()</td>
+<td align="left">清空容器中所有元素</td>
+</tr>
+</tbody></table>
+<p><img src="https://s2.loli.net/2022/06/30/fSvFNGZcyYA1exu.png" class="lazyload" data-srcset="https://s2.loli.net/2022/06/30/fSvFNGZcyYA1exu.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="插入和迭代器指针"></p>
+<table>
+<thead>
+<tr>
+<th align="center">遍历函数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T at(int pos)</td>
+<td>返回pos位置的元素(第一个位置为0)</td>
+</tr>
+<tr>
+<td align="center">T front()</td>
+<td>返回首元素</td>
+</tr>
+<tr>
+<td align="center">T back()</td>
+<td>返回尾元素</td>
+</tr>
+<tr>
+<td align="center">iterator <span style="color:red">begin()</span></td>
+<td>返回vector容器中指向的第一个元素的迭代器</td>
+</tr>
+<tr>
+<td align="center">iterator <span style="color:red">end()</span></td>
+<td>返回vector容器中指向最后一个元素的下一个位置的迭代器</td>
+</tr>
+<tr>
+<td align="center">reverse_iterator rbegin()</td>
+<td>反向迭代器，指向容器中最后一个元素</td>
+</tr>
+<tr>
+<td align="center">reverse_iterator rend()</td>
+<td>反向迭代器，指向容器第一个元素前面的位置</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">大小函数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int <span style="color:red">size()</span></td>
+<td>返回vector容器中元素的个数</td>
+</tr>
+<tr>
+<td align="center">int capacity()</td>
+<td>返回当前vector容器所能容纳的最大容量</td>
+</tr>
+<tr>
+<td align="center">int max_size()</td>
+<td>返回vector容器的最大可允许的容量</td>
+</tr>
+<tr>
+<td align="center">void resize(int size)</td>
+<td>更改vector容器的元素的个数为size</td>
+</tr>
+<tr>
+<td align="center">void reserve(int capacity)</td>
+<td>更改vector容器的容量为capacity</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">赋值函数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">vector<T>&amp; operator&#x3D;</td>
+<td>将右边vector容器的元素拷贝到左边vector容器中</td>
+</tr>
+<tr>
+<td align="center">void assign(int n,const T&amp; x)</td>
+<td>设置容器中前n个元素的值为x</td>
+</tr>
+<tr>
+<td align="center">void assign(const_iterator first,const_iterator last)</td>
+<td>将另一个vector容器中[first,last)中元素设置成当前vector容器的元素</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">其他函数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">bool <span style="color:red">empty()</span></td>
+<td>判断向量是否为空，若为空，则返回真</td>
+</tr>
+<tr>
+<td align="center">void swap(vector&amp; v)</td>
+<td>将两个同类型vector容器的元素互换</td>
+</tr>
+</tbody></table>
+<p>vector的遍历</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">	cout &lt;&lt; v[i] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">	cout &lt;&lt; v1.<span class="built_in">at</span>(i) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator it = v.<span class="built_in">begin</span>(); it != v.<span class="built_in">end</span>(); it++)&#123;</span><br><span class="line">	cout &lt;&lt; *it &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = v.<span class="built_in">begin</span>(); it != v.<span class="built_in">end</span>(); it++)&#123;</span><br><span class="line">	cout &lt;&lt; *it &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<blockquote>
-<p>输入: [1,2,3,4,null,5,6,null,null,7]<br>输出: 7</p>
-</blockquote>
-</div><div class="story post-story"><h2 id="思路：深度优先搜索-DFS"><a href="#思路：深度优先搜索-DFS" class="headerlink" title="思路：深度优先搜索(DFS)"></a>思路：深度优先搜索(DFS)</h2><p>我采用了<strong>优先遍历左节点，再遍历右节点</strong>，因为只有优先遍历左节点，才会优先记录当前深度左节点的值，所以就没有必要记录当前深度右边的值了。</p>
-<p>使用<code>depth</code>记录<strong>当前树的深度</strong>，<code>current_val</code>为<strong>记录的深度</strong><code>current_depth</code>的<strong>最左边的值</strong>。</p>
-<p>进行判断如果<code>depth</code>的深度大于<code>current_depth</code>的深度，将<code>current_val</code>的值设置为当前结点的值，并将<code>current_depth</code>的值设置当前结点深度<code>depth</code></p>
-</div><div class="story post-story"><h2 id="代码-cpp-："><a href="#代码-cpp-：" class="headerlink" title="代码(cpp)："></a>代码(cpp)：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(TreeNode* root, <span class="type">int</span> depth, <span class="type">int</span>&amp; current_depth, <span class="type">int</span>&amp; current_val)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="comment">//如果当前结点为空，则退出</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//优先遍历左节点，深度加1</span></span><br><span class="line">        <span class="built_in">dfs</span>(root-&gt;left, depth+<span class="number">1</span>, current_depth, current_val);</span><br><span class="line">        <span class="comment">//其次遍历右节点，深度加1</span></span><br><span class="line">        <span class="built_in">dfs</span>(root-&gt;right, depth+<span class="number">1</span>, current_depth, current_val);</span><br><span class="line">        <span class="comment">//如果当前深度大于记录的深度</span></span><br><span class="line">        <span class="keyword">if</span> (depth &gt; current_depth)</span><br><span class="line">        &#123;</span><br><span class="line">            current_depth = depth; <span class="comment">//将当前深度记录到current_depth</span></span><br><span class="line">            current_val = root-&gt;val; <span class="comment">//将当前结点值记录到current_val</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findBottomLeftValue</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> current_depth = <span class="number">0</span>; <span class="comment">//初始化current_depth</span></span><br><span class="line">        <span class="type">int</span> current_val = <span class="number">0</span>; <span class="comment">//初始化current_val</span></span><br><span class="line">        <span class="comment">//因为有根结点存在，将depth设置为1，而非0</span></span><br><span class="line">        <span class="built_in">dfs</span>(root, <span class="number">1</span>, current_depth, current_val);</span><br><span class="line">        <span class="keyword">return</span> current_val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><ul>
-<li><p>​	时间复杂度：O(n)，其中 n 是二叉树的节点数目。需要遍历 n 个节点。</p>
-</li>
-<li><p>​	空间复杂度：O(n)。递归栈需要占用 O(n) 的空间。</p>
-</li>
-</ul>
-
-</div>
   </div>
   
   
@@ -2565,8 +2738,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
           <div class="copyright license">
-            <div class="license-title">513. 找树左下角的值</div>
-            <div class="license-link"><a href="http://example.com/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/">http://example.com/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/</a>
+            <div class="license-title">vector容器用法</div>
+            <div class="license-link"><a href="http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/">http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/</a>
             </div>
             <div class="license-meta">
               <div class="license-meta-item">
@@ -2575,12 +2748,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               </div>
               <div class="license-meta-item">
                 <div class="license-meta-title">发布于</div>
-                <div class="license-meta-text">2022年6月22日</div>
-              </div>
-              
-              <div class="license-meta-item">
-                <div class="license-meta-title">更新于</div>
-                <div class="license-meta-text">2022年6月28日</div>
+                <div class="license-meta-text">2022年6月30日</div>
               </div>
               
               
@@ -2605,10 +2773,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-28T09:16:04+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-30T17:57:01+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年6月28日</p>
+    <p>更新于：2022年6月30日</p>
   </a>
 </div>
 
@@ -2617,8 +2785,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/LeetCode/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div>
-  <span hidden itemprop="keywords">算法 LeetCode 数据结构</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>C++</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AE%B9%E5%99%A8/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>容器</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STL/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>STL</p></a></div>
+  <span hidden itemprop="keywords">C++ 容器 STL</span>
 
 
         
@@ -2631,7 +2799,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/&title=513. 找树左下角的值 - 活着就是为了摸鱼🐟！！！&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/&title=vector容器用法 - 活着就是为了摸鱼🐟！！！&summary="
           
           >
           
@@ -2643,7 +2811,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/&title=513. 找树左下角的值 - 活着就是为了摸鱼🐟！！！&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/&title=vector容器用法 - 活着就是为了摸鱼🐟！！！&summary="
           
           >
           
@@ -2655,7 +2823,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/&title=513. 找树左下角的值 - 活着就是为了摸鱼🐟！！！&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/&title=vector容器用法 - 活着就是为了摸鱼🐟！！！&summary="
           
           >
           
@@ -2688,12 +2856,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/06/23/%E6%AF%8F%E6%97%A5LeetCode/30%20%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>30. 串联所有单词的子串</p>
-          <p class='content'>题目：给定一个字符串s和一些长度相同的单词words。找出s中恰好可以由words中所有单词串联形成的子串的起始位置。
-注意子串要与words中的单词完全匹配，中间不能有其他字符，但不需要考虑w...</p>
-        </a>
       
+        <a class='next' href='/2022/06/28/Java/SpringMCV%E6%A1%86%E6%9E%B6/'>
+          <p class='title'>SpringMVC框架<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1.初始SpringMVC1.1 SpringMVC简介
+SpringMVC技术与Servlet技术功能等同，均属于web层开发技术
+SpringMVC是一种基于java实现MVC模型的轻量级W...</p>
+        </a>
       
     </div>
   
@@ -2729,19 +2898,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-text">题目：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-DFS"><span class="toc-text">思路：深度优先搜索(DFS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-cpp-%EF%BC%9A"><span class="toc-text">代码(cpp)：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-text">复杂度分析</span></a></li></ol>
-    </div>
-  </section>
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
 
   
 
@@ -3682,7 +3841,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/每日LeetCode/","name":"每日LeetCode"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/22/每日LeetCode/513 找树左下角的值/","name":"513. 找树左下角的值"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"513. 找树左下角的值","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/22/%E6%AF%8F%E6%97%A5LeetCode/513%20%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC/","wordCount":0,"datePublished":"2022-06-22T03:11:00.000Z","dateModified":"2022-06-28T01:16:04.637Z","articleSection":"每日LeetCode","keywords":"算法,LeetCode,数据结构","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/C/","name":"C++"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/06/30/C++/vecter容器用法详解/","name":"vector容器用法"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vector容器用法","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/","wordCount":0,"datePublished":"2022-06-30T04:23:10.561Z","dateModified":"2022-06-30T09:57:01.005Z","articleSection":"C++","keywords":"C++,容器,STL","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
