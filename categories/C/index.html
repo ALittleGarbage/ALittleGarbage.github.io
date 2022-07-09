@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1656821052802),
+    lastupdate: new Date(1657338591112),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2445,6 +2445,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
       
     
     
@@ -2452,7 +2454,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/05/C++/set%E5%AE%B9%E5%99%A8/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2470,7 +2472,84 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"  itemprop="url">
+      <a href="/2022/07/05/C++/set%E5%AE%B9%E5%99%A8/"  itemprop="url">
+        set容器用法
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        set容器：所有元素都会在插入时自动排序，底层结构采用二叉树实现。
+set和multiset区别：
+set不可以插入重复数据，而multiset可以
+set插入数据的同时会返回插入结果，表示插入是否成功
+multiset不会检测数据，因此可以插入重复数据
+
+set容器的使用：
+头文件：
+12#include&lt;set&gt; using namespace std;
+
+
+
+构造函数：
+
+...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-07-05T00:00:00+08:00">2022-07-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/C/">C++</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/C/" itemprop="url"><span itemprop="name">C++</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/07/05/C++/set%E5%AE%B9%E5%99%A8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8/"  itemprop="url">
         vector容器用法
       </a>
     </h2>
@@ -2491,7 +2570,7 @@ vector实现动态增长的原理：vector的原理就是动态数组。当插�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-06-30T12:23:10+08:00">2022-06-30</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-06-30T17:00:00+08:00">2022-06-30</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/C/">C++</a>
@@ -2504,7 +2583,7 @@ vector实现动态增长的原理：vector的原理就是动态数组。当插�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/' itemprop="url">
+          <a class='readmore' href='/2022/06/30/C++/vecter%E5%AE%B9%E5%99%A8/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2579,17 +2658,17 @@ vector实现动态增长的原理：vector的原理就是动态数组。当插�
           <li><a class="flat-box"
             title="/categories/C/" href="/categories/C/"
             active-action="action-categoriesC"
-            ><div class='name'>C++</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>C++</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Java/" href="/categories/Java/"
             active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>Java</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%AF%8F%E6%97%A5LeetCode/" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/"
             active-action="action-categoriesE6AF8FE697A5LeetCode"
-            ><div class='name'>每日LeetCode</div><div class='badge'>(9)</div></a></li>
+            ><div class='name'>每日LeetCode</div><div class='badge'>(13)</div></a></li>
         
       </ul>
     </div>
