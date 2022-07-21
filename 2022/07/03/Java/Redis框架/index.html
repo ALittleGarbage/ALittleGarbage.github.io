@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-07-03T14:50:31.983Z">
-<meta property="article:modified_time" content="2022-07-09T03:49:14.754Z">
+<meta property="article:modified_time" content="2022-07-21T16:34:06.674Z">
 <meta property="article:author" content="一个小垃圾">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="框架">
@@ -1753,7 +1753,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1657338591112),
+    lastupdate: new Date(1658421367280),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2968,7 +2968,699 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 </ul>
 <p>常用来存储一个有序数据，如：评论列表、点赞列表等</p>
-<h3 id="2-7-Set类型"><a href="#2-7-Set类型" class="headerlink" title="2.7 Set类型"></a>2.7 Set类型</h3><h3 id="2-8-SortedSet类型"><a href="#2-8-SortedSet类型" class="headerlink" title="2.8 SortedSet类型"></a>2.8 SortedSet类型</h3><h1 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h1><h1 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h1><h1 id="原理篇"><a href="#原理篇" class="headerlink" title="原理篇"></a>原理篇</h1>
+<p>List类型的常见命令：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LPUSH key element</td>
+<td>向列表左侧插入一个或多个元素</td>
+<td><code>LPUSH user 1 2 3</code>：<br>表中从第一位依次为 “3” “2” “1”</td>
+</tr>
+<tr>
+<td>LPOP key</td>
+<td>移除并返回列表左侧的第一个元素，没有则返回nil</td>
+<td>LPOP user 1</td>
+</tr>
+<tr>
+<td>RPUSH key element</td>
+<td>向列表右侧插入一个或多个元素</td>
+<td><code>RPUSH user 4 5 6</code>：<br/>表中从第一位依次为 “4” “5” “6”</td>
+</tr>
+<tr>
+<td>RPOP key</td>
+<td>移除并返回列表右侧的第一个元素</td>
+<td></td>
+</tr>
+<tr>
+<td>LRANGE key star end</td>
+<td>返回一段角标范围内的所有元素</td>
+<td><code>LRANGE 1 star 2</code>：从0开始，<br>获取到1~2之间的元素</td>
+</tr>
+<tr>
+<td>BLPOP</td>
+<td>与LPOP类似，<br>只不过在没有元素时等待指定时间，<br>而不是直接返回nil</td>
+<td><code>BLPOP user2 1 100</code>：<br>移除并返回到左侧的第一个元素，<br>没有则等待100秒，超时返回nil</td>
+</tr>
+<tr>
+<td>BRPOP</td>
+<td>与RPOP类似，<br/>只不过在没有元素时等待指定时间，<br/>而不是直接返回nil</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>List结构模拟一个栈</p>
+<ul>
+<li><p>入口和出口在同一边</p>
+</li>
+<li><p>如：<code>LPUSH</code>和<code>LPOP</code>或者 <code>RPUSH</code>和<code>RPOP</code></p>
+</li>
+</ul>
+<p>List结构模拟一个队列</p>
+<ul>
+<li><p>入口和出口不在同一边</p>
+</li>
+<li><p>如：<code>LPUSH</code>和<code>RPOP</code>  或者 <code>RPUSH</code>和<code>LPOP</code></p>
+</li>
+</ul>
+<p>List结构模拟一个阻塞队列</p>
+<ul>
+<li>入口和出口不在同一边</li>
+<li>出队采用<code>BLPOP</code>或者<code>BRPOP</code></li>
+<li>如：<code>LPUSH</code>和<code>BRPOP</code>  或者 <code>RPUSH</code>和<code>BLPOP</code></li>
+</ul>
+<h3 id="2-7-Set类型"><a href="#2-7-Set类型" class="headerlink" title="2.7 Set类型"></a>2.7 Set类型</h3><p>Redis的Set结构与Java中的Hashset类似，可以看做是一个value为null的HashMap。因为也是一个hash表，因此具备与Hashset类似的特征：</p>
+<ul>
+<li>无序</li>
+<li>元素不可重复</li>
+<li>查找快</li>
+<li>支持交集、并集、差集等功能</li>
+</ul>
+<p>Set类型的常见命令：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SADD key member</td>
+<td>向set中添加一个或多个元素</td>
+<td><code>SADD s1 a b c</code></td>
+</tr>
+<tr>
+<td>SREM key member</td>
+<td>移除set中的指定元素</td>
+<td><code>SREM s1 a</code></td>
+</tr>
+<tr>
+<td>SCARD key</td>
+<td>返回set中元素的个数</td>
+<td><code>SCARD s1</code></td>
+</tr>
+<tr>
+<td>SISMEMBER key member</td>
+<td>判断一个元素是否存在于set中</td>
+<td><code>SISMEMBER s1 a</code></td>
+</tr>
+<tr>
+<td>SMEMBERS</td>
+<td>获取set中的所有元素</td>
+<td><code>SMEMBERS</code></td>
+</tr>
+<tr>
+<td>SINTER key1 key2</td>
+<td>求key1与key2的<span style="color:red">交集</span></td>
+<td></td>
+</tr>
+<tr>
+<td>SDIFF key1 key2</td>
+<td>求key1与key2的<span style="color:red">差集</span></td>
+<td></td>
+</tr>
+<tr>
+<td>SUNION key1 key2</td>
+<td>求key1与key2的<span style="color:red">并集</span></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="2-8-SortedSet类型"><a href="#2-8-SortedSet类型" class="headerlink" title="2.8 SortedSet类型"></a>2.8 SortedSet类型</h3><p>Redis的SortedSet是一个可排序的set集合，与java中的TreeSet有些类似，但底层数据结构却差别很大Sortedset中的每一个元素都带有一个score属性，可以基于score属性对元素排序，底层的实现是一个跳表(SkipList)加hash表。<br>SortedSet具备下列特性：</p>
+<ul>
+<li><p>可排序</p>
+</li>
+<li><p>元素不重复</p>
+</li>
+<li><p>查询速度快</p>
+</li>
+</ul>
+<p>因为Sortedset的可排序特性，经常被用来实现排行榜这样的功能。</p>
+<p>SortedSet类型的常见命令：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ZADD key score member</td>
+<td>添加一个或多个元素到sorted set，<br>如果已经存在则更新其score值</td>
+<td><code>ZADD SSet 85 Tom 98 Jerry 77 Rose 78 Jack</code>：<br>向SSet中添加元素，并按照升序排列</td>
+</tr>
+<tr>
+<td>ZREM key member</td>
+<td>删除sorted set中的一个指定元素</td>
+<td><code>ZREM SSet Tom</code>：删除Tom</td>
+</tr>
+<tr>
+<td>ZSCORE key member</td>
+<td>获取sorted set中的指定元素的score值</td>
+<td></td>
+</tr>
+<tr>
+<td>ZRANK key member</td>
+<td>获取sorted set 中的指定元素升序的排名</td>
+<td><code>ZRANK SSet Rose</code>：<br>按照升序的序列，从0开始，<br>返回Rose的排名</td>
+</tr>
+<tr>
+<td>Z<span style="color:red">REV</span>RANK key member</td>
+<td>获取sorted set 中的指定元素降序的排名</td>
+<td><code>ZRANK SSet Rose</code>：<br>按照降序的序列，从0开始，<br>返回Rose的排名</td>
+</tr>
+<tr>
+<td>ZCARD key</td>
+<td>获取sorted set中的元素个数</td>
+<td></td>
+</tr>
+<tr>
+<td>ZCOUNT key min max</td>
+<td>统计score值在给定范国内的所有元素的个数</td>
+<td></td>
+</tr>
+<tr>
+<td>ZINCRBY key increment member</td>
+<td>让sorted set中的指定元素自增，<br>步长为指定的increment值</td>
+<td></td>
+</tr>
+<tr>
+<td>ZRANGE key min max</td>
+<td>按照score升序排序后，获取指定排名范围内的元素</td>
+<td><code>ZCOUNT SSet 0 2</code>：按照升序的情况，<br/>获取0~2范围的元素</td>
+</tr>
+<tr>
+<td>Z<span style="color:red">REV</span>RANGE key min max</td>
+<td>按照score的降序排序后，获取指定排名范围内的元素</td>
+<td><code>ZCOUNT SSet 0 2</code>：按照降序的情况，<br>获取0~2范围的元素</td>
+</tr>
+<tr>
+<td>ZRANGEBYSCORE key min  max</td>
+<td>按照score排序后，获取指定score范国内的元素</td>
+<td><code>ZRANGEBYSCORE SSet 0 80</code>：<br>返回0~80分数的元素</td>
+</tr>
+<tr>
+<td>ZDIFF、ZINTER、ZUNION</td>
+<td>求差集、交集、并集</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>注意：所有排名默认都是升序，如果降序则在命令的Z后面添加<span style="color:red">REV</span>即可</p>
+<p>例如：Z<span style="color:red">REV</span>RANK</p>
+</div><div class="story post-story"><h2 id="3-Redis的java客户端"><a href="#3-Redis的java客户端" class="headerlink" title="3.Redis的java客户端"></a>3.Redis的java客户端</h2><p><a target="_blank" rel="noopener" href="https://redis.io/docs/clients/">Redis官网</a>中提供了各种语言的客户端</p>
+<p>Java：</p>
+<blockquote>
+<p><code>Jedis</code>：以Redis命令作为方法名称，学习成本低，简单实用但是Jedis实例是线程不安全的，多线程环境下需要基于连接池来使用</p>
+<p><code>Lettuce</code>：基于Netty实现的，支持同步、异步和响应式编程方式，并且是线程安全的。支持Redis的哨兵模式、集群模式和管道模式</p>
+<p><code>Redisson</code>：是一个基于Redis实现的分布式、可伸缩的Java数据结构集合。包含了诸如Map、Queue、LockSemaphore、Atomiclong等强大功能</p>
+<p>其中Spring整合了<code>Jedis</code>和<code>Lettuce</code>，只需导入坐标<code>Spring Data Redis</code></p>
+</blockquote>
+<h3 id="3-1-Jedis快速入门"><a href="#3-1-Jedis快速入门" class="headerlink" title="3.1 Jedis快速入门"></a>3.1 Jedis快速入门</h3><p>Jedis：<a target="_blank" rel="noopener" href="https://github.com/redis/jedis">Jedis官网</a></p>
+<p>引入jedis依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>完整依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    	<span class="comment">&lt;!-- jedis依赖 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 测试依赖 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.jupiter<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-jupiter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span>       </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>以下在<code>Test</code>中进行：</p>
+<ol>
+<li>建立连接</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@BeforeEach</span> <span class="comment">//在测试方法执行之前执行的方法</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//建立连接</span></span><br><span class="line">        jedis = <span class="keyword">new</span> <span class="title class_">Jedis</span>(<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">6379</span>);</span><br><span class="line">        <span class="comment">//设置密码</span></span><br><span class="line">        jedis.auth(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        <span class="comment">//选择库</span></span><br><span class="line">        jedis.select(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>测试String类型</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testString</span><span class="params">()</span> &#123;</span><br><span class="line">    jedis.set(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">    System.out.println(jedis.get(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li>释放资源</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AfterEach</span> <span class="comment">//在测试方法执行之后执行的方法</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">tearDown</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (jedis != <span class="literal">null</span>)&#123;</span><br><span class="line">        jedis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>完整测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JedisTest</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Jedis jedis;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeEach</span> <span class="comment">//在测试方法执行之前执行的方法</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//建立连接</span></span><br><span class="line">        jedis = <span class="keyword">new</span> <span class="title class_">Jedis</span>(<span class="string">&quot;127.0.0.1&quot;</span>,<span class="number">6379</span>);</span><br><span class="line">        <span class="comment">//设置密码</span></span><br><span class="line">        jedis.auth(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        <span class="comment">//选择库</span></span><br><span class="line">        jedis.select(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testString</span><span class="params">()</span> &#123;</span><br><span class="line">        jedis.set(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">        System.out.println(jedis.get(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testHash</span><span class="params">()</span> &#123;</span><br><span class="line">        jedis.hset(<span class="string">&quot;demo:user:2&quot;</span>,<span class="string">&quot;name&quot;</span>,<span class="string">&quot;Jerry&quot;</span>);</span><br><span class="line">        jedis.hset(<span class="string">&quot;demo:user:2&quot;</span>,<span class="string">&quot;age&quot;</span>,<span class="string">&quot;18&quot;</span>);</span><br><span class="line">        Map&lt;String, String&gt; map = jedis.hgetAll(<span class="string">&quot;demo:user:2&quot;</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AfterEach</span> <span class="comment">//在测试方法执行之后执行的方法</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">tearDown</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (jedis != <span class="literal">null</span>)&#123;</span><br><span class="line">            jedis.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>jedis使用的基本步骤：</p>
+<blockquote>
+<ol>
+<li><p>引入依赖</p>
+</li>
+<li><p>创建jedis对象，建立连接</p>
+</li>
+<li><p>使用jedis的方法名与Redis命令一致</p>
+</li>
+<li><p>释放资源</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="3-2-Jedis的连接池"><a href="#3-2-Jedis的连接池" class="headerlink" title="3.2 Jedis的连接池"></a>3.2 Jedis的连接池</h3><p>Jedis本身线程是不安全的，并且频繁的创建和销毁连接会有性能损耗，因此推荐使用Jedis连接池替代Jedis的直连方法</p>
+<p>创建<code>JedisConnectionFactory</code>工具类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JedisConnectionFactory</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> JedisPool jedisPool;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">//配置连接池</span></span><br><span class="line">        <span class="type">JedisPoolConfig</span> <span class="variable">jedisPoolConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JedisPoolConfig</span>();</span><br><span class="line">        <span class="comment">//最大连接数</span></span><br><span class="line">        jedisPoolConfig.setMaxTotal(<span class="number">8</span>);</span><br><span class="line">        <span class="comment">//最大空闲连接</span></span><br><span class="line">        jedisPoolConfig.setMaxIdle(<span class="number">8</span>);</span><br><span class="line">        <span class="comment">//最小空闲连接</span></span><br><span class="line">        jedisPoolConfig.setMinIdle(<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//等待时长</span></span><br><span class="line">        jedisPoolConfig.setMaxWaitMillis(<span class="number">1000</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//创建连接池对象</span></span><br><span class="line">        jedisPool = <span class="keyword">new</span> <span class="title class_">JedisPool</span>(jedisPoolConfig, </span><br><span class="line">                <span class="string">&quot;127.0.0.1&quot;</span>,</span><br><span class="line">                <span class="number">6379</span>, </span><br><span class="line">                <span class="number">1000</span>,</span><br><span class="line">                <span class="string">&quot;123456&quot;</span>);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Jedis <span class="title function_">getJedis</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> jedisPool.getResource();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>测试类中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JedisTest</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Jedis jedis;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeEach</span> <span class="comment">//在测试方法执行之前执行的方法</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setUp</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//建立连接</span></span><br><span class="line">        jedis = JedisConnectionFactory.getJedis();</span><br><span class="line">        <span class="comment">//选择库</span></span><br><span class="line">        jedis.select(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testHash</span><span class="params">()</span> &#123;</span><br><span class="line">        jedis.hset(<span class="string">&quot;demo:user:2&quot;</span>,<span class="string">&quot;name&quot;</span>,<span class="string">&quot;Jerry&quot;</span>);</span><br><span class="line">        jedis.hset(<span class="string">&quot;demo:user:2&quot;</span>,<span class="string">&quot;age&quot;</span>,<span class="string">&quot;18&quot;</span>);</span><br><span class="line">        Map&lt;String, String&gt; map = jedis.hgetAll(<span class="string">&quot;demo:user:2&quot;</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AfterEach</span> <span class="comment">//在测试方法执行之后执行的方法</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">tearDown</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (jedis != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//close方法当检测到是连接池时，并不是真正的关闭连接，而是将对象归还给连接池</span></span><br><span class="line">            jedis.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-3-初识SpringDataRedis"><a href="#3-3-初识SpringDataRedis" class="headerlink" title="3.3 初识SpringDataRedis"></a>3.3 初识SpringDataRedis</h3><p>SpringData是Spring中数据操作的模块，包含对各种数据库的集成，其中对Redis的集成模块就叫做<a target="_blank" rel="noopener" href="https://spring.io/projects/spring-data-redis">SpringDataRedis</a></p>
+<blockquote>
+<ul>
+<li>提供了对不同Redis客户端的整合 （Lettuce和Jedis）</li>
+<li>提供了RedisTemplate统一API来操作Redis</li>
+<li>支持Redis的发布订阅模型</li>
+<li>支持Redis哨兵和Redis集群</li>
+<li>支持基于Lettuce的响应式编程</li>
+<li>支持基于JDK、JSON、字符串、Spring对象的数据序列化及反序列化</li>
+<li>支持基于Redis的JDKCollection实现</li>
+</ul>
+</blockquote>
+<p>SpringDataRedis中提供了RedisTemplate工具类，其中封装了各种对Redis的操作。并且将不同数据类型的操作API封装到了不同的类型中：</p>
+<table>
+<thead>
+<tr>
+<th align="center">API</th>
+<th align="center">返回值类型</th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><span style="color:red">redisTemplate</span>.opsForValue()</td>
+<td align="center">ValueOperations</td>
+<td align="center">操作String类型数据</td>
+</tr>
+<tr>
+<td align="center"><span style="color:red">redisTemplate</span>.opsForHash()</td>
+<td align="center">HashOperations</td>
+<td align="center">操作Hash类型数据</td>
+</tr>
+<tr>
+<td align="center"><span style="color:red">redisTemplate</span>.opsForList()</td>
+<td align="center">ListOperations</td>
+<td align="center">操作List类型数据</td>
+</tr>
+<tr>
+<td align="center"><span style="color:red">redisTemplate</span>.opsForSet()</td>
+<td align="center">SetOperations</td>
+<td align="center">操作Set类型数据</td>
+</tr>
+<tr>
+<td align="center"><span style="color:red">redisTemplate</span>.opsForZSet()</td>
+<td align="center">ZSetOperations</td>
+<td align="center">操作SortedSet类型数据</td>
+</tr>
+<tr>
+<td align="center"><span style="color:red">redisTemplate</span></td>
+<td align="center"></td>
+<td align="center">通用命令</td>
+</tr>
+</tbody></table>
+<h3 id="3-4-SpringDataRedis快速入门"><a href="#3-4-SpringDataRedis快速入门" class="headerlink" title="3.4 SpringDataRedis快速入门"></a>3.4 SpringDataRedis快速入门</h3><p>SpringBoot已经提供了对SpringDataRedis的支持，其中Spring默认支持<code>Lettuce</code>，如需使用<code>Jedis</code>需要额外导入依赖</p>
+<ol>
+<li>导入依赖</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Redis依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>            </span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 连接池依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>配置文件</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">host:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">6379</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line">    <span class="attr">lettuce:</span></span><br><span class="line">      <span class="attr">pool:</span></span><br><span class="line">        <span class="attr">max-active:</span> <span class="number">8</span> <span class="comment"># 最大连接数</span></span><br><span class="line">        <span class="attr">max-idle:</span> <span class="number">8</span> <span class="comment">#最大空闲连接数</span></span><br><span class="line">        <span class="attr">min-idle:</span> <span class="number">0</span> <span class="comment">#最小空闲连接数</span></span><br><span class="line">        <span class="attr">max-wait:</span> <span class="string">100ms</span> <span class="comment"># 连接等待时间</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li>注入RedisTemplate，进行测试：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RedisTemplateTest</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//插入一条String类型的数据</span></span><br><span class="line">        redisTemplate.opsForValue().set(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;dahuang&quot;</span>);</span><br><span class="line">        <span class="comment">//获取String类型的数据</span></span><br><span class="line">        System.out.println(redisTemplate.opsForValue().get(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>SpringDataRedis的使用步骤：</p>
+<blockquote>
+<ol>
+<li>引入spring-boot-starter-data-redis依赖</li>
+<li>在application.yml配置Redis以及连接池信息</li>
+<li>注入RedisTemplate</li>
+</ol>
+</blockquote>
+<h3 id="3-5-SpringDataRedis的序列化方式"><a href="#3-5-SpringDataRedis的序列化方式" class="headerlink" title="3.5 SpringDataRedis的序列化方式"></a>3.5 SpringDataRedis的序列化方式</h3><p>RedisTemplate可以接收任意Object作为值写入Redis，只不过写入前会把Object序列化为字节形式，默认采用JDK序列化，刚才存入的数据的结果是这样：</p>
+<p><img src="https://s2.loli.net/2022/07/12/YNlFqgBsVf56Qmh.png" class="lazyload" data-srcset="https://s2.loli.net/2022/07/12/YNlFqgBsVf56Qmh.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220712110421745"></p>
+<p>缺点：</p>
+<ul>
+<li><p>可读性差</p>
+</li>
+<li><p>内存占用较大</p>
+</li>
+</ul>
+<p>需要导入jackson依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>可以自定义RedisTemplate的序列化方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RedisConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> RedisTemplate&lt;String, Object&gt; <span class="title function_">redisTemplate</span><span class="params">(RedisConnectionFactory redisConnectionFactory)</span>&#123;</span><br><span class="line">        <span class="comment">//创建RedisTemplate</span></span><br><span class="line">        RedisTemplate&lt;String,Object&gt; redisTemplate = <span class="keyword">new</span> <span class="title class_">RedisTemplate</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//设置连接工厂</span></span><br><span class="line">        redisTemplate.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">        <span class="comment">//设置json序列化</span></span><br><span class="line">        <span class="type">GenericJackson2JsonRedisSerializer</span> <span class="variable">gjjrs</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GenericJackson2JsonRedisSerializer</span>();</span><br><span class="line">        <span class="comment">//设置key的序列化</span></span><br><span class="line">        redisTemplate.setKeySerializer(RedisSerializer.string());</span><br><span class="line">        redisTemplate.setHashKeySerializer(RedisSerializer.string());</span><br><span class="line">        <span class="comment">//设置value的序列化</span></span><br><span class="line">        redisTemplate.setValueSerializer(gjjrs);</span><br><span class="line">        redisTemplate.setHashValueSerializer(gjjrs);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> redisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>创建一个实体类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">public</span> Integer age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">(String name, Integer age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>进行测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testString</span><span class="params">()</span> &#123;</span><br><span class="line">	redisTemplate.opsForValue().set(<span class="string">&quot;demo:user:3&quot;</span>,<span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&quot;dahuang&quot;</span>,<span class="number">18</span>));</span><br><span class="line">	<span class="type">User</span> <span class="variable">u</span> <span class="operator">=</span> (User) redisTemplate.opsForValue().get(<span class="string">&quot;demo:user:3&quot;</span>);</span><br><span class="line">	System.out.println(<span class="string">&quot;u = &quot;</span> + u);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>控制台打印：</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u = User(name=dahuang, age=18)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>Redis中的数据：</p>
+<blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;@class&quot;</span><span class="punctuation">:</span> <span class="string">&quot;com.redis.pojo.User&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;dahuang&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;age&quot;</span><span class="punctuation">:</span> <span class="number">18</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="3-6-StringRedisTemplate"><a href="#3-6-StringRedisTemplate" class="headerlink" title="3.6 StringRedisTemplate"></a>3.6 StringRedisTemplate</h3><blockquote>
+<p>尽管json的序列化方式可以满足需求，但仍然存在一些问题</p>
+<p>为了在反序列化时知道对象的类型，json序列化器会将类的class类型写入json结果中，存入Redis，会带来额外的内存开销</p>
+<p>为了节省空间，并不会使用json序列化器来处理value，而是统一使用String序列化器，要求只能存储String类型的key和value</p>
+<p>当存储java对象时，手动完成对象的序列化和反序列化</p>
+</blockquote>
+<pre class="mermaid">graph LR;
+实体类 --> |手动序列化|json字符串 --> |插入|Redis
+Redis -->|获取| json字符串 --> |手动反序列化|实体类</pre>
+
+
+
+<p>Spring默认提供了一个SpringRedisTemplate类，它的key和value的序列化方式默认就是String方式。省去了自定义RedisTemplate的过程：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StringRedisTemplateTest</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line">    <span class="comment">//json工具</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testStringTemplate</span><span class="params">()</span> <span class="keyword">throws</span> JsonProcessingException &#123;</span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&quot;dahei&quot;</span>, <span class="number">22</span>);</span><br><span class="line">        <span class="comment">//手动序列化</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">json</span> <span class="operator">=</span> mapper.writeValueAsString(user);</span><br><span class="line">        <span class="comment">//插入数据</span></span><br><span class="line">        stringRedisTemplate.opsForValue().set(<span class="string">&quot;demo:user:5&quot;</span>,json);</span><br><span class="line">        <span class="comment">//获取数据</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">val</span> <span class="operator">=</span> stringRedisTemplate.opsForValue().get(<span class="string">&quot;demo:user:5&quot;</span>);</span><br><span class="line">        <span class="comment">//手动反序列化</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">u</span> <span class="operator">=</span> mapper.readValue(val, User.class);</span><br><span class="line">        <span class="comment">//打印user</span></span><br><span class="line">        System.out.println(<span class="string">&quot;u = &quot;</span> + u);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>RedisTemplate的两种序列化实践方案：</p>
+<blockquote>
+<p>方案一：</p>
+<ol>
+<li>自定义RedisTemplate</li>
+<li>修改RedisTemplate的序列化器为<code>GenericJackson2JsonRedisSerializer</code></li>
+</ol>
+<p>方案二：</p>
+<ol>
+<li>使用StringRedisTemplate</li>
+<li>写入Redis时，需手动把对象序列化为json</li>
+<li>读取Redis时，手动把读取到的json反序列化为对象</li>
+</ol>
+</blockquote>
+<h3 id="3-7-RedisTemplate操作Hash类型"><a href="#3-7-RedisTemplate操作Hash类型" class="headerlink" title="3.7 RedisTemplate操作Hash类型"></a>3.7 RedisTemplate操作Hash类型</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testHash</span><span class="params">()</span> &#123;</span><br><span class="line">    stringRedisTemplate.opsForHash().put(<span class="string">&quot;user:6&quot;</span>,<span class="string">&quot;name&quot;</span>,<span class="string">&quot;dahei&quot;</span>);</span><br><span class="line">    stringRedisTemplate.opsForHash().put(<span class="string">&quot;user:6&quot;</span>,<span class="string">&quot;age&quot;</span>,<span class="string">&quot;22&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    Map&lt;Object, Object&gt; entries = stringRedisTemplate.opsForHash().entries(<span class="string">&quot;user:6&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;entries = &quot;</span> + entries);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="实战篇"><a href="#实战篇" class="headerlink" title="实战篇"></a>实战篇</h1><img src="C:\Users\26919\Documents\Tencent Files\2691936018\FileRecv\MobileFile\2B189D8A28E1E768D7D4394D8AE752F6.png" class="lazyload" data-srcset="C:\Users\26919\Documents\Tencent Files\2691936018\FileRecv\MobileFile\2B189D8A28E1E768D7D4394D8AE752F6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2B189D8A28E1E768D7D4394D8AE752F6" style="zoom: 50%;" />
+
+<p>此项目为黑马点评，如需请到vx搜索黑马程序员获取资源</p>
+<p>项目结构：</p>
+<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220715091142486.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220715091142486.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220715091142486" style="zoom: 67%;" />
+
+<p>application.yaml的配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8081</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hmdp</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/hmdp?useSSL=false&amp;serverTimezone=UTC</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">host:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">6379</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line">    <span class="attr">lettuce:</span></span><br><span class="line">      <span class="attr">pool:</span></span><br><span class="line">        <span class="attr">max-active:</span> <span class="number">10</span></span><br><span class="line">        <span class="attr">max-idle:</span> <span class="number">10</span></span><br><span class="line">        <span class="attr">min-idle:</span> <span class="number">1</span></span><br><span class="line">        <span class="attr">time-between-eviction-runs:</span> <span class="string">10s</span></span><br><span class="line">  <span class="attr">jackson:</span></span><br><span class="line">    <span class="attr">default-property-inclusion:</span> <span class="string">non_null</span> <span class="comment"># JSON处理时忽略非空字段</span></span><br><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="attr">type-aliases-package:</span> <span class="string">com.hmdp.entity</span> <span class="comment"># 别名扫描包</span></span><br><span class="line"><span class="attr">logging:</span></span><br><span class="line">  <span class="attr">level:</span></span><br><span class="line">    <span class="attr">com.hmdp:</span> <span class="string">debug</span></span><br></pre></td></tr></table></figure>
+
+
+
+</div><div class="story post-story"><h2 id="1-短信登录"><a href="#1-短信登录" class="headerlink" title="1.短信登录"></a>1.短信登录</h2><h3 id="1-1-基于Session实现短信登录流程"><a href="#1-1-基于Session实现短信登录流程" class="headerlink" title="1.1 基于Session实现短信登录流程"></a>1.1 基于Session实现短信登录流程</h3><p>发送短信验证码：</p>
+<div id="flowchart-0" class="flow-chart"></div>
+
+
+
+<p>短信验证码登录、注册：</p>
+<div id="flowchart-1" class="flow-chart"></div>
+
+
+
+
+
+<p>校验登录状态：</p>
+<div id="flowchart-2" class="flow-chart"></div>
+
+
+
+<h3 id="1-2-实现发送短信验证码"><a href="#1-2-实现发送短信验证码" class="headerlink" title="1.2 实现发送短信验证码"></a>1.2 实现发送短信验证码</h3><p>IUserService：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">IUserService</span> <span class="keyword">extends</span> <span class="title class_">IService</span>&lt;User&gt; &#123;</span><br><span class="line"></span><br><span class="line">    Result <span class="title function_">sendCode</span><span class="params">(String phone, HttpSession session)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>UserServiceImpl中实现<code>sendCode</code>方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">sendCode</span><span class="params">(String phone, HttpSession session)</span> &#123;</span><br><span class="line">    <span class="comment">//校验手机号</span></span><br><span class="line">    <span class="keyword">if</span> (RegexUtils.isPhoneInvalid(phone)) &#123;</span><br><span class="line">        <span class="comment">//不符合，返回错误信息</span></span><br><span class="line">        <span class="keyword">return</span> Result.fail(<span class="string">&quot;手机号格式错误&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//符合，生成验证码</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">code</span> <span class="operator">=</span> RandomUtil.randomNumbers(<span class="number">6</span>);</span><br><span class="line">    <span class="comment">//保存验证码到Session</span></span><br><span class="line">    session.setAttribute(<span class="string">&quot;code&quot;</span>,code);</span><br><span class="line">    <span class="comment">//发送验证码，模拟一下</span></span><br><span class="line">    log.debug(<span class="string">&quot;发送验证码成功，验证码为：&quot;</span>+code);</span><br><span class="line">    <span class="comment">//返回OK</span></span><br><span class="line">    <span class="keyword">return</span> Result.ok();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>UserController：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;code&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">sendCode</span><span class="params">(<span class="meta">@RequestParam(&quot;phone&quot;)</span> String phone, HttpSession session)</span> &#123;</span><br><span class="line">    <span class="comment">//发送短信验证码并保存验证码</span></span><br><span class="line">    <span class="keyword">return</span> userService.sendCode(phone, session);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>日志打印：</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">发送验证码成功，验证码为：608824</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="1-3-实现短信验证登录与注册"><a href="#1-3-实现短信验证登录与注册" class="headerlink" title="1.3 实现短信验证登录与注册"></a>1.3 实现短信验证登录与注册</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">IUserService</span> <span class="keyword">extends</span> <span class="title class_">IService</span>&lt;User&gt; &#123;</span><br><span class="line">    Result <span class="title function_">sendCode</span><span class="params">(String phone, HttpSession session)</span>;</span><br><span class="line">    Result <span class="title function_">login</span><span class="params">(LoginFormDTO loginForm, HttpSession session)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">login</span><span class="params">(LoginFormDTO loginForm, HttpSession session)</span> &#123;</span><br><span class="line">    <span class="comment">//校验手机号</span></span><br><span class="line">    <span class="keyword">if</span> (RegexUtils.isPhoneInvalid(loginForm.getPhone())) &#123;</span><br><span class="line">        <span class="comment">//不符合，返回错误信息</span></span><br><span class="line">        <span class="keyword">return</span> Result.fail(<span class="string">&quot;手机号格式错误&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//校验验证码</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">code</span> <span class="operator">=</span> (String) session.getAttribute(<span class="string">&quot;code&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (code == <span class="literal">null</span> || !code.equals(loginForm.getCode())) &#123;</span><br><span class="line">        <span class="comment">//不一致，返回错误信息</span></span><br><span class="line">        <span class="keyword">return</span> Result.fail(<span class="string">&quot;验证码错误&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//一致，查询手机号是否存在</span></span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> query().eq(<span class="string">&quot;phone&quot;</span>, loginForm.getPhone()).one();</span><br><span class="line">    <span class="keyword">if</span> (user == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">//不存在，插入到数据库，完成注册</span></span><br><span class="line">        user = createUserByPhone(loginForm.getPhone());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//保存用户到Session</span></span><br><span class="line">    session.setAttribute(<span class="string">&quot;user&quot;</span>,user);</span><br><span class="line">    <span class="comment">//每个session都有唯一的id，不需要登陆凭证</span></span><br><span class="line">    <span class="keyword">return</span> Result.ok();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> User <span class="title function_">createUserByPhone</span><span class="params">(String phone)</span> &#123;</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">    user.setPhone(phone);</span><br><span class="line">    user.setNickName(USER_NICK_NAME_PREFIX + RandomUtil.randomNumbers(<span class="number">10</span>));</span><br><span class="line">    save(user);</span><br><span class="line">    <span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/login&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">login</span><span class="params">(<span class="meta">@RequestBody</span> LoginFormDTO loginForm, HttpSession session)</span>&#123;</span><br><span class="line">    <span class="comment">//实现登录功能</span></span><br><span class="line">    <span class="keyword">return</span> userService.login(loginForm,session);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-4-实现登录校验拦截器"><a href="#1-4-实现登录校验拦截器" class="headerlink" title="1.4 实现登录校验拦截器"></a>1.4 实现登录校验拦截器</h3><p>调用<code>/user/me</code>接口获取用户信息时，响应中包含了手机号、密码等敏感信息，并且发送的多余信息增加了服务器的压力。所以我们只需要用户昵称、头像和id等的部分信息。</p>
+<p>定义一个UserDto：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserDTO</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Long id; <span class="comment">//id</span></span><br><span class="line">    <span class="keyword">private</span> String nickName;<span class="comment">//昵称</span></span><br><span class="line">    <span class="keyword">private</span> String icon;<span class="comment">//头像</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>将<code>UserServiceImpl</code>的<code>login</code>方法中存入session的<code>User</code>转换成<code>UserDto</code>类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.setAttribute(<span class="string">&quot;user&quot;</span>, BeanUtil.copyProperties(user, UserDTO.class));</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建<code>LoginInterceptor</code>拦截器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoginInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//获取session</span></span><br><span class="line">        <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">        <span class="comment">//获取用户信息</span></span><br><span class="line">        <span class="type">UserDTO</span> <span class="variable">user</span> <span class="operator">=</span> (UserDTO) session.getAttribute(<span class="string">&quot;user&quot;</span>);</span><br><span class="line">        <span class="comment">//不存在，拦截</span></span><br><span class="line">        <span class="keyword">if</span> (user == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//返回状态码401，未授权</span></span><br><span class="line">            response.setStatus(<span class="number">401</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//存在，保存到TheadLocal</span></span><br><span class="line">        UserHolder.saveUser(user);</span><br><span class="line">        <span class="comment">//放行</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//移除用户</span></span><br><span class="line">        UserHolder.removeUser();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>新建<code>MvcConfig</code>配置类，添加拦截器并添加排序路径：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MvcConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">LoginInterceptor</span>())</span><br><span class="line">                .excludePathPatterns( <span class="comment">//排除路径</span></span><br><span class="line">                        <span class="string">&quot;/user/login&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/user/code&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/shop/**&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/shop-type/**&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/blog/hot&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/upload/**&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/voucher/**&quot;</span></span><br><span class="line">                );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>UserController</code>中实现获取用户信息：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/me&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">me</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="comment">//获取当前登录的用户并返回</span></span><br><span class="line">    <span class="type">UserDTO</span> <span class="variable">user</span> <span class="operator">=</span> UserHolder.getUser();</span><br><span class="line">    <span class="keyword">return</span> Result.ok(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-5-Session共享问题分析"><a href="#1-5-Session共享问题分析" class="headerlink" title="1.5 Session共享问题分析"></a>1.5 Session共享问题分析</h3><p><strong>session共享问题</strong>：多台Tomcat不能共享session存储空间，当请求切换到不同的Tomcat服务器时导致数据对是问题</p>
+<p>session的替代方案应该满足：</p>
+<ul>
+<li><p>数据共享</p>
+</li>
+<li><p>内存存储</p>
+</li>
+<li><p>key、value结构</p>
+</li>
+</ul>
+<p>Redis都能解决以上问题，并且延时低</p>
+<h3 id="1-6-基于Redis实现共享Session登录流程"><a href="#1-6-基于Redis实现共享Session登录流程" class="headerlink" title="1.6 基于Redis实现共享Session登录流程"></a>1.6 基于Redis实现共享Session登录流程</h3><p>发送短信验证码：</p>
+<div id="flowchart-3" class="flow-chart"></div>
+
+
+
+<p>可以采用String数据类型存储：</p>
+<table>
+<thead>
+<tr>
+<th align="center">key</th>
+<th align="center">value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">手机号</td>
+<td align="center">验证码</td>
+</tr>
+</tbody></table>
+<p>短信验证登录、注册：</p>
+<div id="flowchart-4" class="flow-chart"></div>
+
+
+
+<p>保存登录用户信息，可以使用<span style="color:red">String结构</span>，以json字符串来保存，比较直观</p>
+<p><span style="color:red">Hash结构</span>可以将对象中的每一个字段独立存储，可以针对单个字段做CRUD，并且内存占用少(<span style="color:red">推荐</span>)</p>
+<p>保存用户到Redis：</p>
+<table>
+<thead>
+<tr>
+<th align="center">key</th>
+<th align="center">value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">随机token为key存储用户数据</td>
+<td align="center">{name:Tom}</td>
+</tr>
+</tbody></table>
+<p>校验登录状态：</p>
+<div id="flowchart-5" class="flow-chart"></div>
+
+
+
+<h3 id="1-7-基于Redis实现短信登录"><a href="#1-7-基于Redis实现短信登录" class="headerlink" title="1.7 基于Redis实现短信登录*"></a>1.7 基于Redis实现短信登录*</h3><p>修改<code>UserServiceImpl</code>中的<code>sendCode</code>方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">sendCode</span><span class="params">(String phone, HttpSession session)</span> &#123;</span><br><span class="line">	<span class="comment">//校验手机号</span></span><br><span class="line">	<span class="keyword">if</span> (RegexUtils.isPhoneInvalid(phone)) &#123;</span><br><span class="line">	<span class="comment">//不符合，返回错误信息</span></span><br><span class="line">	<span class="keyword">return</span> Result.fail(<span class="string">&quot;手机号格式错误&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//符合，生成验证码</span></span><br><span class="line">	<span class="type">String</span> <span class="variable">code</span> <span class="operator">=</span> RandomUtil.randomNumbers(<span class="number">6</span>);</span><br><span class="line">	<span class="comment">//保存验证码到Redis，设置有效期</span></span><br><span class="line">    stringRedisTemplate.opsForValue().set(RedisConstants.LOGIN_CODE_KEY +phone, <span class="comment">//key</span></span><br><span class="line">			code, <span class="comment">//value</span></span><br><span class="line">			RedisConstants.LOGIN_CODE_TTL, <span class="comment">// 2</span></span><br><span class="line">			TimeUnit.MINUTES);<span class="comment">//指定单位为分钟</span></span><br><span class="line">	<span class="comment">//发送验证码，模拟一下</span></span><br><span class="line">	log.debug(<span class="string">&quot;发送验证码成功，验证码为：&quot;</span>+code);</span><br><span class="line">	<span class="comment">//返回OK</span></span><br><span class="line">	<span class="keyword">return</span> Result.ok();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>修改<code>UserServiceImpl</code>中的<code>login</code>方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">login</span><span class="params">(LoginFormDTO loginForm, HttpSession session)</span> &#123;</span><br><span class="line">        <span class="comment">//校验手机号</span></span><br><span class="line">        <span class="keyword">if</span> (RegexUtils.isPhoneInvalid(loginForm.getPhone())) &#123;</span><br><span class="line">            <span class="comment">//不符合，返回错误信息</span></span><br><span class="line">            <span class="keyword">return</span> Result.fail(<span class="string">&quot;手机号格式错误&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//校验验证码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">code</span> <span class="operator">=</span> stringRedisTemplate.opsForValue().get(RedisConstants.LOGIN_CODE_KEY + loginForm.getPhone());</span><br><span class="line">        <span class="keyword">if</span> (code == <span class="literal">null</span> || !code.equals(loginForm.getCode())) &#123;</span><br><span class="line">            <span class="comment">//不一致，返回错误信息</span></span><br><span class="line">            <span class="keyword">return</span> Result.fail(<span class="string">&quot;验证码错误&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//一致，查询手机号是否存在</span></span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> query().eq(<span class="string">&quot;phone&quot;</span>, loginForm.getPhone()).one();</span><br><span class="line">        <span class="keyword">if</span> (user == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">//不存在，插入到数据库，完成注册</span></span><br><span class="line">            user = createUserByPhone(loginForm.getPhone());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//随机生成登录令牌token，</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">token</span> <span class="operator">=</span> UUID.randomUUID().toString(<span class="literal">true</span>);</span><br><span class="line">        <span class="comment">//将User对象转成UserDto在转换成Map数据类型</span></span><br><span class="line">        <span class="type">UserDTO</span> <span class="variable">userDTO</span> <span class="operator">=</span> BeanUtil.copyProperties(user, UserDTO.class);</span><br><span class="line">        <span class="comment">//map数据类型的键值对都需要是String类型的</span></span><br><span class="line">        Map&lt;String, Object&gt; userMap = BeanUtil.beanToMap(userDTO,</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(),</span><br><span class="line">                CopyOptions.create().setIgnoreNullValue(<span class="literal">true</span>) <span class="comment">//忽略空的值</span></span><br><span class="line">                        .setFieldValueEditor((fieldName, fieldValue) -&gt; fieldValue.toString()));<span class="comment">//所有value值转换为String</span></span><br><span class="line">        <span class="comment">//保存用户到Redis</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> RedisConstants.LOGIN_USER_KEY + token;</span><br><span class="line">        stringRedisTemplate.opsForHash().putAll(key, userMap);</span><br><span class="line">        <span class="comment">//设置有效期30分钟</span></span><br><span class="line">        stringRedisTemplate.expire(key, <span class="comment">//key</span></span><br><span class="line">                RedisConstants.LOGIN_USER_TTL, <span class="comment">// 30</span></span><br><span class="line">                TimeUnit.MINUTES); <span class="comment">//分钟</span></span><br><span class="line">        <span class="comment">//返回token</span></span><br><span class="line">        <span class="keyword">return</span> Result.ok(token);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>MVcConfig</code>配置类中注入<code>StringRedisTemplate</code>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MvcConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">LoginInterceptor</span>(stringRedisTemplate))</span><br><span class="line">                .excludePathPatterns( <span class="comment">//排除路径</span></span><br><span class="line">                        <span class="string">&quot;/user/login&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/user/code&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/shop/**&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/shop-type/**&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/blog/hot&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/upload/**&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/voucher/**&quot;</span></span><br><span class="line">                );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>LoginInterceptor</code>中获取Redis中的数据：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoginInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LoginInterceptor</span><span class="params">(StringRedisTemplate stringRedisTemplate)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.stringRedisTemplate = stringRedisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//获取token，前端会将token放入到请求头中</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">token</span> <span class="operator">=</span> request.getHeader(<span class="string">&quot;authorization&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (StrUtil.isBlank(token)) &#123;</span><br><span class="line">            <span class="comment">//返回状态码401，未授权</span></span><br><span class="line">            response.setStatus(<span class="number">401</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取用户信息</span></span><br><span class="line">        Map&lt;Object, Object&gt; userMap = stringRedisTemplate.opsForHash().entries(RedisConstants.LOGIN_USER_KEY + token);</span><br><span class="line">        <span class="comment">//不存在，拦截</span></span><br><span class="line">        <span class="keyword">if</span> (userMap.isEmpty())&#123;</span><br><span class="line">            <span class="comment">//返回状态码401，未授权</span></span><br><span class="line">            response.setStatus(<span class="number">401</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将map转换成UserDto</span></span><br><span class="line">        <span class="type">UserDTO</span> <span class="variable">user</span> <span class="operator">=</span> BeanUtil.fillBeanWithMap(userMap,<span class="keyword">new</span> <span class="title class_">UserDTO</span>(),<span class="literal">false</span>);</span><br><span class="line">        <span class="comment">//存在，保存到TheadLocal</span></span><br><span class="line">        UserHolder.saveUser(user);</span><br><span class="line">        <span class="comment">//刷新有效期</span></span><br><span class="line">        stringRedisTemplate.expire(RedisConstants.LOGIN_USER_KEY + token, <span class="comment">//key</span></span><br><span class="line">                RedisConstants.LOGIN_USER_TTL, <span class="comment">// 30</span></span><br><span class="line">                TimeUnit.MINUTES); <span class="comment">//分钟</span></span><br><span class="line">        <span class="comment">//放行</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//移除用户</span></span><br><span class="line">        UserHolder.removeUser();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-8-解决状态登录刷新问题"><a href="#1-8-解决状态登录刷新问题" class="headerlink" title="1.8 解决状态登录刷新问题"></a>1.8 解决状态登录刷新问题</h3><p>拦截器</p>
+<blockquote>
+<ol>
+<li><p>获取token</p>
+</li>
+<li><p>查询Redis的用户信息</p>
+<p>不存在，则拦截</p>
+<p>存在，则继续</p>
+</li>
+<li><p>保存到ThreadLocal</p>
+</li>
+<li><p>刷新token的有效期</p>
+</li>
+<li><p>放行</p>
+</li>
+</ol>
+</blockquote>
+<p>拦截器只会拦截登录的路径，从而刷新token有效期。</p>
+<p>但是其他的一些不需要登录也可以查看的页面，比如首页，则不会刷新token有效期。</p>
+<p>有可能长时间查看其他页面，导致在查看需要登录的路径，token过了有效期，需要重新登录的问题</p>
+<pre class="mermaid">sequenceDiagram
+        用户-->>拦截器1:发送请求
+        note over 拦截器1:拦截一切路径<br>1. 获取token<br>2. 查询Redis的用户<br>3. 保存到ThreadLocal<br>4. 刷新token的有效期<br>5. 放行
+        拦截器1->>拦截器2:进入
+        note over 拦截器2:拦截需要登录的路径<br>查看token<br>存在，则拦截<br>不存在，则继续
+        拦截器2->>UserController:进入</pre>
+
+
+
+<p><code>RefreshTokenInterceptor</code>中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RefreshTokenInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">RefreshTokenInterceptor</span><span class="params">(StringRedisTemplate stringRedisTemplate)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.stringRedisTemplate = stringRedisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//获取token</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">token</span> <span class="operator">=</span> request.getHeader(<span class="string">&quot;authorization&quot;</span>);</span><br><span class="line">        <span class="comment">//token不存在，直接放行，不添加到ThreadLocal</span></span><br><span class="line">        <span class="keyword">if</span> (StrUtil.isBlank(token)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取用户信息</span></span><br><span class="line">        Map&lt;Object, Object&gt; userMap = stringRedisTemplate.opsForHash().entries(RedisConstants.LOGIN_USER_KEY + token);</span><br><span class="line">        <span class="comment">//用户信息不存在，直接放行，不添加到ThreadLocal</span></span><br><span class="line">        <span class="keyword">if</span> (userMap.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将map转换成UserDto</span></span><br><span class="line">        <span class="type">UserDTO</span> <span class="variable">user</span> <span class="operator">=</span> BeanUtil.fillBeanWithMap(userMap,<span class="keyword">new</span> <span class="title class_">UserDTO</span>(),<span class="literal">false</span>);</span><br><span class="line">        <span class="comment">//保存到TheadLocal</span></span><br><span class="line">        UserHolder.saveUser(user);</span><br><span class="line">        <span class="comment">//刷新有效期</span></span><br><span class="line">        stringRedisTemplate.expire(RedisConstants.LOGIN_USER_KEY + token, <span class="comment">//key</span></span><br><span class="line">                RedisConstants.LOGIN_USER_TTL, <span class="comment">// 30</span></span><br><span class="line">                TimeUnit.MINUTES); <span class="comment">//分钟</span></span><br><span class="line">        <span class="comment">//放行</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//移除用户</span></span><br><span class="line">        UserHolder.removeUser();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>LoginInterceptor</code>中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoginInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//判断ThreadLocal是否存在用户</span></span><br><span class="line">        <span class="keyword">if</span> (UserHolder.getUser() == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//没有，拦截，设置状态码</span></span><br><span class="line">            response.setStatus(<span class="number">401</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//有用户放行</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>MvcConfig</code>配置类中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MvcConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        <span class="comment">//token刷新拦截器</span></span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">RefreshTokenInterceptor</span>(stringRedisTemplate))</span><br><span class="line">                .addPathPatterns(<span class="string">&quot;/**&quot;</span>) <span class="comment">//拦截所有路径</span></span><br><span class="line">                .order(<span class="number">0</span>); <span class="comment">// 注册顺序为0</span></span><br><span class="line">        <span class="comment">//登录拦截器</span></span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> <span class="title class_">LoginInterceptor</span>())</span><br><span class="line">                .excludePathPatterns( <span class="comment">//排除路径</span></span><br><span class="line">                        <span class="string">&quot;/user/login&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/user/code&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/shop/**&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/shop-type/**&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/blog/hot&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/upload/**&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;/voucher/**&quot;</span></span><br><span class="line">                ).order(<span class="number">1</span>); <span class="comment">//注册顺序为1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</div><div class="story post-story"><h2 id="2-商户查询缓存"><a href="#2-商户查询缓存" class="headerlink" title="2.商户查询缓存"></a>2.商户查询缓存</h2><h2 id="3-达人探店"><a href="#3-达人探店" class="headerlink" title="3.达人探店"></a>3.达人探店</h2><h2 id="4-优惠券秒杀"><a href="#4-优惠券秒杀" class="headerlink" title="4.优惠券秒杀"></a>4.优惠券秒杀</h2><h2 id="5-好友关注"><a href="#5-好友关注" class="headerlink" title="5.好友关注"></a>5.好友关注</h2><h2 id="6-附近的商户"><a href="#6-附近的商户" class="headerlink" title="6.附近的商户"></a>6.附近的商户</h2><h2 id="7-用户签到"><a href="#7-用户签到" class="headerlink" title="7.用户签到"></a>7.用户签到</h2><h2 id="8-UV统计"><a href="#8-UV统计" class="headerlink" title="8.UV统计"></a>8.UV统计</h2><h1 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h1><h1 id="原理篇"><a href="#原理篇" class="headerlink" title="原理篇"></a>原理篇<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始
+op=>operation: 提交手机号
+cond=>condition: 校验手机号
+code=>operation: 生成验证码
+save=>operation: 验证码保存到Session
+send=>operation: 发送验证码
+e=>end: 结束
+
+st->op->cond(yes)->code->save->send->e
+cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">st=>start: 开始
+op=>operation: 提交手机号和验证码
+cond1=>condition: 校验验证码
+code=>operation: 根据手机号查询用户
+cond2=>condition: 用户是否存在
+login=>operation: 登录
+register=>operation: 创建新用户
+save1=>operation: 保存用户到Session
+save2=>operation: 保存用户到数据库
+e=>end: 结束
+
+st->op->cond1(yes)->code->cond2(yes)->login->save1->e
+cond1(no)->op
+cond2(no)->register->save2->save1</textarea><textarea id="flowchart-1-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script><textarea id="flowchart-2-code" style="display: none">st=>start: 开始
+op=>operation: 请求并携带cookie
+get=>operation: 从Session获取用户
+cond=>condition: 判断用户是否存在
+save=>operation: 保存用户到TreadLocal
+pass=>operation: 放行
+intercept=>operation: 拦截
+e=>end: 结束
+
+st->op->get->cond(yes)->save->pass->e
+cond(no)->intercept->e</textarea><textarea id="flowchart-2-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-2-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-2-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-2", options);</script><textarea id="flowchart-3-code" style="display: none">st=>start: 开始
+op=>operation: 提交手机号
+cond=>condition: 校验手机号
+code=>operation: 生成验证码
+save=>operation: 验证码保存到Redis
+send=>operation: 发送验证码
+e=>end: 结束
+
+st->op->cond(yes)->code->save->send->e
+cond(no)->op</textarea><textarea id="flowchart-3-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-3-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-3-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-3", options);</script><textarea id="flowchart-4-code" style="display: none">st=>start: 开始
+op=>operation: 提交手机号和验证码
+cond1=>condition: 校验验证码
+code=>operation: 根据手机号查询用户
+cond2=>condition: 用户是否存在
+login=>operation: 登录
+register=>operation: 创建新用户
+save1=>operation: 保存用户到Redis
+save2=>operation: 保存用户到数据库
+back=>operation: 返回token给客户端
+e=>end: 结束
+
+st->op->cond1(yes)->code->cond2(yes)->login->save1->back->e
+cond1(no)->op
+cond2(no)->register->save2->save1</textarea><textarea id="flowchart-4-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-4-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-4-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-4", options);</script><textarea id="flowchart-5-code" style="display: none">st=>start: 开始
+op=>operation: 请求并携带token
+get=>operation: 从Redis获取用户
+cond=>condition: 判断用户是否存在
+save=>operation: 保存用户到TreadLocal
+pass=>operation: 放行
+intercept=>operation: 拦截
+e=>end: 结束
+
+st->op->get->cond(yes)->save->pass->e
+cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-5-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-5-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-5", options);</script></h1>
 </div>
   </div>
   
@@ -2999,7 +3691,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
               <div class="license-meta-item">
                 <div class="license-meta-title">更新于</div>
-                <div class="license-meta-text">2022年7月9日</div>
+                <div class="license-meta-text">2022年7月22日</div>
               </div>
               
               
@@ -3024,10 +3716,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-07-09T11:49:14+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-07-22T00:34:06+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年7月9日</p>
+    <p>更新于：2022年7月22日</p>
   </a>
 </div>
 
@@ -3107,9 +3799,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/07/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/'>
+        <a class='prev' href='/2022/07/03/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>操作系统</p>
-          <p class='content'>一、操作系统的概念1234567graph LR;    操作系统--&gt;概念;    操作系统--&gt;功能和目标;    功能和目标--&gt;资源的管理者--&gt;安全,高效;  ...</p>
+          <p class='content'>一、操作系统概述二、进程三、内存四、文件五、I-O设备
+</p>
         </a>
       
       
@@ -3163,7 +3856,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9D%E8%AF%86Redis"><span class="toc-text">1.初识Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%AE%A4%E8%AF%86NoSql"><span class="toc-text">1.1 认识NoSql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E8%AE%A4%E8%AF%86Redis"><span class="toc-text">1.2 认识Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Redis%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E5%85%B6%E9%85%8D%E7%BD%AE-%E4%B8%8D%E8%A6%81%E7%9C%8B%E8%BF%99%E4%B8%AA%E6%95%99%E7%A8%8B%E5%AE%89%E8%A3%85%EF%BC%8C%E6%9C%89%E9%97%AE%E9%A2%98%E6%88%91%E8%BF%98%E8%A6%81%E6%94%B9"><span class="toc-text">1.3 Redis的安装及其配置(不要看这个教程安装，有问题我还要改)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Redis%E5%91%BD%E4%BB%A4"><span class="toc-text">2.Redis命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">2.1 Redis数据结构介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Redis%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">2.2 Redis通用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-String%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.3 String类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Key%E7%9A%84%E5%B1%82%E7%BA%A7%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.4 Key的层级格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Hash%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.5 Hash类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-List%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.6 List类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-Set%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.7 Set类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-SortedSet%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.8 SortedSet类型</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9D%E8%AF%86Redis"><span class="toc-text">1.初识Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%AE%A4%E8%AF%86NoSql"><span class="toc-text">1.1 认识NoSql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E8%AE%A4%E8%AF%86Redis"><span class="toc-text">1.2 认识Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Redis%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E5%85%B6%E9%85%8D%E7%BD%AE-%E4%B8%8D%E8%A6%81%E7%9C%8B%E8%BF%99%E4%B8%AA%E6%95%99%E7%A8%8B%E5%AE%89%E8%A3%85%EF%BC%8C%E6%9C%89%E9%97%AE%E9%A2%98%E6%88%91%E8%BF%98%E8%A6%81%E6%94%B9"><span class="toc-text">1.3 Redis的安装及其配置(不要看这个教程安装，有问题我还要改)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Redis%E5%91%BD%E4%BB%A4"><span class="toc-text">2.Redis命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">2.1 Redis数据结构介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Redis%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">2.2 Redis通用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-String%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.3 String类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Key%E7%9A%84%E5%B1%82%E7%BA%A7%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.4 Key的层级格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Hash%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.5 Hash类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-List%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.6 List类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-Set%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.7 Set类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-SortedSet%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.8 SortedSet类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Redis%E7%9A%84java%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">3.Redis的java客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Jedis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-text">3.1 Jedis快速入门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Jedis%E7%9A%84%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="toc-text">3.2 Jedis的连接池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%88%9D%E8%AF%86SpringDataRedis"><span class="toc-text">3.3 初识SpringDataRedis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-SpringDataRedis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-text">3.4 SpringDataRedis快速入门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-SpringDataRedis%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E6%96%B9%E5%BC%8F"><span class="toc-text">3.5 SpringDataRedis的序列化方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-StringRedisTemplate"><span class="toc-text">3.6 StringRedisTemplate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-RedisTemplate%E6%93%8D%E4%BD%9CHash%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.7 RedisTemplate操作Hash类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95"><span class="toc-text">1.短信登录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9F%BA%E4%BA%8ESession%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B"><span class="toc-text">1.1 基于Session实现短信登录流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="toc-text">1.2 实现发送短信验证码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%99%BB%E5%BD%95%E4%B8%8E%E6%B3%A8%E5%86%8C"><span class="toc-text">1.3 实现短信验证登录与注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8C%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-text">1.4 实现登录校验拦截器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Session%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-text">1.5 Session共享问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E5%9F%BA%E4%BA%8ERedis%E5%AE%9E%E7%8E%B0%E5%85%B1%E4%BA%ABSession%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B"><span class="toc-text">1.6 基于Redis实现共享Session登录流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-%E5%9F%BA%E4%BA%8ERedis%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95"><span class="toc-text">1.7 基于Redis实现短信登录*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-%E8%A7%A3%E5%86%B3%E7%8A%B6%E6%80%81%E7%99%BB%E5%BD%95%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98"><span class="toc-text">1.8 解决状态登录刷新问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%95%86%E6%88%B7%E6%9F%A5%E8%AF%A2%E7%BC%93%E5%AD%98"><span class="toc-text">2.商户查询缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BE%BE%E4%BA%BA%E6%8E%A2%E5%BA%97"><span class="toc-text">3.达人探店</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BC%98%E6%83%A0%E5%88%B8%E7%A7%92%E6%9D%80"><span class="toc-text">4.优惠券秒杀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A5%BD%E5%8F%8B%E5%85%B3%E6%B3%A8"><span class="toc-text">5.好友关注</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%99%84%E8%BF%91%E7%9A%84%E5%95%86%E6%88%B7"><span class="toc-text">6.附近的商户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%94%A8%E6%88%B7%E7%AD%BE%E5%88%B0"><span class="toc-text">7.用户签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-UV%E7%BB%9F%E8%AE%A1"><span class="toc-text">8.UV统计</span></a></li></ol>
     </div>
   </section>
 
@@ -3294,6 +3987,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     <!-- Custom Files footer end-->
   </footer>
+
+
+
+  <script src='https://unpkg.com/mermaid@8.13.8/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
 
         <a id="s-top" class="fa-solid fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
@@ -4106,7 +4808,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/07/03/Java/Redis框架/","name":"Redis框架的学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis框架的学习笔记","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/","wordCount":0,"datePublished":"2022-07-03T14:50:31.983Z","dateModified":"2022-07-09T03:49:14.754Z","articleSection":"Java","keywords":"Java,框架","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/07/03/Java/Redis框架/","name":"Redis框架的学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis框架的学习笔记","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/","wordCount":0,"datePublished":"2022-07-03T14:50:31.983Z","dateModified":"2022-07-21T16:34:06.674Z","articleSection":"Java","keywords":"Java,框架","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
