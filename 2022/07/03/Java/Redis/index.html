@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/07/03/java/redis框架/"/>
+  <link rel="canonical" href="http://example.com/2022/07/03/java/redis/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Redis框架的学习笔记 - 活着就是为了摸鱼🐟！！！</title>
+  <title>Redis的学习笔记 - 活着就是为了摸鱼🐟！！！</title>
   <meta name="keywords" content="Java,框架,null">
   <meta desc name="description" content="一个不起眼的小博客 - 一个小垃圾 - 活着就是为了摸鱼🐟！！！">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis框架的学习笔记">
-<meta property="og:url" content="http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:title" content="Redis的学习笔记">
+<meta property="og:url" content="http://example.com/2022/07/03/Java/Redis/index.html">
 <meta property="og:site_name" content="活着就是为了摸鱼🐟！！！">
 <meta property="og:description" content="基础篇1.初识Redis1.1 认识NoSql键值数据库是一种NoSql数据库    key value    1001 {   “id”:1001,   “name”:”张三”,   “age”:20,}   SQL：关系型数据库 NoSQL：非关系型数据库 SQL与NoSQl的比较：     SQL NoSQL    数据结构 结构化 非结构化：1.键值类型(Redis)2.文档类型(Mong">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-07-03T14:50:31.983Z">
-<meta property="article:modified_time" content="2022-07-21T16:34:06.674Z">
+<meta property="article:modified_time" content="2022-07-25T04:10:58.714Z">
 <meta property="article:author" content="一个小垃圾">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="框架">
@@ -1753,7 +1753,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1658421367280),
+    lastupdate: new Date(1658722361705),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2440,7 +2440,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/03/Java/Redis/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2461,7 +2461,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        Redis框架的学习笔记
+        Redis的学习笔记
       </h1>
       <div class='new-meta-box'>
         
@@ -3595,7 +3595,288 @@ Redis -->|获取| json字符串 --> |手动反序列化|实体类</pre>
 
 
 
-</div><div class="story post-story"><h2 id="2-商户查询缓存"><a href="#2-商户查询缓存" class="headerlink" title="2.商户查询缓存"></a>2.商户查询缓存</h2><h2 id="3-达人探店"><a href="#3-达人探店" class="headerlink" title="3.达人探店"></a>3.达人探店</h2><h2 id="4-优惠券秒杀"><a href="#4-优惠券秒杀" class="headerlink" title="4.优惠券秒杀"></a>4.优惠券秒杀</h2><h2 id="5-好友关注"><a href="#5-好友关注" class="headerlink" title="5.好友关注"></a>5.好友关注</h2><h2 id="6-附近的商户"><a href="#6-附近的商户" class="headerlink" title="6.附近的商户"></a>6.附近的商户</h2><h2 id="7-用户签到"><a href="#7-用户签到" class="headerlink" title="7.用户签到"></a>7.用户签到</h2><h2 id="8-UV统计"><a href="#8-UV统计" class="headerlink" title="8.UV统计"></a>8.UV统计</h2><h1 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h1><h1 id="原理篇"><a href="#原理篇" class="headerlink" title="原理篇"></a>原理篇<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始
+</div><div class="story post-story"><h2 id="2-商户查询缓存"><a href="#2-商户查询缓存" class="headerlink" title="2.商户查询缓存"></a>2.商户查询缓存</h2><h3 id="2-1-什么是缓存"><a href="#2-1-什么是缓存" class="headerlink" title="2.1 什么是缓存"></a>2.1 什么是缓存</h3><p><strong>缓存</strong>就是数据交换的缓冲区(称作Cache)，是贮存数据的临时地方，一般<strong>读写性能较高</strong></p>
+<pre class="mermaid">graph LR
+浏览器缓存 --> Tomcat应用层缓存 --> 数据库缓存 --> CPU缓存
+数据库缓存 --> 磁盘缓存</pre>
+
+
+
+<blockquote>
+<p>缓存的作用</p>
+<ul>
+<li>降低后端的负载</li>
+<li>提高读写效率，降低响应时间</li>
+</ul>
+<p>缓存的成本</p>
+<ul>
+<li>数据一致性成本</li>
+<li>代码维护成本</li>
+<li>运维成本</li>
+</ul>
+</blockquote>
+<h3 id="2-2-添加Redis缓存"><a href="#2-2-添加Redis缓存" class="headerlink" title="2.2 添加Redis缓存"></a>2.2 添加Redis缓存</h3><p>缓存的作用模型：</p>
+<pre class="mermaid">sequenceDiagram
+        客户端->>Redis:请求
+        Redis->>客户端:命中(分支1)
+        Redis->>数据库:未命中(分支2)
+        数据库->>Redis:写缓存
+        数据库->>客户端:响应</pre>
+
+
+
+<p>根据id查询商铺缓存的流程：</p>
+<div id="flowchart-6" class="flow-chart"></div>
+
+
+
+<p><code>IShopService</code>创建一个<code>queryById</code>方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">IShopService</span> <span class="keyword">extends</span> <span class="title class_">IService</span>&lt;Shop&gt; &#123;</span><br><span class="line">    <span class="comment">// ctrl+b转到实现类</span></span><br><span class="line">    Result <span class="title function_">queryById</span><span class="params">(Long id)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在<code>ShopServiceImpl</code>中实现<code>queryById</code>方法，从而实现商铺信息缓存：</p>
+<p>这里选择获取和存储Redis的数据类型为String</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">queryById</span><span class="params">(Long id)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> RedisConstants.CACHE_SHOP_KEY + id;</span><br><span class="line">    <span class="comment">//从Redis查询商铺缓存，Redis数据类型为String</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">shopJson</span> <span class="operator">=</span> stringRedisTemplate.opsForValue().get(key);</span><br><span class="line">    <span class="comment">//判断是否存在</span></span><br><span class="line">    <span class="keyword">if</span> (StrUtil.isNotBlank(shopJson)) &#123;</span><br><span class="line">        <span class="comment">//存在，返回信息</span></span><br><span class="line">        <span class="type">Shop</span> <span class="variable">shop</span> <span class="operator">=</span> JSONUtil.toBean(shopJson, Shop.class);</span><br><span class="line">        <span class="keyword">return</span> Result.ok(shop);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//不存在，根据id查询</span></span><br><span class="line">    <span class="type">Shop</span> <span class="variable">shop</span> <span class="operator">=</span> getById(id);</span><br><span class="line">    <span class="comment">//id不存在，返回错误信息</span></span><br><span class="line">    <span class="keyword">if</span> (shop == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Result.fail(<span class="string">&quot;店铺不存在&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//id存在，将数据写入Redis</span></span><br><span class="line">    stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(shop));</span><br><span class="line">    <span class="comment">//返回商铺信息</span></span><br><span class="line">    <span class="keyword">return</span> Result.ok(shop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>ShopController</code>中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">queryShopById</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Long id)</span> &#123;</span><br><span class="line">    <span class="comment">//通过id获取商铺信息</span></span><br><span class="line">    <span class="keyword">return</span> shopService.queryById(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里选择获取和存储Redis的数据类型为Hash</p>
+<h3 id="2-3-缓存更新策略"><a href="#2-3-缓存更新策略" class="headerlink" title="2.3 缓存更新策略"></a>2.3 缓存更新策略</h3><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">内存淘汰</th>
+<th align="center">超时剔除</th>
+<th>主动更新</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">说明</td>
+<td align="center">不用自己维护，<br>利用Redis的内存淘汰机制，<br>当内存不足时自动淘汰部分数据。<br>下次查询时更新缓存。</td>
+<td align="center">给缓存数据添加TTL时间，<br>到期后自动删除缓存。<br>下次查询时更新缓存。</td>
+<td>编写业务逻辑，<br>在修改数据库的同时，<br>更新缓存。</td>
+</tr>
+<tr>
+<td align="center">一致性</td>
+<td align="center">差</td>
+<td align="center">一般</td>
+<td>好</td>
+</tr>
+<tr>
+<td align="center">维护成本</td>
+<td align="center">无</td>
+<td align="center">低</td>
+<td>高</td>
+</tr>
+</tbody></table>
+<p>业务场景：</p>
+<blockquote>
+<ul>
+<li><p>低一致性需求：</p>
+<p>使用内存淘汰机制。例如：店铺类型的查询缓存</p>
+</li>
+<li><p>高一致性需求：</p>
+<p>主动更新，并以超时剔除为兜底方案。例如：店铺详情查询的缓存</p>
+</li>
+</ul>
+</blockquote>
+<p>主动更新策略：</p>
+<blockquote>
+<ul>
+<li><p>方案一：Cache Aside Pattern(<span style="color:red">可控性高，企业开发常用</span>)</p>
+<p>由缓存的调用者，在更新数据库的同时更新缓存。</p>
+</li>
+<li><p>方案二：Read&#x2F;Write Through Pattern</p>
+<p>缓存与数据库整合为一个服务，由服务来维护一致性。调用者调用该服务，无需关心缓存一致性问题。</p>
+</li>
+<li><p>方案三：Write Behind Caching Pattern</p>
+<p>调用者只操作缓存，由其它线程异步的将缓存数据持久化到数据库，保证最终一致。</p>
+<ul>
+<li><p>说明：</p>
+<p>可以多次修改缓存中的数据，在将缓存的数据一次性更新到数据库中</p>
+<p>如果缓存中的数据未更新到数据库时，出现宕机数据就会完全丢失</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>:cherry_blossom:方案一：Cache Aside Pattern</p>
+<blockquote>
+<p>操作缓存和数据库时有三个问题需要考虑：</p>
+<ol>
+<li><p>删除缓存还是更新缓存？</p>
+<ul>
+<li>更新缓存：每次更新数据库都要更新缓存，无效写操作较多:negative_squared_cross_mark:</li>
+<li>删除缓存：更新数据库时让缓存失效，查询时在更新缓存:white_check_mark:</li>
+</ul>
+</li>
+<li><p>如何保证缓存与数据库的操作的同时成功或失败？</p>
+<ul>
+<li>单体系，将缓存与数据库的操作放在一个事务</li>
+<li>分布式系统，利用TTC等分布式事务方案</li>
+</ul>
+</li>
+<li><p>先操作缓存还是先操作数据库？(数据库的数据操作相比Redis的数据操作慢)</p>
+<ul>
+<li><p>先删除缓存，在操作数据库</p>
+<p>异常情况：(<span style="color:red">出现情况高</span>)</p>
+<p><code>线程1</code>删除缓存后，<code>线程2</code>查询缓存未命中，再查询数据库。将数据库中的旧数据又写入了缓存后，<code>线程1</code>才将数据库的数据进行了更新。导致<code>线程2</code>之前拿到的数据库的数据为旧数据。</p>
+</li>
+<li><p>先操作数据库，在删除缓存:cherry_blossom:(胜出)</p>
+<p>异常情况：(<span style="color:red">出现情况低</span>)</p>
+<p><code>线程1</code>查询缓存未命中，再查询数据库获取到旧数据后，<code>线程2</code>这时更新了数据库的数据，删除了缓存后，<code>线程1</code>才开始写入缓存。导致线程1之前拿到的数据库的数据为旧数据。</p>
+</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<p><span style="color:red">总结</span>：</p>
+<p>缓存更新策略的最佳实践方案</p>
+<blockquote>
+<ol>
+<li><p>低一致性需求：使用Redis自带的内存淘汰机制</p>
+</li>
+<li><p>高一致性需求：主动更新，并以超时剔除为兜底方案</p>
+<ul>
+<li><p>读操作：</p>
+<p>缓存命中直接返回</p>
+<p>缓存未命中则查询数据库，并写入缓存，设置超时时间</p>
+</li>
+<li><p>写操作：</p>
+<p>先写数据库，然后再删除缓存</p>
+<p>要确保数据库与缓存操作的原子性</p>
+</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h3 id="2-4-添加缓存更新策略"><a href="#2-4-添加缓存更新策略" class="headerlink" title="2.4 添加缓存更新策略"></a>2.4 添加缓存更新策略</h3><p>给查询商铺的缓存添加<strong>超时剔除</strong>和<strong>主动更新</strong>的策略</p>
+<p>修改ShopController中的业务逻辑，满足一下的需求：</p>
+<blockquote>
+<ol>
+<li>根据id查询店铺时，如果缓存未命中，则查询数据库，将数据库的结果写入缓存，并设置超时时间</li>
+<li>根据id修改店铺时，先修改数据库，在删除缓存</li>
+</ol>
+</blockquote>
+<p>修改<code>ShopServiceImpl</code>中的<code>queryById</code>方法，将写入Redis的数据设置有效期：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">queryById</span><span class="params">(Long id)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> RedisConstants.CACHE_SHOP_KEY + id;</span><br><span class="line">    <span class="comment">//从Redis查询商铺缓存</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">shopJson</span> <span class="operator">=</span> stringRedisTemplate.opsForValue().get(key);</span><br><span class="line">    <span class="comment">//判断是否存在</span></span><br><span class="line">    <span class="keyword">if</span> (StrUtil.isNotBlank(shopJson)) &#123;</span><br><span class="line">        <span class="comment">//存在，返回信息</span></span><br><span class="line">        <span class="type">Shop</span> <span class="variable">shop</span> <span class="operator">=</span> JSONUtil.toBean(shopJson, Shop.class);</span><br><span class="line">        <span class="keyword">return</span> Result.ok(shop);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//不存在，根据id查询</span></span><br><span class="line">    <span class="type">Shop</span> <span class="variable">shop</span> <span class="operator">=</span> getById(id);</span><br><span class="line">    <span class="comment">//id不存在，返回错误信息</span></span><br><span class="line">    <span class="keyword">if</span> (shop == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Result.fail(<span class="string">&quot;店铺不存在&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//id存在，将数据写入Redis，设置有效期</span></span><br><span class="line">    stringRedisTemplate.opsForValue().set(key, <span class="comment">//key </span></span><br><span class="line">            JSONUtil.toJsonStr(shop), <span class="comment">// value</span></span><br><span class="line">            RedisConstants.CACHE_SHOP_TTL, <span class="comment">// 30</span></span><br><span class="line">            TimeUnit.MINUTES); <span class="comment">//分钟</span></span><br><span class="line">    <span class="comment">//返回商铺信息</span></span><br><span class="line">    <span class="keyword">return</span> Result.ok(shop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>IShopService</code>中创建<code>update</code>方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">IShopService</span> <span class="keyword">extends</span> <span class="title class_">IService</span>&lt;Shop&gt; &#123;</span><br><span class="line">    <span class="comment">// ctrl+b转到实现类</span></span><br><span class="line">    Result <span class="title function_">queryById</span><span class="params">(Long id)</span>;</span><br><span class="line"></span><br><span class="line">    Result <span class="title function_">update</span><span class="params">(Shop shop)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>ShopServiceImpl</code>中,实现<code>update</code>方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="meta">@Transactional</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">update</span><span class="params">(Shop shop)</span> &#123;</span><br><span class="line">    <span class="type">Long</span> <span class="variable">id</span> <span class="operator">=</span> shop.getId();</span><br><span class="line">    <span class="comment">//判断商铺是否存在</span></span><br><span class="line">    <span class="keyword">if</span> (id == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">//返回cu</span></span><br><span class="line">        <span class="keyword">return</span> Result.fail(<span class="string">&quot;商铺id不能为空&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//更新数据库</span></span><br><span class="line">    updateById(shop);</span><br><span class="line">    <span class="comment">//删除缓存，下次用再取</span></span><br><span class="line">    stringRedisTemplate.delete(RedisConstants.CACHE_SHOP_KEY + id);</span><br><span class="line">	<span class="comment">//返回成功信息</span></span><br><span class="line">    <span class="keyword">return</span> Result.ok();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>ShopController</code>中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PutMapping</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">updateShop</span><span class="params">(<span class="meta">@RequestBody</span> Shop shop)</span> &#123;</span><br><span class="line">    <span class="comment">//更新数据</span></span><br><span class="line">    <span class="keyword">return</span> shopService.update(shop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-5-缓存穿透"><a href="#2-5-缓存穿透" class="headerlink" title="2.5 缓存穿透"></a>2.5 缓存穿透</h3><p><strong>缓存穿透</strong>是指客户端请求的数据在缓存中和数据库中都不存在，这样缓存永远不会生效，这些请求到会打到数据库。(多次查询不存在的信息，频繁请求数据库，有可能导致数据库崩溃)</p>
+<p>常见的解决方案有两种：</p>
+<ul>
+<li><p><span style="color:red">缓存空对象</span></p>
+<p>优点：实现简单，维护方便</p>
+<p>缺点：</p>
+<ul>
+<li><p>额外的内存消耗</p>
+</li>
+<li><p>可能造成短期的不一致</p>
+<p>(查询一个id未命中，Redis写入一个空对象，此时数据库插入这个id，导致信息不一致)</p>
+<pre class="mermaid">    sequenceDiagram
+        客户端->>Redis:请求
+        note left of Redis:未命中
+        Redis->>数据库:请求
+        note left of 数据库:未命中
+        数据库->>Redis:缓存null<br>设置TTL</pre></li>
+</ul>
+</li>
+<li><p><span style="color:red">布隆过滤</span></p>
+<p>优点：内存占用较少，没有多余的key</p>
+<p>缺点：</p>
+<ul>
+<li><p>实现复杂</p>
+</li>
+<li><p>存在误判可能</p>
+<pre class="mermaid">    sequenceDiagram
+        客户端->>布隆过滤:请求
+        布隆过滤->>客户端:拒绝
+        note left of 布隆过滤:不存在
+        布隆过滤->>Redis:放行，请求
+        note left of Redis:存在
+        Redis->>客户端:返回
+        note over Redis,客户端:命中
+        Redis->>数据库:请求
+        note left of 数据库:未命中
+        数据库->>Redis:缓存数据
+        数据库->>客户端:返回数据</pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-6-解决缓存穿透问题"><a href="#2-6-解决缓存穿透问题" class="headerlink" title="2.6 解决缓存穿透问题"></a>2.6 解决缓存穿透问题</h3><p>就是将之前判断商铺不存在时，<code>返回404信息</code>改为<code>将空值写入Redis</code></p>
+<div id="flowchart-7" class="flow-chart"></div>
+
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Result <span class="title function_">queryById</span><span class="params">(Long id)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> RedisConstants.CACHE_SHOP_KEY + id;</span><br><span class="line">    <span class="comment">//从Redis查询商铺缓存</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">shopJson</span> <span class="operator">=</span> stringRedisTemplate.opsForValue().get(key);</span><br><span class="line">    <span class="comment">//判断是否存在</span></span><br><span class="line">    <span class="keyword">if</span> (StrUtil.isNotBlank(shopJson)) &#123;</span><br><span class="line">        <span class="comment">//存在，返回信息</span></span><br><span class="line">        <span class="type">Shop</span> <span class="variable">shop</span> <span class="operator">=</span> JSONUtil.toBean(shopJson, Shop.class);</span><br><span class="line">        <span class="keyword">return</span> Result.ok(shop);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//命中的是否为空字符串</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&quot;&quot;</span>.equals(shopJson)) &#123;</span><br><span class="line">        <span class="comment">//返回错误信息</span></span><br><span class="line">        <span class="keyword">return</span> Result.fail(<span class="string">&quot;店铺不存在&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//不存在，根据id查询</span></span><br><span class="line">    <span class="type">Shop</span> <span class="variable">shop</span> <span class="operator">=</span> getById(id);</span><br><span class="line">    <span class="comment">//id不存在，返回错误信息</span></span><br><span class="line">    <span class="keyword">if</span> (shop == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">//将空值写入Redis</span></span><br><span class="line">        stringRedisTemplate.opsForValue().set(key,<span class="comment">//key</span></span><br><span class="line">                <span class="string">&quot;&quot;</span>, <span class="comment">//空值</span></span><br><span class="line">                RedisConstants.CACHE_NULL_TTL,<span class="comment">// 2</span></span><br><span class="line">                TimeUnit.MINUTES); <span class="comment">//分钟</span></span><br><span class="line">        <span class="comment">//返回错误信息</span></span><br><span class="line">        <span class="keyword">return</span> Result.fail(<span class="string">&quot;店铺不存在&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//id存在，将数据写入Redis，设置有效期</span></span><br><span class="line">    stringRedisTemplate.opsForValue().set(key, <span class="comment">//key</span></span><br><span class="line">            JSONUtil.toJsonStr(shop), <span class="comment">// value</span></span><br><span class="line">            RedisConstants.CACHE_SHOP_TTL, <span class="comment">// 30</span></span><br><span class="line">            TimeUnit.MINUTES); <span class="comment">//分钟</span></span><br><span class="line">    <span class="comment">//返回商铺信息</span></span><br><span class="line">    <span class="keyword">return</span> Result.ok(shop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>缓存穿透产生的原因是什么？</p>
+<ul>
+<li>用户请求的数据再缓存和数据库中都不存在，不断发起这样的请求，给数据库带来了巨大压力</li>
+</ul>
+<p>缓存穿透的解决方案有哪些？</p>
+<ul>
+<li><p>缓存null值</p>
+</li>
+<li><p>布隆过滤</p>
+</li>
+<li><p>增加id的复杂度，避免被猜到id规律</p>
+</li>
+<li><p>做好数据的基础格式校验</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="2-7-缓存雪崩"><a href="#2-7-缓存雪崩" class="headerlink" title="2.7 缓存雪崩"></a>2.7 缓存雪崩</h3><p><strong>缓存雪崩</strong>是指同一时间<strong>大量的缓存key同时失效</strong>或者<strong>Redis服务宕机</strong>，导致大量请求到达数据库，带来压力。</p>
+<pre class="mermaid">sequenceDiagram
+        客户端->>Redis:请求
+        note over Redis:宕机或大量缓存同时失效
+        Redis->>数据库:大量请求
+        note left of 数据库:带来巨大压力
+        数据库->>客户端:返回</pre>
+
+
+
+<p>解决方案：</p>
+<blockquote>
+<ul>
+<li><p>给不同的key的TTL添加随机值</p>
+</li>
+<li><p>利用Redis集群提高服务的可用性</p>
+</li>
+<li><p>给缓存业务添加降级限流策略</p>
+</li>
+<li><p>给业务添加多级缓存</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="2-X-缓存击穿"><a href="#2-X-缓存击穿" class="headerlink" title="2.X 缓存击穿"></a>2.X 缓存击穿</h3><h3 id="2-X-缓存工具封装"><a href="#2-X-缓存工具封装" class="headerlink" title="2.X 缓存工具封装"></a>2.X 缓存工具封装</h3></div><div class="story post-story"><h2 id="3-达人探店"><a href="#3-达人探店" class="headerlink" title="3.达人探店"></a>3.达人探店</h2><h2 id="4-优惠券秒杀"><a href="#4-优惠券秒杀" class="headerlink" title="4.优惠券秒杀"></a>4.优惠券秒杀</h2><h2 id="5-好友关注"><a href="#5-好友关注" class="headerlink" title="5.好友关注"></a>5.好友关注</h2><h2 id="6-附近的商户"><a href="#6-附近的商户" class="headerlink" title="6.附近的商户"></a>6.附近的商户</h2><h2 id="7-用户签到"><a href="#7-用户签到" class="headerlink" title="7.用户签到"></a>7.用户签到</h2><h2 id="8-UV统计"><a href="#8-UV统计" class="headerlink" title="8.UV统计"></a>8.UV统计</h2><h1 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h1><h1 id="原理篇"><a href="#原理篇" class="headerlink" title="原理篇"></a>原理篇<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始
 op=>operation: 提交手机号
 cond=>condition: 校验手机号
 code=>operation: 生成验证码
@@ -3660,7 +3941,33 @@ intercept=>operation: 拦截
 e=>end: 结束
 
 st->op->get->cond(yes)->save->pass->e
-cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-5-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-5-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-5", options);</script></h1>
+cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-5-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-5-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-5", options);</script><textarea id="flowchart-6-code" style="display: none">st=>start: 开始
+op=>operation: 提交商铺id
+get=>operation: 从Redis查询商铺缓存
+cond1=>condition: 缓存是否命中
+resp=>operation: 返回商铺信息
+select=>operation: 根据id查询数据库
+cond2=>condition: 判断商铺是否存在
+exist=>operation: 将商铺数据写入Redis
+non-existent=>operation: 返回404
+e=>end: 结束
+
+st->op->get->cond1(yes)->resp->e
+cond1(no)->select->cond2(yes)->exist(left)->resp
+cond2(no)->non-existent->e</textarea><textarea id="flowchart-6-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-6-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-6-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-6", options);</script><textarea id="flowchart-7-code" style="display: none">st=>start: 开始
+op=>operation: 提交商铺id
+get=>operation: 从Redis查询商铺缓存
+cond1=>condition: 缓存是否命中
+resp=>operation: 返回商铺信息
+select=>operation: 根据id查询数据库
+cond2=>condition: 判断商铺是否存在
+exist=>operation: 将商铺数据写入Redis
+non-existent=>operation: 将空值写入Redis
+e=>end: 结束
+
+st->op->get->cond1(yes)->resp->e
+cond1(no)->select->cond2(yes)->exist(left)->resp
+cond2(no)->non-existent->e</textarea><textarea id="flowchart-7-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-7-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-7-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-7", options);</script></h1>
 </div>
   </div>
   
@@ -3676,8 +3983,8 @@ cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="displ
         
           
           <div class="copyright license">
-            <div class="license-title">Redis框架的学习笔记</div>
-            <div class="license-link"><a href="http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/">http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/</a>
+            <div class="license-title">Redis的学习笔记</div>
+            <div class="license-link"><a href="http://example.com/2022/07/03/Java/Redis/">http://example.com/2022/07/03/Java/Redis/</a>
             </div>
             <div class="license-meta">
               <div class="license-meta-item">
@@ -3691,7 +3998,7 @@ cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="displ
               
               <div class="license-meta-item">
                 <div class="license-meta-title">更新于</div>
-                <div class="license-meta-text">2022年7月22日</div>
+                <div class="license-meta-text">2022年7月25日</div>
               </div>
               
               
@@ -3716,10 +4023,10 @@ cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="displ
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-07-22T00:34:06+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-07-25T12:10:58+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年7月22日</p>
+    <p>更新于：2022年7月25日</p>
   </a>
 </div>
 
@@ -3742,7 +4049,7 @@ cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="displ
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/&title=Redis框架的学习笔记 - 活着就是为了摸鱼🐟！！！&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/07/03/Java/Redis/&title=Redis的学习笔记 - 活着就是为了摸鱼🐟！！！&summary="
           
           >
           
@@ -3754,7 +4061,7 @@ cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="displ
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/&title=Redis框架的学习笔记 - 活着就是为了摸鱼🐟！！！&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/07/03/Java/Redis/&title=Redis的学习笔记 - 活着就是为了摸鱼🐟！！！&summary="
           
           >
           
@@ -3766,7 +4073,7 @@ cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="displ
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/&title=Redis框架的学习笔记 - 活着就是为了摸鱼🐟！！！&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/07/03/Java/Redis/&title=Redis的学习笔记 - 活着就是为了摸鱼🐟！！！&summary="
           
           >
           
@@ -3856,7 +4163,7 @@ cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="displ
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9D%E8%AF%86Redis"><span class="toc-text">1.初识Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%AE%A4%E8%AF%86NoSql"><span class="toc-text">1.1 认识NoSql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E8%AE%A4%E8%AF%86Redis"><span class="toc-text">1.2 认识Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Redis%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E5%85%B6%E9%85%8D%E7%BD%AE-%E4%B8%8D%E8%A6%81%E7%9C%8B%E8%BF%99%E4%B8%AA%E6%95%99%E7%A8%8B%E5%AE%89%E8%A3%85%EF%BC%8C%E6%9C%89%E9%97%AE%E9%A2%98%E6%88%91%E8%BF%98%E8%A6%81%E6%94%B9"><span class="toc-text">1.3 Redis的安装及其配置(不要看这个教程安装，有问题我还要改)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Redis%E5%91%BD%E4%BB%A4"><span class="toc-text">2.Redis命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">2.1 Redis数据结构介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Redis%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">2.2 Redis通用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-String%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.3 String类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Key%E7%9A%84%E5%B1%82%E7%BA%A7%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.4 Key的层级格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Hash%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.5 Hash类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-List%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.6 List类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-Set%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.7 Set类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-SortedSet%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.8 SortedSet类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Redis%E7%9A%84java%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">3.Redis的java客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Jedis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-text">3.1 Jedis快速入门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Jedis%E7%9A%84%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="toc-text">3.2 Jedis的连接池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%88%9D%E8%AF%86SpringDataRedis"><span class="toc-text">3.3 初识SpringDataRedis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-SpringDataRedis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-text">3.4 SpringDataRedis快速入门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-SpringDataRedis%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E6%96%B9%E5%BC%8F"><span class="toc-text">3.5 SpringDataRedis的序列化方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-StringRedisTemplate"><span class="toc-text">3.6 StringRedisTemplate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-RedisTemplate%E6%93%8D%E4%BD%9CHash%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.7 RedisTemplate操作Hash类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95"><span class="toc-text">1.短信登录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9F%BA%E4%BA%8ESession%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B"><span class="toc-text">1.1 基于Session实现短信登录流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="toc-text">1.2 实现发送短信验证码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%99%BB%E5%BD%95%E4%B8%8E%E6%B3%A8%E5%86%8C"><span class="toc-text">1.3 实现短信验证登录与注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8C%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-text">1.4 实现登录校验拦截器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Session%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-text">1.5 Session共享问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E5%9F%BA%E4%BA%8ERedis%E5%AE%9E%E7%8E%B0%E5%85%B1%E4%BA%ABSession%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B"><span class="toc-text">1.6 基于Redis实现共享Session登录流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-%E5%9F%BA%E4%BA%8ERedis%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95"><span class="toc-text">1.7 基于Redis实现短信登录*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-%E8%A7%A3%E5%86%B3%E7%8A%B6%E6%80%81%E7%99%BB%E5%BD%95%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98"><span class="toc-text">1.8 解决状态登录刷新问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%95%86%E6%88%B7%E6%9F%A5%E8%AF%A2%E7%BC%93%E5%AD%98"><span class="toc-text">2.商户查询缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BE%BE%E4%BA%BA%E6%8E%A2%E5%BA%97"><span class="toc-text">3.达人探店</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BC%98%E6%83%A0%E5%88%B8%E7%A7%92%E6%9D%80"><span class="toc-text">4.优惠券秒杀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A5%BD%E5%8F%8B%E5%85%B3%E6%B3%A8"><span class="toc-text">5.好友关注</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%99%84%E8%BF%91%E7%9A%84%E5%95%86%E6%88%B7"><span class="toc-text">6.附近的商户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%94%A8%E6%88%B7%E7%AD%BE%E5%88%B0"><span class="toc-text">7.用户签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-UV%E7%BB%9F%E8%AE%A1"><span class="toc-text">8.UV统计</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9D%E8%AF%86Redis"><span class="toc-text">1.初识Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%AE%A4%E8%AF%86NoSql"><span class="toc-text">1.1 认识NoSql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E8%AE%A4%E8%AF%86Redis"><span class="toc-text">1.2 认识Redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Redis%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E5%85%B6%E9%85%8D%E7%BD%AE-%E4%B8%8D%E8%A6%81%E7%9C%8B%E8%BF%99%E4%B8%AA%E6%95%99%E7%A8%8B%E5%AE%89%E8%A3%85%EF%BC%8C%E6%9C%89%E9%97%AE%E9%A2%98%E6%88%91%E8%BF%98%E8%A6%81%E6%94%B9"><span class="toc-text">1.3 Redis的安装及其配置(不要看这个教程安装，有问题我还要改)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Redis%E5%91%BD%E4%BB%A4"><span class="toc-text">2.Redis命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">2.1 Redis数据结构介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Redis%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">2.2 Redis通用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-String%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.3 String类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Key%E7%9A%84%E5%B1%82%E7%BA%A7%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.4 Key的层级格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Hash%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.5 Hash类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-List%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.6 List类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-Set%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.7 Set类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-SortedSet%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.8 SortedSet类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Redis%E7%9A%84java%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">3.Redis的java客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Jedis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-text">3.1 Jedis快速入门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Jedis%E7%9A%84%E8%BF%9E%E6%8E%A5%E6%B1%A0"><span class="toc-text">3.2 Jedis的连接池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%88%9D%E8%AF%86SpringDataRedis"><span class="toc-text">3.3 初识SpringDataRedis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-SpringDataRedis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-text">3.4 SpringDataRedis快速入门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-SpringDataRedis%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E6%96%B9%E5%BC%8F"><span class="toc-text">3.5 SpringDataRedis的序列化方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-StringRedisTemplate"><span class="toc-text">3.6 StringRedisTemplate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-RedisTemplate%E6%93%8D%E4%BD%9CHash%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.7 RedisTemplate操作Hash类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95"><span class="toc-text">1.短信登录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9F%BA%E4%BA%8ESession%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B"><span class="toc-text">1.1 基于Session实现短信登录流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="toc-text">1.2 实现发送短信验证码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%99%BB%E5%BD%95%E4%B8%8E%E6%B3%A8%E5%86%8C"><span class="toc-text">1.3 实现短信验证登录与注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8C%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-text">1.4 实现登录校验拦截器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Session%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-text">1.5 Session共享问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E5%9F%BA%E4%BA%8ERedis%E5%AE%9E%E7%8E%B0%E5%85%B1%E4%BA%ABSession%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B"><span class="toc-text">1.6 基于Redis实现共享Session登录流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-%E5%9F%BA%E4%BA%8ERedis%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E7%99%BB%E5%BD%95"><span class="toc-text">1.7 基于Redis实现短信登录*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-%E8%A7%A3%E5%86%B3%E7%8A%B6%E6%80%81%E7%99%BB%E5%BD%95%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98"><span class="toc-text">1.8 解决状态登录刷新问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%95%86%E6%88%B7%E6%9F%A5%E8%AF%A2%E7%BC%93%E5%AD%98"><span class="toc-text">2.商户查询缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%BB%80%E4%B9%88%E6%98%AF%E7%BC%93%E5%AD%98"><span class="toc-text">2.1 什么是缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%B7%BB%E5%8A%A0Redis%E7%BC%93%E5%AD%98"><span class="toc-text">2.2 添加Redis缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0%E7%AD%96%E7%95%A5"><span class="toc-text">2.3 缓存更新策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E6%B7%BB%E5%8A%A0%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0%E7%AD%96%E7%95%A5"><span class="toc-text">2.4 添加缓存更新策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F"><span class="toc-text">2.5 缓存穿透</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E8%A7%A3%E5%86%B3%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98"><span class="toc-text">2.6 解决缓存穿透问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9"><span class="toc-text">2.7 缓存雪崩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-X-%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF"><span class="toc-text">2.X 缓存击穿</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-X-%E7%BC%93%E5%AD%98%E5%B7%A5%E5%85%B7%E5%B0%81%E8%A3%85"><span class="toc-text">2.X 缓存工具封装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BE%BE%E4%BA%BA%E6%8E%A2%E5%BA%97"><span class="toc-text">3.达人探店</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BC%98%E6%83%A0%E5%88%B8%E7%A7%92%E6%9D%80"><span class="toc-text">4.优惠券秒杀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A5%BD%E5%8F%8B%E5%85%B3%E6%B3%A8"><span class="toc-text">5.好友关注</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%99%84%E8%BF%91%E7%9A%84%E5%95%86%E6%88%B7"><span class="toc-text">6.附近的商户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%94%A8%E6%88%B7%E7%AD%BE%E5%88%B0"><span class="toc-text">7.用户签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-UV%E7%BB%9F%E8%AE%A1"><span class="toc-text">8.UV统计</span></a></li></ol>
     </div>
   </section>
 
@@ -4808,7 +5115,7 @@ cond(no)->intercept->e</textarea><textarea id="flowchart-5-options" style="displ
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/07/03/Java/Redis框架/","name":"Redis框架的学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis框架的学习笔记","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/07/03/Java/Redis%E6%A1%86%E6%9E%B6/","wordCount":0,"datePublished":"2022-07-03T14:50:31.983Z","dateModified":"2022-07-21T16:34:06.674Z","articleSection":"Java","keywords":"Java,框架","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/07/03/Java/Redis/","name":"Redis的学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis的学习笔记","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/07/03/Java/Redis/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/07/03/Java/Redis/","wordCount":0,"datePublished":"2022-07-03T14:50:31.983Z","dateModified":"2022-07-25T04:10:58.714Z","articleSection":"Java","keywords":"Java,框架","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
