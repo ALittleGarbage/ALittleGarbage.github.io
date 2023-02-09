@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-08-06T11:11:16.398Z">
-<meta property="article:modified_time" content="2022-12-14T06:44:57.702Z">
+<meta property="article:modified_time" content="2023-02-09T13:24:31.330Z">
 <meta property="article:author" content="一个小垃圾">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
@@ -1752,7 +1752,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675947976415),
+    lastupdate: new Date(1675949129326),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2588,12 +2588,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>引入<strong>脱机输入&#x2F;输出技术</strong>(用磁带完成)，并<strong>监督程序</strong>(操作系统的雏形)负责控制作业的输入、输出</p>
 <p>主要优点：缓解了一定程度的人机速度矛盾，资源利用率有所提升。</p>
 <p>主要缺点：内存中<strong>仅能有一道程序运行</strong>，只有该程序运行结束后才会进入下一道程序。CPU有大量的时间是在空闲<strong>等待IO完成</strong>，资源利用率依然很低</p>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220917092729299.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220917092729299.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220917092729299" style="zoom: 50%;" />
+<img src="https://s2.loli.net/2023/02/09/yS48JnK9pv5r72O.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/yS48JnK9pv5r72O.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220917092729299.png" style="zoom:50%;" />
 </li>
 <li><p>多道批处理系统</p>
 <p>主要优点：多道程序<strong>并发</strong>执行，<strong>共享</strong>计算加资源。<strong>资源利用率</strong>大幅提升，CPU和其他资源保持”忙碌”状态，系统吞吐量增大</p>
 <p>主要缺点：用户响应时间长，没有<strong>人机交互功能</strong>(用户提交作业后只能等待计算机处理完成，中间不能控制自己的作业执行)</p>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220917092823353.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220917092823353.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220917092823353" style="zoom:67%;" /></li>
+<img src="https://s2.loli.net/2023/02/09/u2QHvJzP7tIjBbr.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/u2QHvJzP7tIjBbr.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220917092823353.png" style="zoom:50%;" /></li>
 </ol>
 </li>
 <li><p>分时操作系统：计算机以<strong>时间片</strong>为单位<span style="color:red">轮流为各个用户&#x2F;作业服务</span>，各个用户可通过终端与计算机进行交互</p>
@@ -2682,8 +2682,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 </ul>
 <p>中断的分类：</p>
-<p>内中断：</p>
-<p>外中断：</p>
+<ul>
+<li><p>内中断</p>
+</li>
+<li><p>外中断</p>
+</li>
+</ul>
+<p>……</p>
 <h1 id="二、进程与线程"><a href="#二、进程与线程" class="headerlink" title="二、进程与线程"></a>二、进程与线程</h1><p>OS中进程作为资源分配与独立运行的基本单位出现。OS的四大特征(并发、共享、虚拟、异步)都是基于进程而形成的。所以在OS中，进程是一个及其重要的概念</p>
 <p>到了80年代中期，又出现了比进程更小的基本单位——线程。用来提高程序并发执行程度，以进一步改善系统的服务质量。现代OS无一例外的引入了线程，线程也是一个重要的概念</p>
 <h3 id="2-1-进程的描述"><a href="#2-1-进程的描述" class="headerlink" title="2.1 进程的描述"></a>2.1 进程的描述</h3><h4 id="进程控制块PCB"><a href="#进程控制块PCB" class="headerlink" title="进程控制块PCB"></a>进程控制块PCB</h4><ul>
@@ -2696,7 +2701,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <h4 id="PCB在进程切换的作用"><a href="#PCB在进程切换的作用" class="headerlink" title="PCB在进程切换的作用"></a>PCB在进程切换的作用</h4><p>操作系统就是根据PCB来感知进程的存在的。</p>
 <p>PCB在进程切换过程中起着非常重要的作用，操作系统可以通过对PCB的修改来达到对进程的控制。</p>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220919102403455.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220919102403455.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220919102403455" style="zoom:67%;" />
+<img src="https://s2.loli.net/2023/02/09/ljsJmIT8xR4GD63.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/ljsJmIT8xR4GD63.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220919102403455.png" style="zoom: 67%;" />
 
 <p>以下是PCB结构体的部分描述属性：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">task_struct</span> &#123;</span></span><br><span class="line"><span class="type">long</span> state;              	<span class="comment">// 进程运行状态：-1不可运行，0可运行，&gt;0已停止</span></span><br><span class="line"><span class="type">long</span> priority;           	<span class="comment">// 进程运行优先级</span></span><br><span class="line"><span class="type">long</span> counter;   			<span class="comment">// 已运行时间计数器</span></span><br><span class="line"><span class="type">long</span> exit_code; 		 	<span class="comment">// 进程停止执行后退出码，其父进程需要读取</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> start_code;   <span class="comment">// 代码段起始地址</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> end_code;  	<span class="comment">// 代码段长度，单位字节</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> next_code;    <span class="comment">// 下一条要执行代码的地址</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> start_data;   <span class="comment">// 数据段起始地址</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> end_data;     <span class="comment">// 代码段长度+数据段长度，单位字节</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> next_data;    <span class="comment">// 下一条要读取数据的地址</span></span><br><span class="line"><span class="type">long</span> pid; 					<span class="comment">// 进程标识</span></span><br><span class="line"><span class="type">long</span> father; 				<span class="comment">// 父进程标识</span></span><br><span class="line">...</span><br><span class="line">&#125;；</span><br></pre></td></tr></table></figure>
@@ -2771,10 +2776,7 @@ C--释放PCB-->E</pre>
 <li>索引表方式：<strong>所有PCB都放入同一链表</strong>，再为<strong>每种状态创建出不同的PCB索引链表</strong>，其中存放的就是该状态的所有PCB的索引</li>
 </ul>
 <p>粗俗的理解就是，无论就绪队列，还是阻塞队列中的元素就是PCB</p>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220919183526346.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220919183526346.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220919183526346" style="zoom:67%;" />
-
-
-
+<p><img src="https://s2.loli.net/2023/02/09/KeLwCMNEnAv7J6O.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/KeLwCMNEnAv7J6O.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220919183526346.png"></p>
 <h3 id="2-3-进程控制"><a href="#2-3-进程控制" class="headerlink" title="2.3 进程控制"></a>2.3 进程控制</h3><p>进程控制是进程管理中最基本的功能。如，进程的创建与终止、进程状态转换等。进程控制一般是由 OS内核中的原语实现的。</p>
 <p>进程控制就是实现进程状态的转换。</p>
 <h4 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h4><p>无论是OS内核创建进程，还是用户进程创建子进程，都是调用了进程创建原语完成的。</p>
@@ -2988,7 +2990,7 @@ C--释放PCB-->E</pre>
 <li>优点：当一个线程被阻塞后，别的线程还可以继续执行，并发能力强。多线程可在多核处理机上并行执行。</li>
 <li>缺点：一个用户进程会占用多个内核级线程，线程切换由操作系统内核完成，需要切换到核心态，因此线程管理的成本高，开销大。</li>
 </ul>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220920140036089.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220920140036089.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220920140036089" style="zoom:50%;" />
+<img src="https://s2.loli.net/2023/02/09/2Mc3U8VPFs5GtOb.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/2Mc3U8VPFs5GtOb.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220920140036089.png" style="zoom:50%;" />
 
 
 
@@ -2998,7 +3000,7 @@ C--释放PCB-->E</pre>
 <li>优点：用户级线程的切换在用户空间即可完成，不需要切换到核心态，线程管理的系统<br>开销小，效率高</li>
 <li>缺点：当一个用户级线程被阻塞后，整个进程都会被阻塞，并发度不高。多个线程不可在多核处理机上并行运行</li>
 </ul>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220920140146980.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220920140146980.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220920140146980" style="zoom:50%;" />
+<img src="https://s2.loli.net/2023/02/09/wLanIfW2PANyGeO.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/wLanIfW2PANyGeO.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220920140146980.png" style="zoom: 50%;" />
 
 
 
@@ -3007,7 +3009,7 @@ C--释放PCB-->E</pre>
 <li>n用户及线程映射到m个内核级线程(n&gt;&#x3D;m)。每个用户进程对应m个内核级线程。</li>
 <li>克服了多对一模型并发度不高的缺点，又克服了一对一模型中一个用户进程占用太多内核级线程，开销太大的缺点。</li>
 </ul>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220920140239032.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20220920140239032.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220920140239032" style="zoom:50%;" />
+<img src="https://s2.loli.net/2023/02/09/7g9jb2dYlTZQqmA.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/7g9jb2dYlTZQqmA.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20220920140239032.png" style="zoom:50%;" />
 
 
 
@@ -3410,6 +3412,7 @@ C--释放PCB-->E</pre>
 <p><strong>1.非抢占式的优先级调度算法</strong></p>
 <p><strong>2.抢占式的优先级调度算法</strong></p>
 <p>多级反馈队列调度算法</p>
+<p>……</p>
 <h3 id="2-11-进程同步"><a href="#2-11-进程同步" class="headerlink" title="2.11 进程同步"></a>2.11 进程同步</h3><h4 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h4><p>进程具有异步性的特征。异步性是指，并发执行的进程以各自独立的、不可预知的速度向前推进。而进程同步就是用来解决这种异步问题。</p>
 <p>同步也称直接制约关系，它是指为完成某种任务而建立的两个或多个进程，这些进程因为需要在某些位置上<strong>协调</strong>它们<strong>工作次序</strong>而产生的制约关系。进程间的<strong>直接制约关系</strong>是源于他们之间的相互合作。</p>
 <h4 id="进程互斥"><a href="#进程互斥" class="headerlink" title="进程互斥"></a>进程互斥</h4><p>我们把一个时间段内只允许一个进程使用的资源称为临界资源。许多物理设备（比如摄像头、打印机）都属于临界资源。此外还有许多变量、数据、内存缓冲区都属于临界资源。</p>
@@ -4594,7 +4597,7 @@ C--释放PCB-->E</pre>
 <h4 id="索引文件"><a href="#索引文件" class="headerlink" title="索引文件"></a>索引文件</h4><p>建立一张索引表以加快文件检素速度。每条记录对应一个索引项。<br>逻辑文件</p>
 <p>索引表本身是定长记录的顺序文件。因此可以快速找到第i个记录对应的素引项。<br>可将关键字作为索引号内容，若按关键字顺序排列，则还可以支持按照关键字折半查找。<br>每当要增加&#x2F;删除一个记录时，需要对索引表进行修改。由于索引文件有很快的检索速度，因此主要用于对信息处理的及时性要求比较高的场合。</p>
 <p>另外，可以用不同的数据项建立多个索引表。如：<br>学生信息表中，可用关键字 “学号”建立一张素引表。也可用“姓名”建立一张索引表。这样就可以根据”姓名”快速地检索文件了。</p>
-<h3 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h3><h4 id="两级目录"><a href="#两级目录" class="headerlink" title="两级目录"></a>两级目录</h4><h4 id="多级目录"><a href="#多级目录" class="headerlink" title="多级目录"></a>多级目录</h4><h3 id="文件的物理结构"><a href="#文件的物理结构" class="headerlink" title="文件的物理结构"></a>文件的物理结构</h3><h3 id="4-3-文件存储空间管理"><a href="#4-3-文件存储空间管理" class="headerlink" title="4.3 文件存储空间管理"></a>4.3 文件存储空间管理</h3><h4 id="位示图法"><a href="#位示图法" class="headerlink" title="位示图法"></a>位示图法</h4><p>![img](file:&#x2F;&#x2F;&#x2F;C:\Users\26919\Documents\Tencent Files\2691936018\Image\C2C\F&#96;XC]DT2WYTE_CB~_40TU[M.png)</p>
+<h3 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h3><h4 id="两级目录"><a href="#两级目录" class="headerlink" title="两级目录"></a>两级目录</h4><h4 id="多级目录"><a href="#多级目录" class="headerlink" title="多级目录"></a>多级目录</h4><h3 id="文件的物理结构"><a href="#文件的物理结构" class="headerlink" title="文件的物理结构"></a>文件的物理结构</h3><h3 id="4-3-文件存储空间管理"><a href="#4-3-文件存储空间管理" class="headerlink" title="4.3 文件存储空间管理"></a>4.3 文件存储空间管理</h3><h4 id="位示图法"><a href="#位示图法" class="headerlink" title="位示图法"></a>位示图法</h4><p>![F&#96;XC_DT2WYTE_CB~_40TU_M.png](<a target="_blank" rel="noopener" href="https://s2.loli.net/2023/02/09/yREqvoUxCZ4MzFw.png">https://s2.loli.net/2023/02/09/yREqvoUxCZ4MzFw.png</a>)</p>
 <p>位示图：每个二进制位对应一个盘块。在本例中，“0”代表盘块空闲，“1”代表盘块已分配。位示图一般用连续的“字”来表示，如本例中一个字的字长是16位，字中的每一位对应一个盘块。因此可以用（字号，位号)对应一个盘块号。当然有的题目中也描述为（行号，列号）</p>
 <p>盘块号与字号、位号相互转换的公式</p>
 <blockquote>
@@ -4607,7 +4610,7 @@ C--释放PCB-->E</pre>
 <h3 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h3><h4 id="先来先服务"><a href="#先来先服务" class="headerlink" title="先来先服务"></a>先来先服务</h4><p>根据进程请求访问磁盘的先后顺序进行调度。</p>
 <p>假设磁头的初始位置是100号磁道，有多个进程先后陆续地请求访问55、58、39、18、90、160、150、38、184号磁道</p>
 <p>按照FCFS的规则，按照请求到达的顺序，磁头需要依次移动到55、58、39、18、90、160、150、38、184号磁道</p>
-<p><img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213175737199.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213175737199.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213175737199"></p>
+<p><img src="https://s2.loli.net/2023/02/09/3XP9rzi6jCKWeJA.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/3XP9rzi6jCKWeJA.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213175737199.png"></p>
 <p>磁头总共移动了45+3+19+21+72+70+10+112+146&#x3D;498个磁道</p>
 <p>响应一个请求平均需要移动498&#x2F;9&#x3D;55.3个磁道(平均寻找长度)</p>
 <blockquote>
@@ -4616,8 +4619,7 @@ C--释放PCB-->E</pre>
 </blockquote>
 <h4 id="最短寻找时间优先SSTF"><a href="#最短寻找时间优先SSTF" class="headerlink" title="最短寻找时间优先SSTF"></a>最短寻找时间优先SSTF</h4><p>SSTF算法会优先处理的磁道是与当前磁头最近的磁道。可以保证每次的寻道时间最短，但是并不能保证总的寻道时间最短。(其实就是<strong>贪心算法</strong>的思想，只是选择眼前最优，但是总体未必最优)</p>
 <p>假设磁头的初始位置是100号磁道，有多个进程先后陆续地请求访问55、58、39、18、90、160、150、38、184号磁道</p>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213180224030.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213180224030.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213180224030"  />
-
+<p><img src="https://s2.loli.net/2023/02/09/oUbJ5MFyrnw2Wps.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/oUbJ5MFyrnw2Wps.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213180224030.png"></p>
 <p>磁头总共移动了（100-18)+(184-18)&#x3D;248个磁道</p>
 <p>响应一个请求平均需要移动248&#x2F;9&#x3D;27.5个磁道（平均寻找长度）</p>
 <blockquote>
@@ -4627,32 +4629,32 @@ C--释放PCB-->E</pre>
 </blockquote>
 <h4 id="扫描算法SCAN"><a href="#扫描算法SCAN" class="headerlink" title="扫描算法SCAN"></a>扫描算法SCAN</h4><p>SSTF算法会产生饥饿的原因在于：磁头有可能在一个小区域内来回来去地移动。为了防止这个问题，可以规定，只有磁头移动到最外侧磁道的时候才能往内移动，移动到最内侧磁道的时候才能往外移动。<strong>这就是扫描算法(SCAN)的思想</strong>。由于磁头移动的方式很像电梯，因此也叫<strong>电梯算法</strong>。</p>
 <p>假设某磁盘的磁道为0~200号，磁头的初始位置是100号磁道，且此时磁头正在往磁道号增大的方向移动，有多个进程先后陆续地请求访问55、58、39、18、90、160、150、38、184号磁道</p>
-<p><img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221214110408242.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221214110408242.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221214110408242"></p>
+<p><img src="https://s2.loli.net/2023/02/09/lBCkH6a5mnyUZju.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/lBCkH6a5mnyUZju.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221214110408242.png"></p>
 <p>磁头总共移动了(200-100)+(184-18)&#x3D;250个磁道</p>
 <p>响应一个请求平均需要移动250&#x2F;9&#x3D;27.5个磁道（平均寻找长度）</p>
 <h4 id="循环扫描算法CSCAN"><a href="#循环扫描算法CSCAN" class="headerlink" title="循环扫描算法CSCAN"></a>循环扫描算法CSCAN</h4><p>SCAN算法对于各个位置磁道的响应频率不平均，而<strong>C-SCAN算法就是为了解决这个问题</strong>。规定只有磁头朝某个特定方向移动时才处理磁道访问请求，而返回时直接快速移动至起始端而不处理任何请求。</p>
 <p>假设某磁盘的磁道为0~200号，磁头的初始位置是100号磁道，且此时磁头正在往磁道号增大的方向移动，有多个进程先后陆续地请求访问55、58、39、18、90、160、150、38、184号磁道</p>
-<p><img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221214110627796.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221214110627796.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221214110627796"></p>
+<p><img src="https://s2.loli.net/2023/02/09/AM28fNdEgxChi6b.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/AM28fNdEgxChi6b.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221214110627796.png"></p>
 <p>磁头总共移动了(184-100)+(184-18)+(90-18)&#x3D;322个磁道</p>
 <p>响应一个请求平均需要移动322&#x2F;9&#x3D;5.8个磁道（平均寻找长度）</p>
 <h1 id="五、I-O设备"><a href="#五、I-O设备" class="headerlink" title="五、I-O设备"></a>五、I-O设备</h1><h3 id="缓冲区管理"><a href="#缓冲区管理" class="headerlink" title="缓冲区管理"></a>缓冲区管理</h3><h4 id="单缓冲"><a href="#单缓冲" class="headerlink" title="单缓冲"></a>单缓冲</h4><p>假设某用户进程请求某种块设备读入若干块的数据。若采用单缓冲的策略，操作系统会在主存中为<br>其分配一个缓冲区(若题目中没有特别说明，一个缓冲区的大小就是一个块)。</p>
 <p>注意：当缓冲区数据非空时，不能往缓冲区冲入数据，只能从缓冲区把数据传出：当缓冲区为空时<br>可以往缓冲区冲入数据，但必须把缓冲区充满以后，才能从缓冲区把数据传出。</p>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213171245536.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213171245536.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213171245536" style="zoom: 50%;" />
+<img src="https://s2.loli.net/2023/02/09/iRYjUcw6VXDaLIe.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/iRYjUcw6VXDaLIe.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213171245536.png" style="zoom:50%;" />
 
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213171901922.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213171901922.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213171901922" style="zoom:67%;" />
+<img src="https://s2.loli.net/2023/02/09/sL8v9egWxPZlGUu.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/sL8v9egWxPZlGUu.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213171901922.png" style="zoom: 67%;" />
 
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213172116018.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213172116018.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213172116018" style="zoom:67%;" />
+<img src="https://s2.loli.net/2023/02/09/vsQzY56w1jkyq3d.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/vsQzY56w1jkyq3d.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213172116018.png" style="zoom:67%;" />
 
 <p><strong>结论：采用单缓冲策略，处理一块数据平均耗时：<code>Max(C,T)+M</code></strong></p>
 <h4 id="双缓冲"><a href="#双缓冲" class="headerlink" title="双缓冲"></a>双缓冲</h4><p>假设某用户进程请求某种块设备读入若干块的数据。若采用双缓冲的策略，操作系统会在主存中为其分配两个缓冲区(若题目中没有特别说明，一个缓冲区的大小就是一个块)</p>
 <p>双缓冲题目中，假设初始状态为：工作区空，其中一个缓冲区满，另一个缓冲区空</p>
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213172635434.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213172635434.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213172635434" style="zoom:50%;" />
+<img src="https://s2.loli.net/2023/02/09/yEsVajr6Uqglh1K.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/yEsVajr6Uqglh1K.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213172635434.png" style="zoom:67%;" />
 
 
 
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213172850833.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213172850833.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213172850833" style="zoom:67%;" />
+<img src="https://s2.loli.net/2023/02/09/IYpb6wSRW9etJ75.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/IYpb6wSRW9etJ75.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213172850833.png" style="zoom:67%;" />
 
-<img src="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213173728832.png" class="lazyload" data-srcset="C:\Users\26919\AppData\Roaming\Typora\typora-user-images\image-20221213173728832.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213173728832" style="zoom: 67%;" />
+<img src="https://s2.loli.net/2023/02/09/e2vp9y1o7irOSlJ.png" class="lazyload" data-srcset="https://s2.loli.net/2023/02/09/e2vp9y1o7irOSlJ.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221213173728832.png" style="zoom:67%;" />
 
 <p><strong>结论：采用双缓冲策略，处理一个数据块的平均耗时为：<code>Max(T,C+M)</code></strong></p>
 
@@ -4686,7 +4688,7 @@ C--释放PCB-->E</pre>
               
               <div class="license-meta-item">
                 <div class="license-meta-title">更新于</div>
-                <div class="license-meta-text">2022年12月14日</div>
+                <div class="license-meta-text">2023年2月9日</div>
               </div>
               
               
@@ -4711,10 +4713,10 @@ C--释放PCB-->E</pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-14T14:44:57+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-09T21:24:31+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年12月14日</p>
+    <p>更新于：2023年2月9日</p>
   </a>
 </div>
 
@@ -5861,7 +5863,7 @@ C--释放PCB-->E</pre>
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/计算机4件套/","name":"计算机4件套"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/08/06/计算机4件套/操作系统/","name":"操作系统的学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"操作系统的学习笔记","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/08/06/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/08/06/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/","wordCount":0,"datePublished":"2022-08-06T11:11:16.398Z","dateModified":"2022-12-14T06:44:57.702Z","articleSection":"计算机4件套","keywords":"数据结构","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/计算机4件套/","name":"计算机4件套"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/08/06/计算机4件套/操作系统/","name":"操作系统的学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"操作系统的学习笔记","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/08/06/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/08/06/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/","wordCount":0,"datePublished":"2022-08-06T11:11:16.398Z","dateModified":"2023-02-09T13:24:31.330Z","articleSection":"计算机4件套","keywords":"数据结构","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
