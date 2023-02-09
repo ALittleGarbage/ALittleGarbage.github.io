@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664288432346),
+    lastupdate: new Date(1675947976415),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2412,8 +2412,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='top'>
     
     
-      <p class="title">一个小垃圾的博客</p>
+      <p class="title">ALittleGarbage的博客</p>
     
+    
+      <p class="subtitle">取法于上，仅得其中，取法于中，仅得其末。</p>
     
   </div>
   <div class='bottom'>
@@ -2443,7 +2445,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/%E5%B0%8F%E6%8A%80%E5%B7%A7/@Autowired%E4%B8%8E@Resource/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/14/Java/JVM/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2461,323 +2463,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/%E5%B0%8F%E6%8A%80%E5%B7%A7/@Autowired%E4%B8%8E@Resource/"  itemprop="url">
-        2022年8月6日
+      <a href="/2022/11/14/Java/JVM/"  itemprop="url">
+        2022年11月14日
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        @Autowired和@Resource区别1.提供方不同：
-@Autowired是由Spring提供，属于第三方
-
-@Resource是由J2EE提供，属于Java的
-
-
-2.装配时默认类型不同：
-@Autowired默认按type装配
-默认情况下必须要求依赖对象存在，如果要允许null值，可以设置它的required属性为false。
-如果想使用名称装配可以结合@Qualifier注解进...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/06/%E5%B0%8F%E6%8A%80%E5%B7%A7/@Autowired%E4%B8%8E@Resource/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/Python/%E5%9B%BE%E5%BD%A2%E5%A4%84%E7%90%86/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/Python/%E5%9B%BE%E5%BD%A2%E5%A4%84%E7%90%86/"  itemprop="url">
-        2022年8月6日
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1.计算机眼中的图像彩色图像中每一个小格叫做像素点，由R(红)G(绿)B(蓝)组成
-导包：
-123import cv2import matplotlib.pyplot as pltimport numpy as np
-
-
-
-12img = cv2.imread(&#x27;scenery.jpg&#x27;)print(img)
-
-运行结果：
-123456789101112131415161...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/06/Python/%E5%9B%BE%E5%BD%A2%E5%A4%84%E7%90%86/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/Java/Spring%E6%A1%86%E6%9E%B6/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/Java/Spring%E6%A1%86%E6%9E%B6/"  itemprop="url">
-        Spring框架的学习笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1.初识Spring
-官网：spring官网
-Spring已经发展成了一种开发的生态圈，Spring提供了若干个项目，每个项目用于完成特定的功能
-Spring Framework
-Spring Boot
-Spring Cloud
-….
-
-
-目前已经发展到Spring 5.0，需要JDK8以上支持
-
-2.Spring Framework架构
-Spring Framework是Spring生态圈...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/06/Java/Spring%E6%A1%86%E6%9E%B6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/Java/SpringMCV%E6%A1%86%E6%9E%B6/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/Java/SpringMCV%E6%A1%86%E6%9E%B6/"  itemprop="url">
-        SpringMVC框架的学习笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1.初认SpringMVC1.1 SpringMVC简介
-SpringMVC技术与Servlet技术功能等同，均属于web层开发技术
-SpringMVC是一种基于java实现MVC模型的轻量级Web框架
-优点：
-
-使用简单，开发便捷(相比与Servlet)
-灵活性强
-
-
-项目结构：
-
-
-1.2 SpringMVC入门1.使用SpringMVC技术需要先导入SpringMVC坐标与Servle...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/06/Java/SpringMCV%E6%A1%86%E6%9E%B6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/Java/SpringCloud%E6%A1%86%E6%9E%B6/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/Java/SpringCloud%E6%A1%86%E6%9E%B6/"  itemprop="url">
-        SpringCloud框架的学习笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        微服务技术栈：
-
-
-
-
-
-
-实用篇1.微服务治理1.1 认识微服务单体架构：
-
-单体架构：将业务的所有功能集中在一个项目开发，打成一个包部署
-优点：
-
-架构简单
-部署成本低
-
-缺点：
-
-耦合度高
-
+1.内存结构1.1 程序计数器Program Counter Register程序计数器(寄存器)
+作用：记录下一条jvm指令的执行地址
 特点：
 
-简单方便、高度耦合、拓展性差、适合小型项目
+线程是私有的(在多线程中，每个线程都一个程序计数器)
+程序计数器不会存在内存溢出
 
+1.2 虚拟机栈栈和栈帧
+栈：线程运行需要的内存空间
+栈帧：每个方法运行需要的内存
 
-分布式架构：
+方法运行时需要的内存：参数、局部变量、返回地址
 
-分布式架构：根据业务功能对系统进行拆分，每个业务模块作为独立项目开发，称为一个服务
-优点：
-
-降低服务耦合
-有利于服务升级...
+定义
+Java Vir...
       
     
   </div>
@@ -2785,20 +2495,79 @@ SpringMVC是一种基于java实现MVC模型的轻量级Web框架
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-11-14T21:49:11+08:00">2022-11-14</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/14/Java/JVM/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/13/%E6%AF%8F%E6%97%A5LeetCode/2022-11/791%20%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/11/13/%E6%AF%8F%E6%97%A5LeetCode/2022-11/791%20%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/"  itemprop="url">
+        (每日LeetCode)1684. 统计一致字符串的数目
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：给定两个字符串 order 和 s 。order 的所有单词都是 唯一 的，并且以前按照一些自定义的顺序排序。
+对 s 的字符进行置换，使其与排序的 order 相匹配。更具体地说，如果在 order 中的字符 x 出现字符 y 之前，那么在排列后的字符串中， x 也应该出现在 y 之前。
+返回 满足这个性质的 s 的任意排列 。
+示例：
+输入: order &#x3D; “cba”,...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-11-13T10:08:00+08:00">2022-11-13</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/08/06/Java/SpringCloud%E6%A1%86%E6%9E%B6/' itemprop="url">
+          <a class='readmore' href='/2022/11/13/%E6%AF%8F%E6%97%A5LeetCode/2022-11/791%20%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2814,7 +2583,7 @@ SpringMVC是一种基于java实现MVC模型的轻量级Web框架
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/Java/SpringBoot%E6%A1%86%E6%9E%B6/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/12/%E6%AF%8F%E6%97%A5LeetCode/2022-11/790%20%E5%A4%9A%E7%B1%B3%E8%AF%BA%E5%92%8C%E6%89%98%E7%B1%B3%E8%AF%BA%E5%B9%B3%E9%93%BA/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2832,18 +2601,23 @@ SpringMVC是一种基于java实现MVC模型的轻量级Web框架
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/Java/SpringBoot%E6%A1%86%E6%9E%B6/"  itemprop="url">
-        SpringBoot框架的学习笔记
+      <a href="/2022/11/12/%E6%AF%8F%E6%97%A5LeetCode/2022-11/790%20%E5%A4%9A%E7%B1%B3%E8%AF%BA%E5%92%8C%E6%89%98%E7%B1%B3%E8%AF%BA%E5%B9%B3%E9%93%BA/"  itemprop="url">
+        (每日LeetCode)790. 多米诺和托米诺平铺
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        1.热部署2.配置高级2.1 自定义bean属性绑定导入lombok坐标：
-1234&lt;dependency&gt;    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;    &lt;artifactId&gt;lombok&lt;/artifactId&gt;&lt;/dependency&gt;
+        题目：有两种形状的瓷砖：一种是 2 x 1 的多米诺形，另一种是形如 “L” 的托米诺形。两种形状都可以旋转。\
 
-application.yaml配...
+
+给定整数 n ，返回可以平铺 2 x n 的面板的方法的数量。返回对 109 + 7 取模 的值。
+平铺指的是每个正方形都必须有瓷砖覆盖。两个平铺不同，当且仅当面板上有四个方向上的相邻单元中的两个，使得恰好有一个平铺有一个瓷砖占据两个正方形。
+示例：
+
+
+输入: n &#x3...
       
     
   </div>
@@ -2851,20 +2625,20 @@ application.yaml配...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-11-12T12:18:00+08:00">2022-11-12</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/08/06/Java/SpringBoot%E6%A1%86%E6%9E%B6/' itemprop="url">
+          <a class='readmore' href='/2022/11/12/%E6%AF%8F%E6%97%A5LeetCode/2022-11/790%20%E5%A4%9A%E7%B1%B3%E8%AF%BA%E5%92%8C%E6%89%98%E7%B1%B3%E8%AF%BA%E5%B9%B3%E9%93%BA/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2880,7 +2654,7 @@ application.yaml配...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/Java/Redis/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/11/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1704%20%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%A4%E5%8D%8A%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2898,42 +2672,19 @@ application.yaml配...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/Java/Redis/"  itemprop="url">
-        Redis的学习笔记
+      <a href="/2022/11/11/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1704%20%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%A4%E5%8D%8A%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/"  itemprop="url">
+        (每日LeetCode)1704. 判断字符串的两半是否相似
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        基础篇1.初识Redis1.1 认识NoSql键值数据库是一种NoSql数据库
-
-
-
-key
-value
-
-
-
-1001
-{   “id”:1001,   “name”:”张三”,   “age”:20,}
-
-
-SQL：关系型数据库
-NoSQL：非关系型数据库
-SQL与NoSQl的比较：
-
-
-
-
-SQL
-NoSQL
-
-
-
-数据结构
-结构化
-非结构化：1.键值类型(Redis)2.文档类型(M...
+        题目：给你一个偶数长度的字符串 s 。将其拆分成长度相同的两半，前一半为 a ，后一半为 b 。
+两个字符串 相似 的前提是它们都含有相同数目的元音（’a’，’e’，’i’，’o’，’u’，’A’，’E’，’I’，’O’，’U’）。注意，s 可能同时含有大写和小写字母。
+如果 a 和 b 相似，返回 true ；否则，返回 false 。
+示例：
+输入：s &#x3D; “textbook”...
       
     
   </div>
@@ -2941,20 +2692,20 @@ NoSQL
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-11-11T09:56:00+08:00">2022-11-11</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/08/06/Java/Redis/' itemprop="url">
+          <a class='readmore' href='/2022/11/11/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1704%20%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%A4%E5%8D%8A%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BC%BC/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2970,7 +2721,7 @@ NoSQL
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/Java/MyBatis-Plus%E6%A1%86%E6%9E%B6/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/10/%E6%AF%8F%E6%97%A5LeetCode/2022-11/864%20%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E9%92%A5%E5%8C%99%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2988,26 +2739,29 @@ NoSQL
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/Java/MyBatis-Plus%E6%A1%86%E6%9E%B6/"  itemprop="url">
-        2022年8月6日
+      <a href="/2022/11/10/%E6%AF%8F%E6%97%A5LeetCode/2022-11/864%20%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E9%92%A5%E5%8C%99%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"  itemprop="url">
+        (每日LeetCode)864. 获取所有钥匙的最短路径
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
+        题目：给定一个二维网格 grid ，其中：
 
-1.初识MyBatis-PlusMyBatis-Plus是MyBatis的增强工具，在MyBatis的基础上只做增强不做改变，为了简化开发，提高效率而生
-官网：MyBatis-Plus
-特性：
+‘.’ 代表一个空房间
+
+‘#’ 代表一堵
+
+‘@’ 是起点
+
+小写字母代表钥匙
+
+大写字母代表锁
 
 
-无入侵：只做增强不做改变，导入它不会对现有工程产生影响。
-
-损耗小：启动即会自动注入基本CRUD，性能基本不损耗，直接面向对象操作
-
-强大的CRUD操作：内置通用Mapper、通用Servic...
+我们从起点开始出发，一次移动是指向四个基本方向之一行走一个单位空间。我们不能在网格外面行走，也无法穿过一堵墙。如果途经一个钥匙，我们就把它捡起来。除非我们手里有对应的钥匙，否则无法通过锁。
+假设 k 为 钥匙&#x2F;锁 的个数，且满足 1 ...
       
     
   </div>
@@ -3015,83 +2769,20 @@ NoSQL
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/08/06/Java/MyBatis-Plus%E6%A1%86%E6%9E%B6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/Java/MongoDB/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/Java/MongoDB/"  itemprop="url">
-        MongoDB的学习笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        未完待续
-1.MongoDB相关概念业务场景
-传统的关系型数据库(如：MySQL)，在数据操作的“三高”需求以及应对Web2.0网站需求面前，显得力不从心。
-“三高”需求：
-
-
-High performance：对数据库高并发读写的需求
-Huge Storage：对海量数据的高效率存储和访问的需求。
-High Scalability &amp;&amp; High Availability：...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-11-10T17:18:00+08:00">2022-11-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/08/06/Java/MongoDB/' itemprop="url">
+          <a class='readmore' href='/2022/11/10/%E6%AF%8F%E6%97%A5LeetCode/2022-11/864%20%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E9%92%A5%E5%8C%99%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3107,7 +2798,7 @@ High Scalability &amp;&amp; High Availability：...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/Java/ELK%E6%90%9C%E7%B4%A2/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/08/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1684%20%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%87%B4%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%95%B0%E7%9B%AE/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -3125,23 +2816,18 @@ High Scalability &amp;&amp; High Availability：...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/08/06/Java/ELK%E6%90%9C%E7%B4%A2/"  itemprop="url">
-        2022年8月6日
+      <a href="/2022/11/08/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1684%20%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%87%B4%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%95%B0%E7%9B%AE/"  itemprop="url">
+        (每日LeetCode)1684. 统计一致字符串的数目
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-
-1.ELK简介ELK是包含但不限于Elasticsearch(简称ES)、Logstash、Kibana三个开源软件的组成的一个整体，这三个软件合成ELK。
-本课程从分别对三个组件经行详细介绍：
-
-
-Elasticsearch：因为它是elk的核心。本课程从es底层对文档、索引、 搜索、聚合、集群经行介绍，从搜索和聚合分析实例来展现es的魅力。
-
-Logstash：从内部如何采集数据到指...
+        题目：给你一个由不同字符组成的字符串 allowed 和一个字符串数组 words 。如果一个字符串的每一个字符都在 allowed 中，就称这个字符串是 一致字符串 。
+请你返回 words 数组中 一致字符串 的数目。
+示例：
+输入：allowed &#x3D; “cad”, words &#x3D; [“cc”,”acd”,”b”,”ba”,”bac”,”bad”,”ac”,”d”]输...
       
     
   </div>
@@ -3149,12 +2835,284 @@ Logstash：从内部如何采集数据到指...
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-08-06T19:11:16+08:00">2022-08-06</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-11-08T09:04:00+08:00">2022-11-08</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/08/06/Java/ELK%E6%90%9C%E7%B4%A2/' itemprop="url">
+          <a class='readmore' href='/2022/11/08/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1684%20%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%87%B4%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%95%B0%E7%9B%AE/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/07/%E6%AF%8F%E6%97%A5LeetCode/2022-11/816%20%E6%A8%A1%E7%B3%8A%E5%9D%90%E6%A0%87/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/11/07/%E6%AF%8F%E6%97%A5LeetCode/2022-11/816%20%E6%A8%A1%E7%B3%8A%E5%9D%90%E6%A0%87/"  itemprop="url">
+        (每日LeetCode)816. 模糊坐标
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：我们有一些二维坐标，如 “(1, 3)” 或 “(2, 0.5)”，然后我们移除所有逗号，小数点和空格，得到一个字符串S。返回所有可能的原始字符串到一个列表中。
+原始的坐标表示法不会存在多余的零，所以不会出现类似于”00”, “0.0”, “0.00”, “1.0”, “001”, “00.01”或一些其他更小的数来表示坐标。此外，一个小数点前至少存在一个数，所以也不会出现“.1”形式...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-11-07T12:55:00+08:00">2022-11-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/07/%E6%AF%8F%E6%97%A5LeetCode/2022-11/816%20%E6%A8%A1%E7%B3%8A%E5%9D%90%E6%A0%87/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/06/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1678%20%E8%AE%BE%E8%AE%A1%20Goal%20%E8%A7%A3%E6%9E%90%E5%99%A8/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/11/06/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1678%20%E8%AE%BE%E8%AE%A1%20Goal%20%E8%A7%A3%E6%9E%90%E5%99%A8/"  itemprop="url">
+        (每日LeetCode)1678. 设计 Goal 解析器
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：请你设计一个可以解释字符串 command 的 Goal 解析器 。command 由 “G”、”()” 和&#x2F;或 “(al)” 按某种顺序组成。Goal 解析器会将 “G” 解释为字符串 “G”、”()” 解释为字符串 “o” ，”(al)” 解释为字符串 “al” 。然后，按原顺序将经解释得到的字符串连接成一个字符串。
+给你字符串 command ，返回 Goal 解析器 ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-11-06T11:51:00+08:00">2022-11-06</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/06/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1678%20%E8%AE%BE%E8%AE%A1%20Goal%20%E8%A7%A3%E6%9E%90%E5%99%A8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/05/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1106%20%E8%A7%A3%E6%9E%90%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/11/05/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1106%20%E8%A7%A3%E6%9E%90%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F/"  itemprop="url">
+        (每日LeetCode)1106. 解析布尔表达式
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：给你一个以字符串形式表述的 布尔表达式（boolean） expression，返回该式的运算结果。
+有效的表达式需遵循以下约定：
+
+&quot;t&quot;，运算结果为 True
+&quot;f&quot;，运算结果为 False
+&quot;!(expr)&quot;，运算过程为对内部表达式 expr 进行逻辑 非的运算（NOT）
+&quot;&amp;(expr1,expr2,...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-11-05T22:37:00+08:00">2022-11-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/05/%E6%AF%8F%E6%97%A5LeetCode/2022-11/1106%20%E8%A7%A3%E6%9E%90%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/04/%E6%AF%8F%E6%97%A5LeetCode/2022-11/754%20%E5%88%B0%E8%BE%BE%E7%BB%88%E7%82%B9%E6%95%B0%E5%AD%97/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/11/04/%E6%AF%8F%E6%97%A5LeetCode/2022-11/754%20%E5%88%B0%E8%BE%BE%E7%BB%88%E7%82%B9%E6%95%B0%E5%AD%97/"  itemprop="url">
+        (每日LeetCode)754. 到达终点数字
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：
+在一根无限长的数轴上，你站在0的位置。终点在target的位置。
+你可以做一些数量的移动 numMoves :
+每次你可以选择向左或向右移动。第 i 次移动（从  i &#x3D;&#x3D; 1 开始，到 i &#x3D;&#x3D; numMoves ），在选择的方向上走 i 步。给定整数 target ，返回 到达目标所需的 最小 移动次数(即最小 numMoves ) 。
+示...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-11-04T15:06:00+08:00">2022-11-04</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/04/%E6%AF%8F%E6%97%A5LeetCode/2022-11/754%20%E5%88%B0%E8%BE%BE%E7%BB%88%E7%82%B9%E6%95%B0%E5%AD%97/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3181,7 +3139,7 @@ Logstash：从内部如何采集数据到指...
           </a>
         
         <p class="current">
-          6 / 9
+          6 / 18
         </p>
         
           <a class="next" rel="next" href="/page/7/">
@@ -3253,7 +3211,7 @@ Logstash：从内部如何采集数据到指...
           <li><a class="flat-box"
             title="/categories/Java/" href="/categories/Java/"
             active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>Java</div><div class='badge'>(10)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Python/" href="/categories/Python/"
@@ -3268,7 +3226,7 @@ Logstash：从内部如何采集数据到指...
           <li><a class="flat-box"
             title="/categories/%E6%AF%8F%E6%97%A5LeetCode/" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/"
             active-action="action-categoriesE6AF8FE697A5LeetCode"
-            ><div class='name'>每日LeetCode</div><div class='badge'>(65)</div></a></li>
+            ><div class='name'>每日LeetCode</div><div class='badge'>(147)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/"
@@ -3303,7 +3261,7 @@ Logstash：从内部如何采集数据到指...
 
 
     <div class='content'>
-      <a href="/tags/C/" style="font-size: 17.33px; color: #828282">C++</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Java/" style="font-size: 20.67px; color: #6c6c6c">Java</a> <a href="/tags/LeetCode/" style="font-size: 22.33px; color: #606060">LeetCode</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/STL/" style="font-size: 15.67px; color: #8e8e8e">STL</a> <a href="/tags/c/" style="font-size: 14px; color: #999">c++</a> <a href="/tags/es/" style="font-size: 14px; color: #999">es</a> <a href="/tags/kibana/" style="font-size: 14px; color: #999">kibana</a> <a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 19px; color: #777">容器</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15.67px; color: #8e8e8e">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 19px; color: #777">框架</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 22.33px; color: #606060">算法</a>
+      <a href="/tags/C/" style="font-size: 17.33px; color: #828282">C++</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Java/" style="font-size: 20.67px; color: #6c6c6c">Java</a> <a href="/tags/LeetCode/" style="font-size: 22.33px; color: #606060">LeetCode</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/STL/" style="font-size: 15.67px; color: #8e8e8e">STL</a> <a href="/tags/c/" style="font-size: 14px; color: #999">c++</a> <a href="/tags/es/" style="font-size: 14px; color: #999">es</a> <a href="/tags/kibana/" style="font-size: 14px; color: #999">kibana</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">基础</a> <a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 19px; color: #777">容器</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.33px; color: #828282">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 19px; color: #777">框架</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 22.33px; color: #606060">算法</a>
     </div>
   </section>
 
