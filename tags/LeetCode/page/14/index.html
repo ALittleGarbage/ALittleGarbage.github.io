@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675949129326),
+    lastupdate: new Date(1682953631743),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2448,7 +2448,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/21/%E6%AF%8F%E6%97%A5LeetCode/2022-7/814%20%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%AA%E6%9E%9D/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/07/%E6%AF%8F%E6%97%A5LeetCode/2022-8/636%20%E5%87%BD%E6%95%B0%E7%9A%84%E7%8B%AC%E5%8D%A0%E6%97%B6%E9%97%B4/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2466,23 +2466,483 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/21/%E6%AF%8F%E6%97%A5LeetCode/2022-7/814%20%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%AA%E6%9E%9D/"  itemprop="url">
-        (每日LeetCode)814. 二叉树剪枝
+      <a href="/2022/08/07/%E6%AF%8F%E6%97%A5LeetCode/2022-8/636%20%E5%87%BD%E6%95%B0%E7%9A%84%E7%8B%AC%E5%8D%A0%E6%97%B6%E9%97%B4/"  itemprop="url">
+        (每日LeetCode)636. 函数的独占时间
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：给你二叉树的根结点 root ，此外树的每个结点的值要么是 0 ，要么是 1 。
-返回移除了所有不包含 1 的子树的原二叉树。
-节点 node 的子树为 node 本身加上所有 node 的后代。
+        题目：有一个 单线程 CPU 正在运行一个含有 n 道函数的程序。每道函数都有一个位于  0 和 n-1 之间的唯一标识符。
+函数调用 存储在一个 调用栈 上 ：当一个函数调用开始时，它的标识符将会推入栈中。而当一个函数调用结束时，它的标识符将会从栈中弹出。标识符位于栈顶的函数是 当前正在执行的函数 。每当一个函数开始或者结束时，将会记录一条日志，包括函数标识符、是开始还是结束、以及相应的时...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-07T11:38:00+08:00">2022-08-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/07/%E6%AF%8F%E6%97%A5LeetCode/2022-8/636%20%E5%87%BD%E6%95%B0%E7%9A%84%E7%8B%AC%E5%8D%A0%E6%97%B6%E9%97%B4/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/06/%E6%AF%8F%E6%97%A5LeetCode/2022-8/1408%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/06/%E6%AF%8F%E6%97%A5LeetCode/2022-8/1408%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"  itemprop="url">
+        (每日LeetCode)1408. 数组中的字符串匹配
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：给你一个字符串数组 words ，数组中的每个字符串都可以看作是一个单词。请你按 任意 顺序返回 words 中是其他单词的子字符串的所有单词。
+如果你可以删除 words[j] 最左侧和&#x2F;或最右侧的若干字符得到 word[i] ，那么字符串 words[i] 就是 words[j] 的一个子字符串。
+示例：
+输入：words &#x3D; [“mass”,”as”,”her...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-06T18:43:00+08:00">2022-08-06</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/06/%E6%AF%8F%E6%97%A5LeetCode/2022-8/1408%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/05/%E6%AF%8F%E6%97%A5LeetCode/2022-8/623%20%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%A2%9E%E5%8A%A0%E4%B8%80%E8%A1%8C/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/05/%E6%AF%8F%E6%97%A5LeetCode/2022-8/623%20%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%A2%9E%E5%8A%A0%E4%B8%80%E8%A1%8C/"  itemprop="url">
+        (每日LeetCode)623. 在二叉树中增加一行
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：给定一个二叉树的根 root 和两个整数 val 和 depth ，在给定的深度 depth 处添加一个值为 val 的节点行。
+注意，根节点 root 位于深度 1 。
+加法规则如下:
+
+给定整数 depth，对于深度为 depth - 1 的每个非空树节点 cur ，创建两个值为 val 的树节点作为 cur 的左子树根和右子树根。
+cur 原来的左子树应该是新的左子树根的左子树。...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-05T10:57:00+08:00">2022-08-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/05/%E6%AF%8F%E6%97%A5LeetCode/2022-8/623%20%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%A2%9E%E5%8A%A0%E4%B8%80%E8%A1%8C/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/04/%E6%AF%8F%E6%97%A5LeetCode/2022-8/1403%20%E9%9D%9E%E9%80%92%E5%A2%9E%E9%A1%BA%E5%BA%8F%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E5%BA%8F%E5%88%97/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/04/%E6%AF%8F%E6%97%A5LeetCode/2022-8/1403%20%E9%9D%9E%E9%80%92%E5%A2%9E%E9%A1%BA%E5%BA%8F%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E5%BA%8F%E5%88%97/"  itemprop="url">
+        (每日LeetCode)1403. 非递增顺序的最小子序列
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：给你一个数组 nums，请你从中抽取一个子序列，满足该子序列的元素之和 严格 大于未包含在该子序列中的各元素之和。
+如果存在多个解决方案，只需返回 长度最小 的子序列。如果仍然有多个解决方案，则返回 元素之和最大 的子序列。
+与子数组不同的地方在于，「数组的子序列」不强调元素在原数组中的连续性，也就是说，它可以通过从数组中分离一些（也可能不分离）元素得到。
+注意，题目数据保证满足所有约...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-04T12:09:00+08:00">2022-08-04</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/04/%E6%AF%8F%E6%97%A5LeetCode/2022-8/1403%20%E9%9D%9E%E9%80%92%E5%A2%9E%E9%A1%BA%E5%BA%8F%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E5%BA%8F%E5%88%97/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/03/%E6%AF%8F%E6%97%A5LeetCode/2022-8/899%20%E6%9C%89%E5%BA%8F%E9%98%9F%E5%88%97/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/03/%E6%AF%8F%E6%97%A5LeetCode/2022-8/899%20%E6%9C%89%E5%BA%8F%E9%98%9F%E5%88%97/"  itemprop="url">
+        (每日LeetCode)899. 有序队列
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：给定一个字符串 s 和一个整数 k 。你可以从 s 的前 k 个字母中选择一个，并把它加到字符串的末尾。
+返回 在应用上述步骤的任意数量的移动后，字典上最小的字符串 。
+示例：
+输入：s &#x3D; “cba”, k &#x3D; 1输出：”acb”解释：在第一步中，我们将第一个字符（“c”）移动到最后，获得字符串 “bac”。在第二步中，我们将第一个字符（“b”）移动到最后，获得最...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-03T09:37:00+08:00">2022-08-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/03/%E6%AF%8F%E6%97%A5LeetCode/2022-8/899%20%E6%9C%89%E5%BA%8F%E9%98%9F%E5%88%97/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/02/%E6%AF%8F%E6%97%A5LeetCode/2022-8/622%20%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/02/%E6%AF%8F%E6%97%A5LeetCode/2022-8/622%20%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/"  itemprop="url">
+        (每日LeetCode)622. 设计循环队列
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：设计你的循环队列实现。 循环队列是一种线性数据结构，其操作表现基于 FIFO（先进先出）原则并且队尾被连接在队首之后以形成一个循环。它也被称为“环形缓冲器”。
+循环队列的一个好处是我们可以利用这个队列之前用过的空间。在一个普通队列里，一旦一个队列满了，我们就不能插入下一个元素，即使在队列前面仍有空间。但是使用循环队列，我们能使用这些空间去存储新的值。
+你的实现应该支持如下操作：
+
+My...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-02T12:15:00+08:00">2022-08-02</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/02/%E6%AF%8F%E6%97%A5LeetCode/2022-8/622%20%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/01/%E6%AF%8F%E6%97%A5LeetCode/2022-8/1374%20%E7%94%9F%E6%88%90%E6%AF%8F%E7%A7%8D%E5%AD%97%E7%AC%A6%E9%83%BD%E6%98%AF%E5%A5%87%E6%95%B0%E4%B8%AA%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/08/01/%E6%AF%8F%E6%97%A5LeetCode/2022-8/1374%20%E7%94%9F%E6%88%90%E6%AF%8F%E7%A7%8D%E5%AD%97%E7%AC%A6%E9%83%BD%E6%98%AF%E5%A5%87%E6%95%B0%E4%B8%AA%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/"  itemprop="url">
+        (每日LeetCode)1374. 生成每种字符都是奇数个的字符串
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：给你一个整数 n，请你返回一个含 n 个字符的字符串，其中每种字符在该字符串中都恰好出现 奇数次 。
+返回的字符串必须只含小写英文字母。如果存在多个满足题目要求的字符串，则返回其中任意一个即可。
+示例：
+输入：n &#x3D; 4输出：”pppz”解释：”pppz” 是一个满足题目要求的字符串，因为 ‘p’ 出现 3 次，且 ‘z’ 出现 1 次。当然，还有很多其他字符串也满足题目要求...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-08-01T11:00:00+08:00">2022-08-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/08/01/%E6%AF%8F%E6%97%A5LeetCode/2022-8/1374%20%E7%94%9F%E6%88%90%E6%AF%8F%E7%A7%8D%E5%AD%97%E7%AC%A6%E9%83%BD%E6%98%AF%E5%A5%87%E6%95%B0%E4%B8%AA%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/31/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1161%20%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/07/31/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1161%20%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C/"  itemprop="url">
+        (每日LeetCode)1161. 最大层内元素和
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：给你一个二叉树的根节点 root。设根节点位于二叉树的第 1 层，而根节点的子节点位于第 2 层，依此类推。
+请返回层内元素之和 最大 的那几层（可能只有一层）的层号，并返回其中 最小 的那个。
 示例：
 
 
-输入：root &#x3D; [1,null,0,0,1]输出：[1,null,0,null,1]解释：只有红色节点满足条件“所有不包含 1 的子树”。 右图为返回的答案。
-
-自...
+输入：root &#x3D; [1,7,0,7,-8,null,null]输出：2解释：第 1 层各元素之和为 1，第 2 层各元素之和为 7 + 0 &#x3D; 7，第 3 层...
       
     
   </div>
@@ -2490,7 +2950,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-21T08:36:00+08:00">2022-07-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-07-31T11:29:00+08:00">2022-07-31</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -2503,7 +2963,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/21/%E6%AF%8F%E6%97%A5LeetCode/2022-7/814%20%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%AA%E6%9E%9D/' itemprop="url">
+          <a class='readmore' href='/2022/07/31/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1161%20%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2519,7 +2979,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/12/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1252%20%E5%A5%87%E6%95%B0%E5%80%BC%E5%8D%95%E5%85%83%E6%A0%BC%E7%9A%84%E6%95%B0%E7%9B%AE/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/28/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1331%20%E6%95%B0%E7%BB%84%E5%BA%8F%E5%8F%B7%E8%BD%AC%E6%8D%A2/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2537,279 +2997,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/12/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1252%20%E5%A5%87%E6%95%B0%E5%80%BC%E5%8D%95%E5%85%83%E6%A0%BC%E7%9A%84%E6%95%B0%E7%9B%AE/"  itemprop="url">
-        (每日LeetCode)1252. 奇数值单元格的数目
+      <a href="/2022/07/28/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1331%20%E6%95%B0%E7%BB%84%E5%BA%8F%E5%8F%B7%E8%BD%AC%E6%8D%A2/"  itemprop="url">
+        (每日LeetCode)1331. 数组序号转换
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：给你一个 m x n 的矩阵，最开始的时候，每个单元格中的值都是 0。
-另有一个二维索引数组 indices，indices[i] = [ri, ci] 指向矩阵中的某个位置，其中 ri 和 ci 分别表示指定的行和列（从 0 开始编号）。
-对 indices[i] 所指向的每个位置，应同时执行下述增量操作：
-ri 行上的所有单元格，加 1 。ci 列上的所有单元格，加 1 。给你 m...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-12T09:24:00+08:00">2022-07-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/12/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1252%20%E5%A5%87%E6%95%B0%E5%80%BC%E5%8D%95%E5%85%83%E6%A0%BC%E7%9A%84%E6%95%B0%E7%9B%AE/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/11/%E6%AF%8F%E6%97%A5LeetCode/2022-7/676%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AD%94%E6%B3%95%E5%AD%97%E5%85%B8/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/11/%E6%AF%8F%E6%97%A5LeetCode/2022-7/676%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AD%94%E6%B3%95%E5%AD%97%E5%85%B8/"  itemprop="url">
-        (每日LeetCode)676. 实现一个魔法字典
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于你构建的字典中。
-实现 MagicDictionary 类：
-MagicDictionary() 初始化对象void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-11T08:35:00+08:00">2022-07-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/11/%E6%AF%8F%E6%97%A5LeetCode/2022-7/676%20%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AD%94%E6%B3%95%E5%AD%97%E5%85%B8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/09/%E6%AF%8F%E6%97%A5LeetCode/2022-7/873%20%E6%9C%80%E9%95%BF%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%BF%E5%BA%A6/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/09/%E6%AF%8F%E6%97%A5LeetCode/2022-7/873%20%E6%9C%80%E9%95%BF%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%BF%E5%BA%A6/"  itemprop="url">
-        (每日LeetCode)873. 最长的斐波那契子序列的长度
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：如果序列 $X_1, X_2, …, X_n$ 满足下列条件，就说它是 斐波那契式 的：
-n &gt;&#x3D; 3对于所有 i + 2 &lt;&#x3D; n，都有 $X_i + X_{i+1} &#x3D; X_{i+2}$给定一个严格递增的正整数数组形成序列 arr ，找到 arr 中最长的斐波那契式的子序列的长度。如果一个不存在，返回  0 。
-（回想一下，子序列是从原序列...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-09T08:34:00+08:00">2022-07-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/09/%E6%AF%8F%E6%97%A5LeetCode/2022-7/873%20%E6%9C%80%E9%95%BF%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%BF%E5%BA%A6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/08/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1846%20%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/08/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1846%20%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/"  itemprop="url">
-        (每日LeetCode)1846. 减小和重新排列数组后的最大元素
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：给你一个正整数数组 arr 。请你对 arr 执行一些操作（也可以不进行任何操作），使得数组满足以下条件：
-arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对值 小于等于 1 ，也就是说，对于任意的 1 &lt;= i &lt; arr.length （数组下标从 0 开始），都满足 abs(arr[i] - arr[i - 1]) &lt;= 1 。abs(x) 为 x...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-08T08:34:00+08:00">2022-07-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/08/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1846%20%E5%87%8F%E5%B0%8F%E5%92%8C%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/08/%E6%AF%8F%E6%97%A5LeetCode/2022-7/593%20%E6%9C%89%E6%95%88%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/08/%E6%AF%8F%E6%97%A5LeetCode/2022-7/593%20%E6%9C%89%E6%95%88%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/"  itemprop="url">
-        (每日LeetCode)593. 有效的正方形
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：给定2D空间中四个点的坐标 p1, p2, p3 和 p4，如果这四个点构成一个正方形，则返回 true 。
-点的坐标 pi 表示为 [xi, yi] 。输入 不是 按任何顺序给出的。
-一个 有效的正方形 有四条等边和四个等角(90度角)。
+        题目：给你一个整数数组 arr ，请你将数组中的每个元素替换为它们排序后的序号。
+序号代表了一个元素有多大。序号编号的规则如下：
+序号从 1 开始编号。一个元素越大，那么序号越大。如果两个元素相等，那么它们的序号相同。每个数字的序号都应该尽可能地小。
 示例：
-输入：p1 &#x3D; [1,0], p2 &#x3D; [-1,0], p3 &#x3D; [0,1], p4 &#x3D; [0,-...
+输入：arr &#x3D; [37,12,28,9,100,56,80,5,12]输出：[5,3,4,2,8,6,7,1,3]
+
+思路...
       
     
   </div>
@@ -2817,7 +3019,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-08T08:34:00+08:00">2022-07-08</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-07-28T09:26:00+08:00">2022-07-28</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -2830,7 +3032,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/08/%E6%AF%8F%E6%97%A5LeetCode/2022-7/593%20%E6%9C%89%E6%95%88%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2/' itemprop="url">
+          <a class='readmore' href='/2022/07/28/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1331%20%E6%95%B0%E7%BB%84%E5%BA%8F%E5%8F%B7%E8%BD%AC%E6%8D%A2/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2846,7 +3048,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/05/%E6%AF%8F%E6%97%A5LeetCode/2022-7/729%20%E6%88%91%E7%9A%84%E6%97%A5%E7%A8%8B%E5%AE%89%E6%8E%92%E8%A1%A8%20I/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/25/%E6%AF%8F%E6%97%A5LeetCode/2022-7/919%20%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E6%8F%92%E5%85%A5%E5%99%A8/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2864,17 +3066,23 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/05/%E6%AF%8F%E6%97%A5LeetCode/2022-7/729%20%E6%88%91%E7%9A%84%E6%97%A5%E7%A8%8B%E5%AE%89%E6%8E%92%E8%A1%A8%20I/"  itemprop="url">
-        (每日LeetCode)729. 我的日程安排表 I
+      <a href="/2022/07/25/%E6%AF%8F%E6%97%A5LeetCode/2022-7/919%20%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E6%8F%92%E5%85%A5%E5%99%A8/"  itemprop="url">
+        (每日LeetCode)919. 完全二叉树插入器
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：实现一个 MyCalendar 类来存放你的日程安排。如果要添加的日程安排不会造成 重复预订 ，则可以存储这个新的日程安排。
-当两个日程安排有一些时间上的交叉时（例如两个日程安排都在同一时间内），就会产生 重复预订 。
-日程可以用一对整数 start 和 end 表示，这里的时间是半开区间，即 [start, end), 实数 x 的范围为，  start &lt;= x &lt; e...
+        题目：完全二叉树： 
+
+是每一层（除最后一层外）都是完全填充（即，节点数达到最大）的，并且所有的节点都尽可能地集中在左侧。
+
+设计一种算法，将一个新节点插入到一个完整的二叉树中，并在插入后保持其完整。
+实现 CBTInserter 类：
+
+CBTInserter(TreeNode root) 使用头节点为 root 的给定树初始化该数据结构；
+CBTInserter.insert(int v...
       
     
   </div>
@@ -2882,7 +3090,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-05T12:50:00+08:00">2022-07-05</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-07-25T09:51:00+08:00">2022-07-25</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -2895,218 +3103,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
       </div>
       
         <div>
-          <a class='readmore' href='/2022/07/05/%E6%AF%8F%E6%97%A5LeetCode/2022-7/729%20%E6%88%91%E7%9A%84%E6%97%A5%E7%A8%8B%E5%AE%89%E6%8E%92%E8%A1%A8%20I/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/04/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1200%20%E6%9C%80%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%B7%AE/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/04/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1200%20%E6%9C%80%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%B7%AE/"  itemprop="url">
-        (每日LeetCode)1200. 最小绝对差
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：给你个整数数组 arr，其中每个元素都 不相同。
-请你找到所有具有最小绝对差的元素对，并且按升序的顺序返回。
-示例：示例1：
-
-输入：arr &#x3D; [4,2,1,3]输出：[[1,2],[2,3],[3,4]]
-
-示例2：
-
-输入：arr &#x3D; [1,3,6,10,15]输出：[[1,3]]
-
-思路：先将arr数组排序
-再遍历arr数组，如果找到有比min更小的差值，将...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-04T07:54:00+08:00">2022-07-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/04/%E6%AF%8F%E6%97%A5LeetCode/2022-7/1200%20%E6%9C%80%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%B7%AE/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/03/%E6%AF%8F%E6%97%A5LeetCode/2022-7/556%20%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0%20III/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/03/%E6%AF%8F%E6%97%A5LeetCode/2022-7/556%20%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0%20III/"  itemprop="url">
-        (每日LeetCode)556. 下一个更大元素 III
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：给你一个正整数 n ，请你找出符合条件的最小整数，其由重新排列 n 中存在的每位数字组成，并且其值大于 n 。如果不存在这样的正整数，则返回 -1 。
-注意 ，返回的整数应当是一个 32 位整数 ，如果存在满足题意的答案，但不是 32 位整数 ，同样返回 -1。
-示例：示例 1：
-
-输入：n &#x3D; 12324321输出：12331224
-
-示例 2：
-
-输入：n &#x3D; ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-03T12:00:00+08:00">2022-07-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/03/%E6%AF%8F%E6%97%A5LeetCode/2022-7/556%20%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0%20III/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/02/%E6%AF%8F%E6%97%A5LeetCode/2022-7/871%20%E6%9C%80%E4%BD%8E%E5%8A%A0%E6%B2%B9%E6%AC%A1%E6%95%B0/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/07/02/%E6%AF%8F%E6%97%A5LeetCode/2022-7/871%20%E6%9C%80%E4%BD%8E%E5%8A%A0%E6%B2%B9%E6%AC%A1%E6%95%B0/"  itemprop="url">
-        (每日LeetCode)871. 最低加油次数
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：汽车从起点出发驶向目的地，该目的地位于出发位置东面 target 英里处。
-沿途有加油站，每个 station[i] 代表一个加油站，它位于出发位置东面 station[i][0] 英里处，并且有 station[i][1]升汽油。
-假设汽车油箱的容量是无限的，其中最初有startFuel升燃料。它每行驶 1 英里就会用掉 1 升汽油。
-当汽车到达加油站时，它可能停下来加油，将所有汽油...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-07-02T15:36:00+08:00">2022-07-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/07/02/%E6%AF%8F%E6%97%A5LeetCode/2022-7/871%20%E6%9C%80%E4%BD%8E%E5%8A%A0%E6%B2%B9%E6%AC%A1%E6%95%B0/' itemprop="url">
+          <a class='readmore' href='/2022/07/25/%E6%AF%8F%E6%97%A5LeetCode/2022-7/919%20%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E6%8F%92%E5%85%A5%E5%99%A8/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3133,7 +3130,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
           </a>
         
         <p class="current">
-          14 / 15
+          14 / 16
         </p>
         
           <a class="next" rel="next" href="/tags/LeetCode/page/15/">
@@ -3207,7 +3204,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
           <li><a class="flat-box"
             title="/categories/Java/" href="/categories/Java/"
             active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(10)</div></a></li>
+            ><div class='name'>Java</div><div class='badge'>(11)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Python/" href="/categories/Python/"
@@ -3222,7 +3219,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
           <li><a class="flat-box"
             title="/categories/%E6%AF%8F%E6%97%A5LeetCode/" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/"
             active-action="action-categoriesE6AF8FE697A5LeetCode"
-            ><div class='name'>每日LeetCode</div><div class='badge'>(147)</div></a></li>
+            ><div class='name'>每日LeetCode</div><div class='badge'>(158)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/"
@@ -3232,7 +3229,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
           <li><a class="flat-box"
             title="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"
             active-action="action-categoriesE8BDAFE4BBB6E5AE89E8A385"
-            ><div class='name'>软件安装</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>软件安装</div><div class='badge'>(5)</div></a></li>
         
       </ul>
     </div>
@@ -3257,7 +3254,7 @@ arr 中 第一个 元素必须为 1 。任意相邻两个元素的差的绝对�
 
 
     <div class='content'>
-      <a href="/tags/C/" style="font-size: 17.33px; color: #828282">C++</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Java/" style="font-size: 20.67px; color: #6c6c6c">Java</a> <a href="/tags/LeetCode/" style="font-size: 22.33px; color: #606060">LeetCode</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/STL/" style="font-size: 15.67px; color: #8e8e8e">STL</a> <a href="/tags/c/" style="font-size: 14px; color: #999">c++</a> <a href="/tags/es/" style="font-size: 14px; color: #999">es</a> <a href="/tags/kibana/" style="font-size: 14px; color: #999">kibana</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">基础</a> <a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 19px; color: #777">容器</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.33px; color: #828282">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 19px; color: #777">框架</a> <a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">汇编</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 22.33px; color: #606060">算法</a>
+      <a href="/tags/C/" style="font-size: 16.86px; color: #868686">C++</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Java/" style="font-size: 21.14px; color: #686868">Java</a> <a href="/tags/LeetCode/" style="font-size: 22.57px; color: #5f5f5f">LeetCode</a> <a href="/tags/MQ/" style="font-size: 14px; color: #999">MQ</a> <a href="/tags/MinIo/" style="font-size: 14px; color: #999">MinIo</a> <a href="/tags/Nacos/" style="font-size: 14px; color: #999">Nacos</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/STL/" style="font-size: 15.43px; color: #8f8f8f">STL</a> <a href="/tags/Seata/" style="font-size: 14px; color: #999">Seata</a> <a href="/tags/c/" style="font-size: 14px; color: #999">c++</a> <a href="/tags/es/" style="font-size: 14px; color: #999">es</a> <a href="/tags/kibana/" style="font-size: 14px; color: #999">kibana</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">基础</a> <a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 19.71px; color: #727272">容器</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.86px; color: #868686">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 18.29px; color: #7c7c7c">框架</a> <a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">汇编</a> <a href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 14px; color: #999">消息中间件</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 22.57px; color: #5f5f5f">算法</a>
     </div>
   </section>
 

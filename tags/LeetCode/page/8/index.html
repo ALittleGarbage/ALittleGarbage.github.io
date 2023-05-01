@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675949129326),
+    lastupdate: new Date(1682953631743),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2448,7 +2448,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/13/%E6%AF%8F%E6%97%A5LeetCode/2022-10/769%20%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/30/%E6%AF%8F%E6%97%A5LeetCode/2022-10/784%20%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%85%A8%E6%8E%92%E5%88%97/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2466,19 +2466,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/13/%E6%AF%8F%E6%97%A5LeetCode/2022-10/769%20%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97/"  itemprop="url">
-        (每日LeetCode)769. 最多能完成排序的块
+      <a href="/2022/10/30/%E6%AF%8F%E6%97%A5LeetCode/2022-10/784%20%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%85%A8%E6%8E%92%E5%88%97/"  itemprop="url">
+        (每日LeetCode)784. 字母大小写全排列
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：给定一个长度为 n 的整数数组 arr ，它表示在 [0, n - 1] 范围内的整数的排列。
-我们将 arr 分割成若干 块 (即分区)，并对每个块单独排序。将它们连接起来后，使得连接的结果和按升序排序后的原数组相同。
-返回数组能分成的最多块数量。
+        题目：给定一个字符串 s ，通过将字符串 s 中的每个字母转变大小写，我们可以获得一个新的字符串。
+返回 所有可能得到的字符串集合 。以 任意顺序 返回输出。
 示例：
-输入: arr &#x3D; [4,3,2,1,0]输出: 1解释:将数组分成2块或者更多块，都无法得到所需的结果。例如，分成 ...
+输入：s &#x3D; “a1b2”输出：[“a1b2”, “a1B2”, “A1b2”, “A1B2”]
+
+思路：DFS获取到字符串s中每个字母的位置，并且如果是大写字母的话，改为小写字母，统一为小写字母
+利用dfs，得到所...
       
     
   </div>
@@ -2486,7 +2488,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-10-13T13:57:00+08:00">2022-10-13</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-10-30T09:31:00+08:00">2022-10-30</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -2499,7 +2501,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/10/13/%E6%AF%8F%E6%97%A5LeetCode/2022-10/769%20%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97/' itemprop="url">
+          <a class='readmore' href='/2022/10/30/%E6%AF%8F%E6%97%A5LeetCode/2022-10/784%20%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%85%A8%E6%8E%92%E5%88%97/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2515,7 +2517,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/12/%E6%AF%8F%E6%97%A5LeetCode/2022-10/817%20%E9%93%BE%E8%A1%A8%E7%BB%84%E4%BB%B6/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/29/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1773%20%E7%BB%9F%E8%AE%A1%E5%8C%B9%E9%85%8D%E6%A3%80%E7%B4%A2%E8%A7%84%E5%88%99%E7%9A%84%E7%89%A9%E5%93%81%E6%95%B0%E9%87%8F/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2533,18 +2535,84 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/12/%E6%AF%8F%E6%97%A5LeetCode/2022-10/817%20%E9%93%BE%E8%A1%A8%E7%BB%84%E4%BB%B6/"  itemprop="url">
-        (每日LeetCode)817. 链表组件
+      <a href="/2022/10/29/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1773%20%E7%BB%9F%E8%AE%A1%E5%8C%B9%E9%85%8D%E6%A3%80%E7%B4%A2%E8%A7%84%E5%88%99%E7%9A%84%E7%89%A9%E5%93%81%E6%95%B0%E9%87%8F/"  itemprop="url">
+        (每日LeetCode)1773. 统计匹配检索规则的物品数量
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：给定链表头结点 head，该链表上的每个结点都有一个 唯一的整型值 。同时给定列表 nums，该列表是上述链表中整型值的一个子集。
-返回列表 nums 中组件的个数，这里对组件的定义为：链表中一段最长连续结点的值（该值必须在列表 nums 中）构成的集合。
+        题目：给你一个数组 items ，其中 items[i] &#x3D; [typei, colori, namei] ，描述第 i 件物品的类型、颜色以及名称。
+另给你一条由两个字符串 ruleKey 和 ruleValue 表示的检索规则。
+如果第 i 件物品能满足下述条件之一，则认为该物品与给定的检索规则 匹配 ：
+ruleKey &#x3D;&#x3D; “type” 且 ruleVa...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-29T11:27:00+08:00">2022-10-29</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/29/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1773%20%E7%BB%9F%E8%AE%A1%E5%8C%B9%E9%85%8D%E6%A3%80%E7%B4%A2%E8%A7%84%E5%88%99%E7%9A%84%E7%89%A9%E5%93%81%E6%95%B0%E9%87%8F/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/28/%E6%AF%8F%E6%97%A5LeetCode/2022-10/907%20%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E4%B9%8B%E5%92%8C/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/28/%E6%AF%8F%E6%97%A5LeetCode/2022-10/907%20%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E4%B9%8B%E5%92%8C/"  itemprop="url">
+        (每日LeetCode)907. 子数组的最小值之和
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：给定一个整数数组 arr，找到 min(b) 的总和，其中 b 的范围为 arr 的每个（连续）子数组。
+由于答案可能很大，因此 返回答案模 10^9 + 7 。
 示例：
-输入: head &#x3D; [0,1,2,3,4], nums &#x3D; [0,3,1,4]输出: 2解释: 链表...
+输入：arr &#x3D; [3,1,2,4]输出：17解释：子数组为 [3]，[1]，[2]，[4]，[3,1]，[1,2]，[2,4]，[3,1,2]，[1,2,4]，[3,1,2,4]。最小值为 3，1，2，4...
       
     
   </div>
@@ -2552,7 +2620,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-10-12T09:18:00+08:00">2022-10-12</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-10-28T10:26:00+08:00">2022-10-28</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -2565,7 +2633,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/10/12/%E6%AF%8F%E6%97%A5LeetCode/2022-10/817%20%E9%93%BE%E8%A1%A8%E7%BB%84%E4%BB%B6/' itemprop="url">
+          <a class='readmore' href='/2022/10/28/%E6%AF%8F%E6%97%A5LeetCode/2022-10/907%20%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC%E4%B9%8B%E5%92%8C/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2581,7 +2649,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/11/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1790%20%E4%BB%85%E6%89%A7%E8%A1%8C%E4%B8%80%E6%AC%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BA%A4%E6%8D%A2%E8%83%BD%E5%90%A6%E4%BD%BF%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E7%AD%89/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/27/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1822%20%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%A7%AF%E7%9A%84%E7%AC%A6%E5%8F%B7/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2599,18 +2667,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/11/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1790%20%E4%BB%85%E6%89%A7%E8%A1%8C%E4%B8%80%E6%AC%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BA%A4%E6%8D%A2%E8%83%BD%E5%90%A6%E4%BD%BF%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E7%AD%89/"  itemprop="url">
-        (每日LeetCode)1790. 仅执行一次字符串交换能否使两个字符串相等
+      <a href="/2022/10/27/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1822%20%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%A7%AF%E7%9A%84%E7%AC%A6%E5%8F%B7/"  itemprop="url">
+        (每日LeetCode)1822. 数组元素积的符号
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：给你长度相等的两个字符串 s1 和 s2 。一次 字符串交换 操作的步骤如下：选出某个字符串中的两个下标（不必不同），并交换这两个下标所对应的字符。
-如果对 其中一个字符串 执行 最多一次字符串交换 就可以使两个字符串相等，返回 true ；否则，返回 false 。
+        题目：已知函数 signFunc(x) 将会根据 x 的正负返回特定值：
+如果 x 是正数，返回 1 。如果 x 是负数，返回 -1 。如果 x 是等于 0 ，返回 0 。给你一个整数数组 nums 。令 product 为数组 nums 中所有元素值的乘积。
+返回 signFunc(product) 。
 示例：
-输入：s1 &#x3D; “bank”, s2 &#x3D; “kanb”输出：true解释：例如，交换 s2...
+输入：nums &#x3D; [-1,-2,-3,-4,3,2,1]输出：1解...
       
     
   </div>
@@ -2618,7 +2687,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-10-11T11:25:00+08:00">2022-10-11</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-10-27T09:16:00+08:00">2022-10-27</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -2631,7 +2700,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class='readmore' href='/2022/10/11/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1790%20%E4%BB%85%E6%89%A7%E8%A1%8C%E4%B8%80%E6%AC%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BA%A4%E6%8D%A2%E8%83%BD%E5%90%A6%E4%BD%BF%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E7%AD%89/' itemprop="url">
+          <a class='readmore' href='/2022/10/27/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1822%20%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%A7%AF%E7%9A%84%E7%AC%A6%E5%8F%B7/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2647,7 +2716,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/09/%E6%AF%8F%E6%97%A5LeetCode/2022-10/856%20%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%88%86%E6%95%B0/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/25/%E6%AF%8F%E6%97%A5LeetCode/2022-10/934%20%E6%9C%80%E7%9F%AD%E7%9A%84%E6%A1%A5/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2665,24 +2734,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/09/%E6%AF%8F%E6%97%A5LeetCode/2022-10/856%20%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%88%86%E6%95%B0/"  itemprop="url">
-        (每日LeetCode)856. 括号的分数
+      <a href="/2022/10/25/%E6%AF%8F%E6%97%A5LeetCode/2022-10/934%20%E6%9C%80%E7%9F%AD%E7%9A%84%E6%A1%A5/"  itemprop="url">
+        (每日LeetCode)934. 最短的桥
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：给定一个平衡括号字符串 S，按下述规则计算该字符串的分数：
-
-() 得 1 分。
-AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
-(A) 得 2 * A 分，其中 A 是平衡括号字符串。
-
+        题目：给你一个大小为 n x n 的二元矩阵 grid ，其中 1 表示陆地，0 表示水域。
+岛 是由四面相连的 1 形成的一个最大组，即不会与非组内的任何其他 1 相连。grid 中 恰好存在两座岛 。
+你可以将任意数量的 0 变为 1 ，以使两座岛连接起来，变成 一座岛 。
+返回必须翻转的 0 的最小数目。
 示例：
-输入： “(()(()))”输出： 6
-
-代码(cpp)：12345678910111213141516171819202122class Solution &#123;pu...
+输入：grid &#x3D; [[0,1,0],[0,0,0],[0,0...
       
     
   </div>
@@ -2690,7 +2755,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-10-09T21:03:00+08:00">2022-10-09</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-10-25T15:51:00+08:00">2022-10-25</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -2703,7 +2768,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/10/09/%E6%AF%8F%E6%97%A5LeetCode/2022-10/856%20%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%88%86%E6%95%B0/' itemprop="url">
+          <a class='readmore' href='/2022/10/25/%E6%AF%8F%E6%97%A5LeetCode/2022-10/934%20%E6%9C%80%E7%9F%AD%E7%9A%84%E6%A1%A5/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2719,7 +2784,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/08/%E6%AF%8F%E6%97%A5LeetCode/2022-10/870%20%E4%BC%98%E5%8A%BF%E6%B4%97%E7%89%8C/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/23/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1768%20%E4%BA%A4%E6%9B%BF%E5%90%88%E5%B9%B6%E5%AD%97%E7%AC%A6%E4%B8%B2/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2737,18 +2802,18 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/08/%E6%AF%8F%E6%97%A5LeetCode/2022-10/870%20%E4%BC%98%E5%8A%BF%E6%B4%97%E7%89%8C/"  itemprop="url">
-        (每日LeetCode)870. 优势洗牌
+      <a href="/2022/10/23/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1768%20%E4%BA%A4%E6%9B%BF%E5%90%88%E5%B9%B6%E5%AD%97%E7%AC%A6%E4%B8%B2/"  itemprop="url">
+        (每日LeetCode)1768. 交替合并字符串
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：给定两个大小相等的数组 nums1 和 nums2，nums1 相对于 nums2 的优势可以用满足 nums1[i] &gt; nums2[i] 的索引 i 的数目来描述。
-返回 nums1 的任意排列，使其相对于 nums2 的优势最大化。
+        题目：给你两个字符串 word1 和 word2 。请你从 word1 开始，通过交替添加字母来合并字符串。如果一个字符串比另一个字符串长，就将多出来的字母追加到合并后字符串的末尾。
+返回 合并后的字符串 。
 示例：
-输入：nums1 &#x3D; [2,7,11,15], nums2 &#x3D; [1,10,4,11]输出：[2,11,7,15]...
+输入：word1 &#x3D; “abc”, word2 &#x3D; “pqr”输出：”apbqcr”解释：字符串合并情况如下所示：word1：  a   b   cword...
       
     
   </div>
@@ -2756,7 +2821,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-10-08T15:37:00+08:00">2022-10-08</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-10-23T08:53:00+08:00">2022-10-23</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -2769,7 +2834,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/10/08/%E6%AF%8F%E6%97%A5LeetCode/2022-10/870%20%E4%BC%98%E5%8A%BF%E6%B4%97%E7%89%8C/' itemprop="url">
+          <a class='readmore' href='/2022/10/23/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1768%20%E4%BA%A4%E6%9B%BF%E5%90%88%E5%B9%B6%E5%AD%97%E7%AC%A6%E4%B8%B2/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2785,7 +2850,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/07/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1800%20%E6%9C%80%E5%A4%A7%E5%8D%87%E5%BA%8F%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/21/%E6%AF%8F%E6%97%A5LeetCode/2022-10/901%20%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E8%B7%A8%E5%BA%A6/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -2803,211 +2868,19 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/07/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1800%20%E6%9C%80%E5%A4%A7%E5%8D%87%E5%BA%8F%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/"  itemprop="url">
-        (每日LeetCode)1800. 最大升序子数组和
+      <a href="/2022/10/21/%E6%AF%8F%E6%97%A5LeetCode/2022-10/901%20%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E8%B7%A8%E5%BA%A6/"  itemprop="url">
+        (每日LeetCode)901. 股票价格跨度
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：给你一个正整数组成的数组 nums ，返回 nums 中一个 升序 子数组的最大可能元素和。
-子数组是数组中的一个连续数字序列。
-已知子数组 [numsl, numsl+1, …, numsr-1, numsr] ，若对所有 i（l &lt;&#x3D; i &lt; r），numsi &lt; numsi+1 都成立，则称这一子数组为 升序 子数组。注意，大小为 1 的子数组也视作 ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-07T10:47:00+08:00">2022-10-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/07/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1800%20%E6%9C%80%E5%A4%A7%E5%8D%87%E5%BA%8F%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/05/%E6%AF%8F%E6%97%A5LeetCode/2022-10/811%20%E5%AD%90%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E8%AE%A1%E6%95%B0/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/05/%E6%AF%8F%E6%97%A5LeetCode/2022-10/811%20%E5%AD%90%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E8%AE%A1%E6%95%B0/"  itemprop="url">
-        (每日LeetCode)811. 子域名访问计数
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：网站域名 “discuss.leetcode.com” 由多个子域名组成。顶级域名为 “com” ，二级域名为 “leetcode.com” ，最低一级为 “discuss.leetcode.com” 。当访问域名 “discuss.leetcode.com” 时，同时也会隐式访问其父域名 “leetcode.com” 以及 “com” 。
-计数配对域名 是遵循 “rep d1.d2....
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-05T11:10:00+08:00">2022-10-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/05/%E6%AF%8F%E6%97%A5LeetCode/2022-10/811%20%E5%AD%90%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E8%AE%A1%E6%95%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/04/%E6%AF%8F%E6%97%A5LeetCode/2022-10/921%20%E4%BD%BF%E6%8B%AC%E5%8F%B7%E6%9C%89%E6%95%88%E7%9A%84%E6%9C%80%E5%B0%91%E6%B7%BB%E5%8A%A0/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/04/%E6%AF%8F%E6%97%A5LeetCode/2022-10/921%20%E4%BD%BF%E6%8B%AC%E5%8F%B7%E6%9C%89%E6%95%88%E7%9A%84%E6%9C%80%E5%B0%91%E6%B7%BB%E5%8A%A0/"  itemprop="url">
-        (每日LeetCode)921. 使括号有效的最少添加
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：只有满足下面几点之一，括号字符串才是有效的：
-它是一个空字符串，或者它可以被写成 AB （A 与 B 连接）, 其中 A 和 B 都是有效字符串，或者它可以被写作 (A)，其中 A 是有效字符串。给定一个括号字符串 s ，移动N次，你就可以在字符串的任何位置插入一个括号。
-例如，如果 s &#x3D; “()))” ，你可以插入一个开始括号为 “(()))” 或结束括号为 “())))...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-04T23:18:00+08:00">2022-10-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/04/%E6%AF%8F%E6%97%A5LeetCode/2022-10/921%20%E4%BD%BF%E6%8B%AC%E5%8F%B7%E6%9C%89%E6%95%88%E7%9A%84%E6%9C%80%E5%B0%91%E6%B7%BB%E5%8A%A0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/02/%E6%AF%8F%E6%97%A5LeetCode/2022-10/777%20%E5%9C%A8LR%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E4%BA%A4%E6%8D%A2%E7%9B%B8%E9%82%BB%E5%AD%97%E7%AC%A6/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
-    <meta itemprop="description" content="一个不起眼的小博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/02/%E6%AF%8F%E6%97%A5LeetCode/2022-10/777%20%E5%9C%A8LR%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E4%BA%A4%E6%8D%A2%E7%9B%B8%E9%82%BB%E5%AD%97%E7%AC%A6/"  itemprop="url">
-        (每日LeetCode)777. 在LR字符串中交换相邻字符
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        题目：在一个由 ‘L’ , ‘R’ 和 ‘X’ 三个字符组成的字符串（例如”RXXLRXRXL”）中进行移动操作。一次移动操作指用一个”LX”替换一个”XL”，或者用一个”XR”替换一个”RX”。现给定起始字符串start和结束字符串end，请编写代码，当且仅当存在一系列移动操作使得start可以转换成end时， 返回True。
+        题目：编写一个 StockSpanner 类，它收集某些股票的每日报价，并返回该股票当日价格的跨度。
+今天股票价格的跨度被定义为股票价格小于或等于今天价格的最大连续日数（从今天开始往回数，包括今天）。
+例如，如果未来7天股票的价格是 [100, 80, 60, 70, 60, 75, 85]，那么股票跨度将是 [1, 1, 1, 2, 1, 4, 6]。
 示例：
-输入: start &#x3D; “RXXLRXRXL...
+输入：[“StockSpan...
       
     
   </div>
@@ -3015,7 +2888,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-10-02T10:27:00+08:00">2022-10-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-10-21T09:33:00+08:00">2022-10-21</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -3028,7 +2901,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/10/02/%E6%AF%8F%E6%97%A5LeetCode/2022-10/777%20%E5%9C%A8LR%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E4%BA%A4%E6%8D%A2%E7%9B%B8%E9%82%BB%E5%AD%97%E7%AC%A6/' itemprop="url">
+          <a class='readmore' href='/2022/10/21/%E6%AF%8F%E6%97%A5LeetCode/2022-10/901%20%E8%82%A1%E7%A5%A8%E4%BB%B7%E6%A0%BC%E8%B7%A8%E5%BA%A6/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3044,7 +2917,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/01/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1694%20%E9%87%8D%E6%96%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/19/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1700%20%E6%97%A0%E6%B3%95%E5%90%83%E5%8D%88%E9%A4%90%E7%9A%84%E5%AD%A6%E7%94%9F%E6%95%B0%E9%87%8F/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
   </span>
@@ -3062,20 +2935,16 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/01/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1694%20%E9%87%8D%E6%96%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81/"  itemprop="url">
-        (每日LeetCode)1694. 重新格式化电话号码
+      <a href="/2022/10/19/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1700%20%E6%97%A0%E6%B3%95%E5%90%83%E5%8D%88%E9%A4%90%E7%9A%84%E5%AD%A6%E7%94%9F%E6%95%B0%E9%87%8F/"  itemprop="url">
+        (每日LeetCode)1700. 无法吃午餐的学生数量
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        题目：给你一个字符串形式的电话号码 number 。number 由数字、空格 &#39; &#39;、和破折号 &#39;-&#39; 组成。
-请你按下述方式重新格式化电话号码。
-首先，删除 所有的空格和破折号。其次，将数组从左到右 每 3 个一组 分块，直到 剩下 4 个或更少数字。剩下的数字将按下述规定再分块：
-
-2 个数字：单个含 2 个数字的块。
-3 个数字：单个含 3 个数字的块...
+        题目：学校的自助午餐提供圆形和方形的三明治，分别用数字 0 和 1 表示。所有学生站在一个队列里，每个学生要么喜欢圆形的要么喜欢方形的。餐厅里三明治的数量与学生的数量相同。所有三明治都放在一个 栈 里，每一轮：
+如果队列最前面的学生 喜欢 栈顶的三明治，那么会 拿走它 并离开队列。否则，这名学生会 放弃这个三明治 并回到队列的尾部。这个过程会一直持续到队列里所有学生都不喜欢栈顶的三明治为止。...
       
     
   </div>
@@ -3083,7 +2952,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-10-01T20:35:00+08:00">2022-10-01</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-10-19T13:57:00+08:00">2022-10-19</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
@@ -3096,7 +2965,143 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
       </div>
       
         <div>
-          <a class='readmore' href='/2022/10/01/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1694%20%E9%87%8D%E6%96%B0%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81/' itemprop="url">
+          <a class='readmore' href='/2022/10/19/%E6%AF%8F%E6%97%A5LeetCode/2022-10/1700%20%E6%97%A0%E6%B3%95%E5%90%83%E5%8D%88%E9%A4%90%E7%9A%84%E5%AD%A6%E7%94%9F%E6%95%B0%E9%87%8F/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/18/%E6%AF%8F%E6%97%A5LeetCode/2022-10/902%20%E6%9C%80%E5%A4%A7%E4%B8%BA%20N%20%E7%9A%84%E6%95%B0%E5%AD%97%E7%BB%84%E5%90%88/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/18/%E6%AF%8F%E6%97%A5LeetCode/2022-10/902%20%E6%9C%80%E5%A4%A7%E4%B8%BA%20N%20%E7%9A%84%E6%95%B0%E5%AD%97%E7%BB%84%E5%90%88/"  itemprop="url">
+        (每日LeetCode)902. 最大为 N 的数字组合
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：
+给定一个按 非递减顺序 排列的数字数组 digits 。你可以用任意次数 digits[i] 来写的数字。例如，如果 digits &#x3D; [‘1’,’3’,’5’]，我们可以写数字，如 ‘13’, ‘551’, 和 ‘1351315’。
+返回 可以生成的小于或等于给定整数 n 的正整数的个数 。
+示例：
+
+输入：digits &#x3D; [“1”,”3”,”5”,”7”],...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-18T10:19:00+08:00">2022-10-18</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/18/%E6%AF%8F%E6%97%A5LeetCode/2022-10/902%20%E6%9C%80%E5%A4%A7%E4%B8%BA%20N%20%E7%9A%84%E6%95%B0%E5%AD%97%E7%BB%84%E5%90%88/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/17/%E6%AF%8F%E6%97%A5LeetCode/2022-10/904%20%E6%B0%B4%E6%9E%9C%E6%88%90%E7%AF%AE/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="活着就是为了摸鱼🐟！！！">
+    <meta itemprop="description" content="一个不起眼的小博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/17/%E6%AF%8F%E6%97%A5LeetCode/2022-10/904%20%E6%B0%B4%E6%9E%9C%E6%88%90%E7%AF%AE/"  itemprop="url">
+        (每日LeetCode)904. 水果成篮
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        题目：你正在探访一家农场，农场从左到右种植了一排果树。这些树用一个整数数组 fruits 表示，其中 fruits[i] 是第 i 棵树上的水果 种类 。
+你想要尽可能多地收集水果。然而，农场的主人设定了一些严格的规矩，你必须按照要求采摘水果：
+
+你只有 两个 篮子，并且每个篮子只能装 单一类型 的水果。每个篮子能够装的水果总量没有限制。
+
+你可以选择任意一棵树开始采摘，你必须从 每棵 树（...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-17T17:46:00+08:00">2022-10-17</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/">每日LeetCode</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%AF%8F%E6%97%A5LeetCode/" itemprop="url"><span itemprop="name">每日LeetCode</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/17/%E6%AF%8F%E6%97%A5LeetCode/2022-10/904%20%E6%B0%B4%E6%9E%9C%E6%88%90%E7%AF%AE/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3123,7 +3128,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
           </a>
         
         <p class="current">
-          8 / 15
+          8 / 16
         </p>
         
           <a class="next" rel="next" href="/tags/LeetCode/page/9/">
@@ -3197,7 +3202,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
           <li><a class="flat-box"
             title="/categories/Java/" href="/categories/Java/"
             active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(10)</div></a></li>
+            ><div class='name'>Java</div><div class='badge'>(11)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Python/" href="/categories/Python/"
@@ -3212,7 +3217,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
           <li><a class="flat-box"
             title="/categories/%E6%AF%8F%E6%97%A5LeetCode/" href="/categories/%E6%AF%8F%E6%97%A5LeetCode/"
             active-action="action-categoriesE6AF8FE697A5LeetCode"
-            ><div class='name'>每日LeetCode</div><div class='badge'>(147)</div></a></li>
+            ><div class='name'>每日LeetCode</div><div class='badge'>(158)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA4%E4%BB%B6%E5%A5%97/"
@@ -3222,7 +3227,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
           <li><a class="flat-box"
             title="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"
             active-action="action-categoriesE8BDAFE4BBB6E5AE89E8A385"
-            ><div class='name'>软件安装</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>软件安装</div><div class='badge'>(5)</div></a></li>
         
       </ul>
     </div>
@@ -3247,7 +3252,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
 
 
     <div class='content'>
-      <a href="/tags/C/" style="font-size: 17.33px; color: #828282">C++</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Java/" style="font-size: 20.67px; color: #6c6c6c">Java</a> <a href="/tags/LeetCode/" style="font-size: 22.33px; color: #606060">LeetCode</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/STL/" style="font-size: 15.67px; color: #8e8e8e">STL</a> <a href="/tags/c/" style="font-size: 14px; color: #999">c++</a> <a href="/tags/es/" style="font-size: 14px; color: #999">es</a> <a href="/tags/kibana/" style="font-size: 14px; color: #999">kibana</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">基础</a> <a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 19px; color: #777">容器</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.33px; color: #828282">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 19px; color: #777">框架</a> <a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">汇编</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 22.33px; color: #606060">算法</a>
+      <a href="/tags/C/" style="font-size: 16.86px; color: #868686">C++</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Java/" style="font-size: 21.14px; color: #686868">Java</a> <a href="/tags/LeetCode/" style="font-size: 22.57px; color: #5f5f5f">LeetCode</a> <a href="/tags/MQ/" style="font-size: 14px; color: #999">MQ</a> <a href="/tags/MinIo/" style="font-size: 14px; color: #999">MinIo</a> <a href="/tags/Nacos/" style="font-size: 14px; color: #999">Nacos</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/STL/" style="font-size: 15.43px; color: #8f8f8f">STL</a> <a href="/tags/Seata/" style="font-size: 14px; color: #999">Seata</a> <a href="/tags/c/" style="font-size: 14px; color: #999">c++</a> <a href="/tags/es/" style="font-size: 14px; color: #999">es</a> <a href="/tags/kibana/" style="font-size: 14px; color: #999">kibana</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">基础</a> <a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 19.71px; color: #727272">容器</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.86px; color: #868686">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 18.29px; color: #7c7c7c">框架</a> <a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">汇编</a> <a href="/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 14px; color: #999">消息中间件</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 22.57px; color: #5f5f5f">算法</a>
     </div>
   </section>
 

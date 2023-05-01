@@ -43,7 +43,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-10-08T07:37:44.332Z">
-<meta property="article:modified_time" content="2023-02-03T03:48:45.726Z">
+<meta property="article:modified_time" content="2023-03-29T06:11:03.275Z">
 <meta property="article:author" content="一个小垃圾">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="数据库">
@@ -1753,7 +1753,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.af2d54c8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.d9437285.js","rightMenus":"/js/plugins/rightMenus.4d580c89.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js"},"css":{"style":"/css/style.13e9f403.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675949129326),
+    lastupdate: new Date(1682953631743),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2798,7 +2798,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 <p><strong>B+Tree</strong></p>
-<p>以一颗最大度数为4的(4阶)B-Tree为例：</p>
+<p>以一颗最大度数为3的(3阶)B+Tree为例：</p>
 <img src="https://s2.loli.net/2022/10/08/QzROMgSdqV3wjFD.png" class="lazyload" data-srcset="https://s2.loli.net/2022/10/08/QzROMgSdqV3wjFD.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221008164831179.png" style="zoom:67%;" />
 
 
@@ -2829,11 +2829,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ol>
 <ul>
 <li><p><strong>存储引擎支持</strong></p>
-<p>在MySQL中，支持hash索引的是Memory引擎，而InnoDB中具有自适应hash功能，hash索引是存储引擎根据B+Tree索引l在指定条件下自动构建的。</p>
+<p>在MySQL中，支持hash索引的是Memory引擎，而InnoDB中具有自适应hash功能，hash索引是存储引擎根据B+Tree索引在指定条件下自动构建的。</p>
 </li>
 </ul>
 <p><strong>思考</strong>：</p>
-<p>为什么InnoDB存储引擎选择使用Bttree索引结构？</p>
+<p>为什么InnoDB存储引擎选择使用B+tree索引结构？</p>
 <ul>
 <li>相对于二叉树，层级更少，搜索效率高；</li>
 <li>对于B-tree，无论是叶子节点还是非叶子节点，都会保存数据，这样导致一页中存储的键值减少，指针跟着减少，要同样保存大量数据，只能增加树的高度，导致性能降低;</li>
@@ -3198,7 +3198,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>针对于常作为查询条件(where)、排序(order by)、分组(groupby) 操作的字段建立索引。</li>
 <li>尽量选择区分度高的列作为索引，尽量建立唯一索引，区分度越高，使用索引的效率越高。</li>
 <li>如果是字符串类型的字段，字段的长度较长，可以针对于字段的特点，建立前缀索引。</li>
-<li>尽量使用联合索引，减少单列索引，查询时，联合素引很多时候可以覆盖索引，节省存储空问，避免回表，提高查询效率。</li>
+<li>尽量使用联合索引，减少单列索引，查询时，联合索引很多时候可以覆盖索引，节省存储空问，避免回表，提高查询效率。</li>
 <li>要控制索引的数量，索引不是多多益善，索引越多，维护索引结构的代价也就越大，会影响增删改的效率。</li>
 <li>如果索引列不能存储NULL值，请在创建表时使用<code>NOT NULL</code>约束它。当优化器知道每列是否包含NULL值时，它可以更好地确定哪个索引最有效地用于查询。</li>
 </ol>
@@ -3583,7 +3583,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>幻读：事务A修改了表中所有信息，此时事务B插入一条数据，在事务A提交时发现有一条未修改的数据</li>
 </ul>
 </li>
-<li>临键锁(Next-Key Lock)：行锁和间隙锁组合，同时锁住数据，并锁住数据前面的间隙Gap。在RR隔离级别下支持。</li>
+<li>临界锁(Next-Key Lock)：行锁和间隙锁组合，同时锁住数据，并锁住数据前面的间隙Gap。在RR隔离级别下支持。</li>
 </ol>
 <h4 id="行锁"><a href="#行锁" class="headerlink" title="行锁"></a>行锁</h4><p>InnoDB实现了以下两种类型的行锁：</p>
 <ol>
@@ -3630,7 +3630,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td>手动加锁</td>
 </tr>
 </tbody></table>
-<h4 id="间隙锁-amp-临界锁"><a href="#间隙锁-amp-临界锁" class="headerlink" title="间隙锁&amp;临界锁"></a>间隙锁&amp;临界锁</h4><p>默认情况下，InnoDB在REPEATABLE READ事务隔离级别运行，InnoDB使用next-key锁(临界锁)进行搜索和索引扫描，以防止幻读。</p>
+<h4 id="间隙锁-amp-临界锁"><a href="#间隙锁-amp-临界锁" class="headerlink" title="间隙锁&amp;临界锁"></a>间隙锁&amp;临界锁</h4><p><strong>默认情况下</strong>，InnoDB在REPEATABLE READ事务隔离级别运行，<strong>InnoDB使用next-key锁</strong>(临界锁)进行搜索和索引扫描，以防止幻读。</p>
 <ol>
 <li><p>索引上的等值查询（唯一索引），给不存在的记录加锁时，优化为间隙锁。</p>
 <ul>
@@ -3641,6 +3641,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 </li>
 <li><p>索引上的等值查询(普通索引)，向右遍历时最后一个值不满足查询需求时，next-key lock退化为间隙锁。</p>
+<ul>
+<li>因为索引是按照升序排序的，假设要搜索的是值是18，当搜索到第一个不为18值的时候，这个值假设为30，那么就会在最后一个18与30之间加间隙锁</li>
+</ul>
 </li>
 <li><p>索引上的范围查询(唯一索引)，会访问到不满足条件的第一个值为止。</p>
 </li>
@@ -3648,7 +3651,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>注意：间隙锁唯一目的是防止其他事务插入间隙。间隙锁可以共存，一个事务采用的间隙锁不会阻止另一个事务在同一间隙上采用间隙锁。</p>
 </div><div class="story post-story"><h2 id="8-InnoDB引擎"><a href="#8-InnoDB引擎" class="headerlink" title="8.InnoDB引擎"></a>8.InnoDB引擎</h2><h3 id="8-1-逻辑存储结构"><a href="#8-1-逻辑存储结构" class="headerlink" title="8.1 逻辑存储结构"></a>8.1 逻辑存储结构</h3><p><img src="https://s2.loli.net/2022/12/06/OyXSt8omNKhjUGc.png" class="lazyload" data-srcset="https://s2.loli.net/2022/12/06/OyXSt8omNKhjUGc.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221206173530147.png"></p>
 <ul>
-<li><p>Tablespace：表空间(ibd文件)，一个ysql实例可以对应多个表空间，用于存储记录、索引等数据。</p>
+<li><p>Tablespace：表空间(ibd文件)，一个sql实例可以对应多个表空间，用于存储记录、索引等数据。</p>
 </li>
 <li><p>Segment：段，分为数据段(Leaf node segment)、索引段(Non-leaf node segment)、回滚段(Rollback segment),InnoDB是索引组织表，数据段就是B+树的叶子节点，索引段即为B+树的非叶子节点。段用来管理多个Extent(区)。</p>
 </li>
@@ -3661,15 +3664,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <h3 id="8-2-架构"><a href="#8-2-架构" class="headerlink" title="8.2 架构"></a>8.2 架构</h3><p>MySQL5.5版本开始，默认使用InnoDB存储引擎，它擅长事务处理，具有崩溃恢复特性，在日常开发中使用非常广泛。</p>
 <p>下面是InnoDB架构图，左侧为内存结构，右侧为磁盘结构：</p>
-<img src="https://s2.loli.net/2023/01/17/tK8HjiSqAhx2QC1.png" class="lazyload" data-srcset="https://s2.loli.net/2023/01/17/tK8HjiSqAhx2QC1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230117140744367.png" style="zoom:67%;" />
+<img src="https://s2.loli.net/2023/01/17/tK8HjiSqAhx2QC1.png" class="lazyload" data-srcset="https://s2.loli.net/2023/01/17/tK8HjiSqAhx2QC1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230117140744367.png"  />
 
 
 
 <h4 id="内存结构"><a href="#内存结构" class="headerlink" title="内存结构"></a>内存结构</h4><ul>
-<li><p>Buffer Pool：缓冲池是主内存中的一个区域，里面可以缓存磁盘上经常操作的真实数据，在执行增改查操作先操作缓冲池中的数据(若缓冲池没有数据，则从磁盘加载并缓存)，然后再以一定频率刷新到磁盘，从而减少磁盘的I&#x2F;O操作，快处理速度。</p>
+<li><p><strong>Buffer Pool</strong>：缓冲池是主内存中的一个区域，里面可以缓存磁盘上经常操作的真实数据，在执行增改查操作先操作缓冲池中的数据(若缓冲池没有数据，则从磁盘加载并缓存)，然后再以一定频率刷新到磁盘，从而减少磁盘的I&#x2F;O操作，快处理速度。</p>
 <p>缓冲池以Page页为单位，底层采用链表结构管理Page。根据状态，将Page分为三种类型：</p>
 <ul>
-<li><p>free page：未发使用。</p>
+<li><p>free page：未被使用。</p>
 </li>
 <li><p>clean page：被使用page，数据没有被修改过.</p>
 </li>
@@ -3870,7 +3873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <p>不同的隔离级别，生成ReadView的时机不同：</p>
 <ul>
-<li>READ COMMITTED：在事务中每一次执行快黑读时生成Readview。</li>
+<li>READ COMMITTED：在事务中每一次执行快照读时生成Readview。</li>
 <li>REPEATABLE READ：仅在事务中第一次执行快照读时生成Readview，后续复用该Readview。</li>
 </ul>
 <p><strong>RC隔离级别</strong>下，在事务中每一次执行快照读时生成ReadView。</p>
@@ -3944,7 +3947,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
               <div class="license-meta-item">
                 <div class="license-meta-title">更新于</div>
-                <div class="license-meta-text">2023年2月3日</div>
+                <div class="license-meta-text">2023年3月29日</div>
               </div>
               
               
@@ -3969,10 +3972,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-03T11:48:45+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-29T14:11:03+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年2月3日</p>
+    <p>更新于：2023年3月29日</p>
   </a>
 </div>
 
@@ -5064,7 +5067,7 @@ AB 得 A + B 分，其中 A 和 B 是平衡括号字符串。
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/08/Java/MySQL/","name":"MySQL的学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MySQL的学习笔记","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/08/Java/MySQL/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/08/Java/MySQL/","wordCount":0,"datePublished":"2022-10-08T07:37:44.332Z","dateModified":"2023-02-03T03:48:45.726Z","articleSection":"Java","keywords":"Java,数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"一个不起眼的小博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"活着就是为了摸鱼🐟！！！"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/08/Java/MySQL/","name":"MySQL的学习笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","keywords":null,"description":"一个不起眼的小博客","author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"一个不起眼的小博客"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MySQL的学习笔记","description":"一个不起眼的小博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/08/Java/MySQL/"},"author":{"@type":"Person","name":"一个小垃圾","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"活着就是为了摸鱼🐟！！！","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/08/Java/MySQL/","wordCount":0,"datePublished":"2022-10-08T07:37:44.332Z","dateModified":"2023-03-29T06:11:03.275Z","articleSection":"Java","keywords":"Java,数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
